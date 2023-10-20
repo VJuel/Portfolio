@@ -2,26 +2,469 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #fdfdfd;
+    --foreground: hsl(222.2, 84%, 4.9%);
+
+    --card: rgb(255, 255, 255);
+    --card-foreground: hsl(222.2, 84%, 4.9%);
+
+    --popover: #1e293b;
+    --popover-foreground: hsl(222.2, 84%, 4.9%);
+
+    --primary: hsl(222.2, 47.4%, 11.2%);
+    --primary-foreground: hsl(210, 40%, 98%);
+
+    --secondary: rgb(255, 222, 89);
+    --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+
+    --muted: #000;
+    --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+
+    --accent: #06d6a0;
+    --accent-foreground: hsl(222.2, 47.4%, 11.2%);
+
+    --destructive: hsl(0, 84.2%, 60.2%);
+    --destructive-foreground: hsl(210, 40%, 98%);
+
+    --warning: hsl(38 92% 50%);
+    --warning-foreground: 48 96% 89%;
+
+    --border: hsl(214.3, 31.8%, 91.4%);
+    --input: hsl(214.3, 31.8%, 91.4%);
+    --ring: hsl(222.2, 84%, 4.9%);
+    --footer: RGB(13, 17, 23);
+    --footer-text: #e5e7eb;
+
+    --font-roboto: "Roboto", sans-serif;
+    --font-monterrat: "Montserrat", sans-serif;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: hsl(222.2, 84%, 4.9%);
+    --foreground: hsl(210, 40%, 98%);
+
+    --card: hsl(222.2, 84%, 4.9%);
+    --card-foreground: hsl(210, 40%, 98%);
+
+    --popover: hsl(222.2, 84%, 4.9%);
+    --popover-foreground: hsl(210, 40%, 98%);
+
+    --primary: hsl(210, 40%, 98%);
+    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+
+    --secondary: hsl(217.2, 32.6%, 17.5%);
+    --secondary-foreground: hsl(210, 40%, 98%);
+
+    --muted: hsl(217.2, 32.6%, 17.5%);
+    --muted-foreground: hsl(215, 20.2%, 65.1%);
+
+    --accent: hsl(217.2, 32.6%, 17.5%);
+    --accent-foreground: hsl(210, 40%, 98%);
+
+    --destructive: hsl(0, 62.8%, 30.6%);
+    --destructive-foreground: hsl(210, 40%, 98%);
+
+    --border: hsl(217.2, 32.6%, 17.5%);
+    --input: hsl(217.2, 32.6%, 17.5%);
+    --ring: hsl(212.7, 26.8%, 83.9%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer debug {
+  :root {
+    --background: hsl(0 0% 100%);
+    --dark: hsl(222.2 47.4% 11.2%);
+
+    --muted: hsl(227 14% 38%);
+    --muted-foreground: hsa(0 0% 91%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222.2 47.4% 11.2%);
+
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222.2 47.4% 11.2%);
+
+    --border: hsl(214.3 31.8% 91.4%);
+    --input: hsl(214.3 31.8% 91.4%);
+
+    --primary: hsl(241 100% 10%);
+    --primary-foreground: hsl(210 40% 98%);
+
+    --secondary: hsl(210 40% 96.1%);
+    --secondary-foreground: hsl(222.2 47.4% 11.2%);
+
+    --accent: hsl(210 40% 96.1%);
+    --accent-foreground: hsl(222.2 47.4% 11.2%);
+
+    --destructive: hsl(0 100% 50%);
+    --destructive-foreground: hsl(210 40% 98%);
+
+    --ring: hsl(215 20.2% 65.1%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply m-0 bg-[var(--background)] p-0 box-border text-[var(--dark)];
+  }
+
+  html {
+    @apply font-[var(--font-roboto)] text-[var(--dark)] scroll-smooth scroll-pt-20 text-[18px];
+  }
+
+  .roboto {
+    font-family: var(--font-roboto);
+  }
+
+  .monterrat {
+    font-family: var(--font-monterrat);
+  }
+
+  .portfolio:before {
+    content: "Portfolio";
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 1px);
+    transform: translate(-50%, -50%);
+  }
+
+  h1,
+  h2 {
+    @apply roboto text-[var(--dark)] font-medium;
+  }
+
+  p,
+  a {
+    @apply font-normal monterrat;
+  }
+
+  button {
+    background-color: initial;
+  }
+
+  .absolute-default {
+    @apply top-0 left-0 h-full w-full;
+  }
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.unset {
+  position: unset;
+}
+
+.reseauheight {
+  padding-bottom: 270px;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  clip-path: url(#clipping);
+}
+
+nav > ul > li {
+  @apply border-neutral-200 flex justify-start items-start px-2 py-1 w-full;
+}
+
+nav > ul > li {
+  width: calc(100% - 2.5rem);
+}
+
+footer {
+  @apply bg-red-400 text-sm !text-[var(--footer-text)];
+}
+
+.bandeau h2 {
+  @apply font-bold;
+}
+
+.footer > * {
+  @apply text-black;
+}
+
+.footer div > h2 {
+  @apply text-xl font-bold;
+}
+
+.footer div > p {
+  @apply text-lg font-medium;
+}
+
+.list-footer {
+  @apply flex items-start justify-start gap-2 pl-[60px];
+}
+
+.list-footer > li {
+  @apply flex items-center justify-between gap-4 text-lg;
+}
+
+.list-footer > li > svg {
+  @apply text-xl;
+}
+
+.list-footer > li a {
+  position: initial !important;
+}
+
+.before::before {
+  position: absolute;
+  content: "";
+  border-radius: 4px;
+  background-color: black;
+  bottom: -1rem;
+  left: 1.25rem;
+  width: calc(100% - 2.5rem);
+  height: 1px;
+}
+
+.before::before {
+  @apply block lg:hidden;
+}
+
+section > div > h2 {
+  @apply text-4xl m-0 text-center text-black;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.image-color,
+.image-bw,
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mask {
+  background-color: transparent;
+  clip-path: circle(25px at var(--x, 0) var(--y, 0));
+}
+
+.image-bw {
+  z-index: 1;
+}
+
+.card-work {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-work h3 {
+  position: relative;
+  z-index: 50;
+}
+
+.card-work:before {
+  transition: all 0.4s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--secondary);
+  opacity: 1;
+}
+
+.card-work:hover:before {
+  height: 100%;
+}
+
+.card-work:hover h3 {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+.card-work {
+  transition-property: transform, opacity;
+  opacity: 1;
+}
+
+.card-work:hover .badge {
+  animation: animation-badge 1s ease forwards;
+  transition-property: transform, opacity;
+  opacity: 1;
+}
+
+/* // Animation // */
+
+.animation {
+  animation: spin 1s forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 1s 2s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.9s;
+}
+
+.animation-delay-800 {
+  animation-delay: 1.1s;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-img {
+  animation: fade-img 1s ease-out forwards;
+}
+
+@keyframes fade-img {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-border {
+  animation: border 1s ease-out forwards;
+}
+
+@keyframes border {
+  0% {
+    right: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.animate-title-discover {
+  animation: title-discover 1s ease forwards;
+}
+
+@keyframes title-discover {
+  0% {
+    width: 100%;
+    border: 2px solid black;
+  }
+
+  100% {
+    border: 1px solid black;
+    width: 0%;
+  }
+}
+
+.animate-height-discover {
+  animation: height-discover 1s ease forwards;
+}
+
+@keyframes height-discover {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: calc(100% - 4px);
+  }
+}
+
+.animation-badge {
+  animation: animation-badge 1s ease forwards;
+}
+
+@keyframes animation-badge {
+  0% {
+    transform: scale(0.8);
+  }
+
+  55% {
+    transform: scale(10.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.content-project {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.content-project.active {
+  opacity: 1;
+  position: relative;
+}
+
+.animation-change-project {
+  transition: opacity 2s ease-in-out forwards;
+}
+
+@keyframes animation-change-project {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

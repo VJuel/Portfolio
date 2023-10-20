@@ -1,0 +1,10 @@
+{
+  "semi": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascriptreact": {
+    "editor.formatOnSave": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false
+}
