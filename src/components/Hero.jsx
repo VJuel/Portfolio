@@ -21,89 +21,6 @@ export default function Hero() {
     r: 0,
   })
   const containerRef = useRef(null)
-  const borderedContainer = useRef(null)
-  const animation = useRef()
-
-  const imageLoader = ({ src, width, quality }) => {
-    return <Spinner />
-  }
-
-  function SpinArrow({ children, timeline, index, rotation }) {
-    const [count, setCount, countRef] = useStateRef()
-    const [gsapCount, setGsapCount] = useState(0)
-
-    useLayoutEffect(() => {
-      let ctx = gsap.context(() => {
-        // all your animations go in here...
-        gsap.to(".hover", {
-          rotation: rotation,
-          delay: 1.2,
-          duration: 0.5,
-          repeat: 0,
-          onRepeat: () => setGsapCount(countRef.current),
-        })
-      }, containerRef)
-      ctx.revert() // <- Easy Cleanup!
-    }, [containerRef])
-  }
-
-  function Border() {
-    useLayoutEffect(() => {
-      gsap.context(() => {
-        // all your animations go in here...
-        gsap.from(".bordered", { y: -60, duration: 2 })
-      }, borderedContainer) // <- scopes all selector text to the root element
-    }, [])
-  }
-
-  const FadeIn = forwardRef(({ children, stagger = 0, y = 0 }, ref) => {
-    const el = useRef()
-
-    useLayoutEffect(() => {
-      const ctx = gsap.context(() => {
-        animation.current = gsap.from(el.current.children, {
-          opacity: 0,
-          stagger,
-          y,
-        })
-      })
-      return () => ctx.revert()
-    })
-
-    useEffect(() => {
-      // forward the animation instance
-      if (typeof ref === "function") {
-        ref(animation.current)
-      } else if (ref) {
-        ref.current = animation.current.delay(0.5)
-      }
-    }, [ref])
-
-    return (
-      <div ref={el} className="flex flex-col gap-2">
-        {children}
-      </div>
-    )
-  })
-
-  function FadeImg() {
-    const imgFade = useRef(null)
-    useLayoutEffect(() => {
-      const ctx = gsap.context(() => {
-        gsap.from(".fade", { opacity: 0 })
-      }, borderedContainer)
-
-      ctx.revert() // <- Easy Cleanup!
-    }, [])
-  }
-
-  const onEnter = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: "#e77614", scale: 1.2 })
-  }
-
-  const onLeave = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: "#28a92b", scale: 1 })
-  }
 
   useEffect(() => {
     if (typeof window != "undefined") {
@@ -143,14 +60,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className={`lg:h-[calc(100vh_-_84px)] clip-hero transition-all duration-[1s] flex justify-center items-center`}
+      className={`lg:h-[calc(100vh_-_84px)] clip-hero transition-all duration-_ 1s_ flex justify-center items-center`}
     >
-      <div className="max-w-6xl w-full flex flex-col lg:flex-row p-10 gap-12 lg:gap-0 justify-center items-center">
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row p-4 lg:p-10 gap-12 lg:gap-0 justify-center items-center">
         <div className="w-full lg:w-1/2 pr-0 lg:pr-10 text-center lg:text-left">
-          <div className="relative z-0 pl-4" useRef={borderedContainer}>
-            <h1 className="text-4xl ">Vicktor Juhel</h1>
-            <h2 className="text-4xl">Developpeur Web</h2>
-            <h2 className="mb-[18px] lg:mb-4 text-4xl">Fullstack</h2>
+          <div className="relative z-0 pl-4">
+            <h1 className="text-4xl">Vicktor Juhel</h1>
+            <h2 className="text-3xl">Developpeur Web</h2>
+            <h2 className="mb-[18px] lg:mb-4 text-3xl">Fullstack</h2>
             <div className="hidden lg:block animate-title-discover h-full bg-secondary absolute top-0 left-0 rounded-[2px] w-full"></div>
           </div>
 
@@ -169,7 +86,7 @@ export default function Hero() {
           </p>
           <Button
             onClick={() => router.push("#contact")}
-            className="animate-fade-in  animation-delay-800 w-fit"
+            className="mt-4 animate-fade-in animation-delay-800 w-fit"
           >
             Contactez-moi !
           </Button>
@@ -185,7 +102,7 @@ export default function Hero() {
             alt="Picture of the author"
             className={clsx(
               imgClass,
-              "animate-fade-img relative z-1 shadow-md min-h-[300px] min-w-[300px]"
+              "animate-fade-img opacity-0 relative z-1 shadow-md min-h-[300px] min-w-[300px]"
             )}
             onError={() => setSrc("/assets/image-error.png")}
           />
@@ -208,7 +125,7 @@ export default function Hero() {
             alt="Picture of the author"
             className={clsx(
               imgClass,
-              `heroImg !absolute top-0 left-0 z-1 shadow-md`
+              `heroImg !absolute top-0 left-0 z-1 shadow-md min-h-[300px] min-w-[300px]`
             )}
           />
 
@@ -218,10 +135,10 @@ export default function Hero() {
             height={250}
             alt="Hover me"
             className={clsx(
-              `animation hover !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[5rem] xl:-right-[7rem] -z-10`
+              `animation-spin opacity-0 hidden lg:block w-[150px]' animation hover !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
             )}
           />
-          <div className="w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
+          <div className="animate-fade-img opacity-0 min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
         </div>
       </div>
     </section>

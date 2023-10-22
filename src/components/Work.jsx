@@ -1,4 +1,7 @@
 "use client"
+
+import { useRef, useEffect, useState } from "react"
+import { useRouter, usePathname } from "next/navigation"
 import { projects } from "@/lib/projects"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
@@ -6,12 +9,12 @@ import Link from "next/link"
 import {
   Sheet,
   SheetContent,
+  SheetClose,
   SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import clsx from "clsx"
 import {
@@ -20,7 +23,6 @@ import {
   FaRegArrowAltCircleRight,
 } from "react-icons/fa"
 import Spinner from "@/components/Spinner"
-import { useRouter, usePathname } from "next/navigation"
 
 export default function Work() {
   const [open, setOpen] = useState(false)
@@ -29,15 +31,28 @@ export default function Work() {
   const router = useRouter()
   const projetData = Object.values(projects)
   const [animating, setAnimating] = useState(false)
-  const toggle = useRef(null)
+  const toggle = useRef()
 
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      console.log(toggle)
+  console.log(SheetClose)
 
-      toggle.current.classList.toggle("active")
+  function resetUrlQuery(el) {
+    if (typeof window !== "undefined") {
+      router.replace(pathname)
     }
-  }, [animating])
+  }
+
+  function topFunction() {
+    if (typeof window !== "undefined") {
+      document.body.scrollTop = 1 // For Safari
+      document.documentElement.scrollTop = 1
+    } // For Chrome, Firefox, IE and Opera
+  }
+
+  const fadeEls = toggle.current
+
+  // useEffect(() => {
+  //   if (open) router.push("/")
+  // }, [open])
 
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {
@@ -45,7 +60,7 @@ export default function Work() {
       setTimeout(() => {
         setCurrentIndex(currentIndex + 1)
         setAnimating(false)
-      }, 300)
+      }, 400)
     }
   }
 
@@ -55,25 +70,26 @@ export default function Work() {
       setTimeout(() => {
         setCurrentIndex(currentIndex - 1)
         setAnimating(false)
-      }, 300)
+      }, 400)
     }
   }
 
   return (
-    <section className="w-full h-auto pb-8 my-[4.5rem]" id="projects">
+    <section className="w-full h-auto pb-8 mt-[4.5rem]" id="projects">
       <div className="py-6">
         <h2 className="mb-6">Mes Projets</h2>
         <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
-          <div className="flex-col md:flex-row flex flex-wrap w-full justify-center gap-4 [&>button]:z-10">
+          <div className="flex-col md:flex-row flex flex-wrap w-full justify-center items-center gap-4 [&>button]:z-10">
             {projects.map((project, index) => (
               <Sheet key={index}>
                 <SheetTrigger
                   className={clsx(
-                    "w-[calc(80%-1rem)] lg:w-[calc(40%-1rem)] min-h-[250px]"
+                    "w-[calc(80%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
                   )}
                 >
                   <div
                     onClick={() => {
+                      setCurrentIndex(index)
                       setOpen(!open)
                       router.replace(pathname + "?=" + project.title)
                     }}
@@ -116,65 +132,80 @@ export default function Work() {
                     </div>
                   </div>
                 </SheetTrigger>
-                {projetData
-                  .filter((_, index) => index === currentIndex)
-                  .map((project, index) => (
-                    <SheetContent
-                      ref={toggle}
-                      className={clsx(
-                        "w-[400px] sm:w-[800px] lg:max-w-2xl overflow-scroll"
-                      )}
-                    >
-                      <SheetHeader
-                        className={clsx(
-                          "content-project flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto",
-                          index === currentIndex ? "active" : ""
-                        )}
-                      >
-                        <SheetTitle className="text-2xl">
-                          {project.title}
-                        </SheetTitle>
-                        <SheetDescription>
-                          {project.description}
-                        </SheetDescription>
-                        <Image src={project.image} width={600} height={450} />
-                        {project.imgproject.map((image, index) => (
-                          <Image
-                            key={index}
-                            src={image}
-                            width={700}
-                            height={450}
-                            loader={Spinner}
-                            unoptimized
-                          />
-                        ))}
-                      </SheetHeader>
-                      <div className="flex justify-center items-center mt-4">
-                        <Button
-                          variant="ghost"
-                          onClick={handlePrev}
-                          className="mr-auto w-fit text-xl"
+                <SheetContent
+                  ref={toggle}
+                  className={clsx(
+                    "w-[400px] sm:w-[800px] lg:max-w-2xl overflow-scroll"
+                  )}
+                >
+                  {projetData
+                    .filter((_, index) => index === currentIndex)
+                    .map((project, index) => (
+                      <>
+                        <SheetHeader
+                          key={project.title}
+                          className={clsx(
+                            animating ? "active" : "notactive",
+                            "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
+                          )}
                         >
-                          <FaRegArrowAltCircleLeft />
-                        </Button>
-                        <Button className="text-center m-auto">
-                          <Link
-                            className="flex justify-center items-center gap-2"
-                            href="/"
-                          >
-                            Accédez au site <FaExternalLinkAlt />
-                          </Link>
-                        </Button>
-                        <Button
-                          onClick={handleNext}
-                          variant="ghost"
-                          className="ml-auto w-fit text-xl"
-                        >
-                          <FaRegArrowAltCircleRight />
-                        </Button>
-                      </div>
-                    </SheetContent>
-                  ))}
+                          <SheetTitle className="text-2xl">
+                            {project.title}
+                          </SheetTitle>
+                          <SheetDescription>
+                            {project.description}
+                          </SheetDescription>
+                          <Image src={project.image} width={700} height={450} />
+                          {project.imgproject.map((image, index) => (
+                            <Image
+                              key={index}
+                              src={image}
+                              width={700}
+                              height={450}
+                              loader={Spinner}
+                              unoptimized
+                            />
+                          ))}
+                          <div className="w-full flex justify-center items-center !mt-6">
+                            <Button className="text-center m-auto">
+                              <Link
+                                className="flex justify-center items-center gap-2"
+                                href="/"
+                              >
+                                Accédez au site <FaExternalLinkAlt />
+                              </Link>
+                            </Button>
+                          </div>
+                        </SheetHeader>
+
+                        <div className="flex justify-center items-center mt-2">
+                          {currentIndex !== 0 && (
+                            <>
+                              <Button
+                                variant="ghost"
+                                onClick={handlePrev}
+                                className="mr-auto w-fit text-xl"
+                              >
+                                <FaRegArrowAltCircleLeft />
+                              </Button>
+                            </>
+                          )}
+
+                          {currentIndex < projetData.length - 1 && (
+                            <>
+                              <Button
+                                onClick={handleNext}
+                                variant="ghost"
+                                className="ml-auto w-fit text-xl"
+                              >
+                                <FaRegArrowAltCircleRight />
+                              </Button>
+                            </>
+                          )}
+                        </div>
+                      </>
+                    ))}
+                </SheetContent>
               </Sheet>
             ))}
           </div>

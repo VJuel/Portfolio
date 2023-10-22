@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="my-[4.5rem] bg-white transition-all duration-1 flex justify-center"
+      className="mt-[4.5rem] bg-white transition-all duration-1 flex justify-center"
     >
       <div className="py-6">
         <h2>About me</h2>
@@ -18,7 +18,7 @@ export default function About() {
               alt="Picture of the author"
             />
           </div>
-          <div className="w-full lg:w-[55%] p-7 text-black text-lg text-center md:text-left">
+          <div className="w-full lg:w-[55%] p-3 lg:p-7 text-black text-lg text-center md:text-left">
             <h2 className="mb-4">
               👋 Salut ! Je suis passionné par le monde du développement web.
               Avec plusieurs années d'expérience dans le secteur, j'ai pu
@@ -30,7 +30,7 @@ export default function About() {
               sites et applications web. Ma pile technologique comprend des
               technologies modernes comme <b>React</b> et <b>Next.js</b>, ce qui
               me permet de développer des solutions rapides, évolutives et de
-              cree des composants <b>SSR</b> (Server-Side Rendering) et{" "}
+              créer des composants <b>SSR</b> (Server-Side Rendering) et{" "}
               <b>SSG</b> (Static Site Generation).
             </p>
             <p className="mb-4">

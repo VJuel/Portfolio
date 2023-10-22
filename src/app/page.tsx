@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <Reseaux />
-      <div className="flex flex-col justify-center items-center mr-auto">
+      <div className="flex flex-col justify-center items-center">
         <Hero />
         <Work />
         <About />

@@ -13,7 +13,7 @@ export function ButtonToTop() {
   return (
     <>
       <Button
-        className="absolute bottom-8 right-4 rounded-[100%] shadow-xl w-12 h-12 flex justify-center items-center bg-primary text-secondary text-xl"
+        className="absolute bottom-8 right-10 rounded-[100%] shadow-xl w-12 h-12 flex justify-center items-center bg-primary text-secondary text-xl"
         onClick={topFunction}
       >
         <FaArrowUp />

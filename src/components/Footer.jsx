@@ -25,16 +25,19 @@ export default function Footer() {
             <br />
             Merci d'avoir pris du temps pour regarder mon profil.
             <br />
-            Au plaisir de communiquer avec vous.
+            Au plaisir de collaborer avec vous.
           </p>
         </div>
-        <div className="w-full md:w-auto text-left flex flex-col justify-start items-start ">
-          <h2 className="me text-2xl m-auto mb-2">Mes coordonees</h2>
-          <ul className="flex flex-col gap-2 mt-2 items-start justify-start list-footer fit-content lg:m-auto">
+        <div className="px-5 w-full md:w-auto text-left flex flex-col justify-start items-start ">
+          <h2 className="me text-2xl mb-2 text-start md:m-auto md:text-center ">
+            Mes coordonees
+          </h2>
+          <ul className="flex flex-col gap-2 mt-2 items-start justify-start list-footer w-full lg:m-auto">
             <li className="list-me">
               <FaMapMarkerAlt />
               <div className="flex flex-col">
-                <span>La Rochelle 18 Quai Louis Durand</span>
+                <span className="whitespace-nowrap">18 Quai Louis Durand</span>
+                <span>17000 La Rochelle</span>
               </div>
             </li>
             <li className="list-me">

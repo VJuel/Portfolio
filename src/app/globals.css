@@ -127,14 +127,6 @@
     font-family: var(--font-monterrat);
   }
 
-  .portfolio:before {
-    content: "Portfolio";
-    position: absolute;
-    top: 50%;
-    left: calc(50% + 1px);
-    transform: translate(-50%, -50%);
-  }
-
   h1,
   h2 {
     @apply roboto text-[var(--dark)] font-medium;
@@ -167,14 +159,36 @@ a::before {
   background-color: #18272f;
   bottom: 0;
   left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
+  transform-origin: right bottom;
+  transform: scale(0);
   transition: transform 0.3s ease-in-out;
 }
 
 a:hover::before {
   transform-origin: left;
-  transform: scaleX(1);
+  transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+  a:before {
+    width: 2px;
+    height: 100%;
+    transform-origin: left bottom;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a:hover::before {
+    transform: scale(1);
+    transform-origin: left top;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  a:before {
+    width: 4px;
+  }
 }
 
 .unset {
@@ -186,14 +200,14 @@ a:hover::before {
 }
 
 .heroImg {
-  width: 100%;
+  left: unset;
   height: auto;
   max-height: 100%;
   clip-path: url(#clipping);
 }
 
 nav > ul > li {
-  @apply border-neutral-200 flex justify-start items-start px-2 py-1 w-full;
+  @apply border-neutral-200 flex justify-start items-start py-1 w-full;
 }
 
 nav > ul > li {
@@ -221,7 +235,7 @@ footer {
 }
 
 .list-footer {
-  @apply flex items-start justify-start gap-2 pl-[60px];
+  @apply flex items-start justify-start gap-2 lg:pl-[60px];
 }
 
 .list-footer > li {
@@ -313,28 +327,30 @@ section > div > h2 {
 }
 
 .card-work {
-  transition-property: transform, opacity;
+  transition-property: opacity;
   opacity: 1;
 }
 
 .card-work:hover .badge {
   animation: animation-badge 1s ease forwards;
-  transition-property: transform, opacity;
+  transition-property: opacity;
   opacity: 1;
 }
 
 /* // Animation // */
 
-.animation {
-  animation: spin 1s forwards;
+.animation-spin {
+  animation: 0.8s spin 1.4s forwards;
 }
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
+    opacity: 0;
   }
   to {
     transform: rotate(360deg);
+    opacity: 1;
   }
 }
 
@@ -370,13 +386,48 @@ section > div > h2 {
   }
 }
 
+.animate-fade-in-down {
+  opacity: 0;
+  animation: 1s fade-in-down 1.5s ease-out forwards;
+}
+
+@keyframes fade-in-down {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  animation: 1s fade-in-right 1.5s ease-out forwards;
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .animate-fade-img {
-  animation: fade-img 1s ease-out forwards;
+  animation: 2s fade-img 1.3s ease-out forwards;
+  @media (max-width: 768px) {
+    animation: fade-img 1s 3s ease-out forwards;
+  }
 }
 
 @keyframes fade-img {
   0% {
-    opacity: 0.2;
+    opacity: 0;
   }
   100% {
     opacity: 1;
@@ -426,45 +477,19 @@ section > div > h2 {
   }
 }
 
-.animation-badge {
-  animation: animation-badge 1s ease forwards;
-}
-
-@keyframes animation-badge {
-  0% {
-    transform: scale(0.8);
-  }
-
-  55% {
-    transform: scale(10.9);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .content-project {
-  opacity: 0;
-  position: absolute;
-  transition: all 0.5s ease-in-out;
+  transition-duration: 0.8s !important;
+}
+
+.content-project.notactive {
+  opacity: 1;
 }
 
 .content-project.active {
-  opacity: 1;
-  position: relative;
+  opacity: 0;
 }
 
-.animation-change-project {
-  transition: opacity 2s ease-in-out forwards;
-}
-
-@keyframes animation-change-project {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.shadiner {
+  -webkit-box-shadow: inset 5px 2px 15px 0px #000000;
+  box-shadow: inset 5px 2px 15px 0px #000000;
 }

@@ -1,27 +1,47 @@
 "use client"
 
-import { useState, useRef } from "react"
-import emailjs from "@emailjs/browser"
+import { useState, useRef, useCallback } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/Button"
 import { Textarea } from "@/components/ui/textarea"
-import z, { set } from "zod"
+import { useToast } from "@/components/ui/use-toast"
+import z from "zod"
+import emailjs from "@emailjs/browser"
+import Spinner from "./Spinner"
 
 const SignupForm = () => {
   const form = useRef()
   const errorForm = "text-red-500 text-sm"
   const [validationError, setValidationError] = useState([])
   const [name, setName] = useState("")
+  const [firstname, setFirstName] = useState("")
   const [email, setEmail] = useState("")
   const [tel, setTel] = useState("")
   const [message, setMessage] = useState("")
+  const { toast } = useToast()
+
+  const toaster = () => {
+    return
+  }
+
+  const renderSimpleComponent = useCallback(() => {
+    return toast({
+      title: "Message envoyé",
+      description: "Merci pour votre message",
+    })
+  }, [])
 
   async function handleOnSubmit(e) {
     e.preventDefault()
 
     const emailSchema = z.object({
       name: z
+        .string()
+        .min(1, "Le nom doit contenir au moins un caractère")
+        .max(100, "Le nom ne peut pas dépasser 100 caractères")
+        .regex(/^[a-zA-Z]+$/, "Le nom ne peut contenir que des lettres"),
+      firstname: z
         .string()
         .min(1, "Le nom doit contenir au moins un caractère")
         .max(100, "Le nom ne peut pas dépasser 100 caractères")
@@ -41,23 +61,25 @@ const SignupForm = () => {
 
     const { success, error: zodError } = emailSchema.safeParse({
       name,
+      firstname,
       email,
       tel,
       message,
     })
 
+    console.log(success)
+
     if (!success) {
       setValidationError(zodError.format())
-      console.log(validationError)
       return
     }
 
     const templateParms = {
       from_name: name,
+      from_firstname: firstname,
       from_email: email,
       from_tel: tel,
       message: message,
-      test: "test",
       to_name: "Vicktor",
     }
 
@@ -68,14 +90,17 @@ const SignupForm = () => {
         templateParms,
         "XrmwcsoPcTNKciiuJ"
       )
+      .then((res) => res)
       .then(
         (result) => {
           console.log(result.text)
           setName("")
+          setFirstName("")
           setEmail("")
           setTel("")
           setMessage("")
           setValidationError([])
+          renderSimpleComponent()
         },
         (error) => {
           console.log(error.text)
@@ -89,17 +114,39 @@ const SignupForm = () => {
       onSubmit={handleOnSubmit}
       ref={form}
     >
-      <Label>Name</Label>
-      <Input
-        placeholder="Bruce Wayne"
-        type="text"
-        name="from_name"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-      />
-      {validationError?.name && (
-        <p className={errorForm}>{validationError.name._errors.join(", ")}</p>
-      )}
+      <div className="flex">
+        <div className="flex-col w-1/2">
+          <Label>Nom</Label>
+          <Input
+            placeholder="Wayne"
+            type="text"
+            name="from_name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+          {validationError?.name && (
+            <p className={errorForm}>
+              {validationError.name._errors.join(", ")}
+            </p>
+          )}
+        </div>
+
+        <div className="flex-col w-1/2 pl-4">
+          <Label>Prénom</Label>
+          <Input
+            placeholder="Bruce"
+            type="text"
+            name="from_firstname"
+            onChange={(e) => setFirstName(e.target.value)}
+            value={firstname}
+          />
+          {validationError?.name && (
+            <p className={errorForm}>
+              {validationError.firstname._errors.join(", ")}
+            </p>
+          )}
+        </div>
+      </div>
 
       <Label>Email</Label>
       <Input
@@ -112,8 +159,7 @@ const SignupForm = () => {
       {validationError?.email && (
         <p className={errorForm}>{validationError.email._errors.join(", ")}</p>
       )}
-
-      <Label>Tel</Label>
+      <Label>Téléphone</Label>
       <Input
         placeholder="02 99 99 99 99"
         type="text"
@@ -124,7 +170,6 @@ const SignupForm = () => {
       {validationError?.tel && (
         <p className={errorForm}>{validationError.tel._errors.join(", ")}</p>
       )}
-
       <Label>Message</Label>
       <Textarea
         placeholder="Waouh super site !"
@@ -136,8 +181,19 @@ const SignupForm = () => {
           {validationError.message._errors.join(", ")}
         </p>
       )}
-
-      <Button variable="default" type="submit" value="Send">
+      <Button
+        className="flex justify-center items-center"
+        variable="default"
+        type="submit"
+        value="Send"
+        onClick={() => {
+          toast({
+            title: "Envoie en cours",
+            description: "Votre message est en cours d'envoie",
+            action: <Spinner />,
+          })
+        }}
+      >
         Envoyez moi un email
       </Button>
     </form>

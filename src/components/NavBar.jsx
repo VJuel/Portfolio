@@ -4,6 +4,7 @@ import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import clsx from "clsx"
 import { Button } from "@/components/ui/Button"
 import Link from "next/link"
+import { z } from "zod"
 
 export default function NavBar() {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -28,7 +29,7 @@ export default function NavBar() {
           scrollPosition === 0
             ? "border-b-0 py-6"
             : "shadow border-1 border-b-black py-4"
-        } z-50 transition-all duration-[250ms] px-10 bg-background flex md:items-center justify-between sticky top-0`}
+        } animate-fade-in-down z-50 transition-all duration-_250ms_ px-4 sm:px-10 bg-background flex md:items-center justify-between sticky top-0`}
       >
         <div className="flex justify-center items-center md:w-1/2 md:justify-start md:items-start">
           <h2
@@ -42,7 +43,8 @@ export default function NavBar() {
               "justify-end",
               "items-end",
               "gap-2",
-              'text-black", "z-30'
+              "text-black",
+              "z-[-1]"
             )}
           >
             Portfolio
@@ -51,7 +53,7 @@ export default function NavBar() {
         </div>
 
         {/*Burger*/}
-        <div className="block">
+        <div className={"block"}>
           {isOpen ? (
             <HiMenuAlt3
               onClick={() => {
@@ -76,33 +78,47 @@ export default function NavBar() {
         <nav
           className={`${
             isOpen ? "opacity-0 top-[-400px]" : "opacity-1 top-0"
-          } lg:bg-inherit bg-gray-100 lg:text-inherit text-black lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 p-9 lg:opacity-100 transition-all`}
+          } pb-6 lg:pb-0 lg:py-0 lg:bg-inherit bg-secondary lg:text-inherit text-black lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:pl-0 lg:opacity-100 transition-all`}
         >
           <ul className="flex flex-col lg:flex-row items-start justify-start mt-4 lg:mt-0 z-10">
-            <li className="lg:mx-4 my-6 lg:my-0 mt-8">
-              <Link href="#home" className="text-xl duration-500">
+            <li className="w-full lg:mx-4 px-2 lg:my-0 mt-6 ">
+              <Link
+                href="#home"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+              >
                 Home
               </Link>
             </li>
-            <li className="lg:mx-4 my-6 lg:my-0">
-              <Link href="#projects" className="text-xl duration-500">
+            <li className="w-full lg:mx-4 px-2 lg:my-0">
+              <Link
+                href="#projects"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xlrounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+              >
                 Projects
               </Link>
             </li>
-            <li className="lg:mx-4 my-6 lg:my-0">
-              <Link href="#about" className="text-xl duration-500">
+            <li className="w-full lg:mx-4 px-2 lg:my-0">
+              <Link
+                href="#about"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-50 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+              >
                 About
               </Link>
             </li>
-            <li className="lg:mx-4 my-6 lg:my-0">
-              <Link href="#contact" className="text-xl duration-500">
+            <li className="w-full lg:mx-4 px-2 lg:my-0">
+              <Link
+                href="#contact"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+              >
                 Contact
               </Link>
             </li>
-            <Button className="ml-6 whitespace-nowrap w-full">
-              <Link href="#contact">Get started</Link>
-            </Button>
           </ul>
+          <Button className="ml-2 lg:ml-6 whitespace-nowrap w-auto lg:w-full">
+            <Link href="#contact" className="px-4">
+              Get started
+            </Link>
+          </Button>
         </nav>
       </header>
     </>
