@@ -16,7 +16,7 @@ export const metadata = {
     "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout() {
   return (
     <html lang="fr">
       <Head>
