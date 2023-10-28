@@ -207,7 +207,7 @@ a:hover::before {
 }
 
 nav > ul > li {
-  @apply border-neutral-200 flex justify-start items-start py-1 w-full;
+  @apply border-neutral-200 lg:block hidden justify-start items-start py-1 w-full;
 }
 
 nav > ul > li {
@@ -235,7 +235,7 @@ footer {
 }
 
 .list-footer {
-  @apply flex items-start justify-start gap-2 lg:pl-[60px];
+  @apply flex items-start justify-start gap-2 lg:pl-[0px];
 }
 
 .list-footer > li {
@@ -339,14 +339,17 @@ section > div > h2 {
 
 /* // Animation // */
 
-.animation-spin {
-  animation: 0.8s spin 1.4s forwards;
+@media (max-width: 1024px) {
+  .animation-spin {
+    animation: 0.8s spin 1.4s forwards;
+  }
 }
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
     opacity: 0;
+    display: block;
   }
   to {
     transform: rotate(360deg);
@@ -492,4 +495,8 @@ section > div > h2 {
 .shadiner {
   -webkit-box-shadow: inset 5px 2px 15px 0px #000000;
   box-shadow: inset 5px 2px 15px 0px #000000;
+}
+
+.bordersite {
+  border: 2px solid black;
 }

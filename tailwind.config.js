@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './src/app/**/*.{js,jsx}',
-    './src/components/**/*.{js,jsx}',
-  ],
+  important: true,
+
+  content: ["./src/app/**/*.{js,jsx}", "./src/components/**/*.{js,jsx}"],
   theme: {
     container: {
       center: true,
@@ -16,7 +15,7 @@ module.exports = {
     safelist: ["dark"],
     extend: {
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif']
+        roboto: ["Roboto", "sans-serif"],
       },
       colors: {
         border: "var(--border)",
@@ -54,7 +53,7 @@ module.exports = {
         },
         footer: {
           DEFAULT: "var(--footer)",
-        }, 
+        },
         footext: {
           DEFAULT: "var(--footer-text)",
         },

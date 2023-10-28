@@ -14,7 +14,7 @@ import useStateRef from "@/lib/useStateRef"
 
 export default function Hero() {
   const router = useRouter()
-  const imgClass = `w-[80%] lg:w-full lg:h-full rounded-lg shadow-md z-[-1] relative`
+  const imgClass = `w-[80%] lg:w-full lg:h-full rounded-lg shadow-md z-[-1]`
   const [circleAttributes, setCircleAttributes] = useState({
     cx: 300,
     cy: 0,
@@ -68,16 +68,19 @@ export default function Hero() {
             <h1 className="text-4xl">Vicktor Juhel</h1>
             <h2 className="text-3xl">Developpeur Web</h2>
             <h2 className="mb-[18px] lg:mb-4 text-3xl">Fullstack</h2>
-            <div className="hidden lg:block animate-title-discover h-full bg-secondary absolute top-0 left-0 rounded-[2px] w-full"></div>
+            <div className="hidden lg:block animate-title-discover h-full bg-secondary absolute top-0 left-0 rounded-[2px]"></div>
           </div>
 
           <p className="mb-2 green animate-fade-in animation-delay-200">
-            Vous recherchez un Développeur Web jeune, dynamique et motivé
+            Vous recherchez un Développeur Web <br />
+            jeune, dynamique et motivé
             <br />
             pour une mission de courte ou longue durée.
           </p>
           <p className="mb-2 purple animate-fade-in animation-delay-400">
-            Sous contrat en CDD ou CDI ou même Freelance, je vous propose
+            Sous contrat en CDD ou CDI ou même Freelance,
+            <br />
+            je vous propose
             <br />
             mes compétences et mon éxpérience.
           </p>
@@ -88,7 +91,7 @@ export default function Hero() {
             onClick={() => router.push("#contact")}
             className="mt-4 animate-fade-in animation-delay-800 w-fit"
           >
-            Contactez-moi !
+            <Link href="contact">Contactez-moi !</Link>
           </Button>
         </div>
         <div
@@ -102,7 +105,7 @@ export default function Hero() {
             alt="Picture of the author"
             className={clsx(
               imgClass,
-              "animate-fade-img opacity-0 relative z-1 shadow-md min-h-[300px] min-w-[300px]"
+              "animate-fade-img relative z-1 shadow-md min-h-[300px] min-w-[300px relative]"
             )}
             onError={() => setSrc("/assets/image-error.png")}
           />
@@ -135,10 +138,10 @@ export default function Hero() {
             height={250}
             alt="Hover me"
             className={clsx(
-              `animation-spin opacity-0 hidden lg:block w-[150px]' animation hover !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
+              `animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
             )}
           />
-          <div className="animate-fade-img opacity-0 min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
+          <div className="animate-fade-img min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
         </div>
       </div>
     </section>

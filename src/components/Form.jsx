@@ -21,16 +21,12 @@ const SignupForm = () => {
   const [message, setMessage] = useState("")
   const { toast } = useToast()
 
-  const toaster = () => {
-    return
-  }
-
   const renderSimpleComponent = useCallback(() => {
     return toast({
       title: "Message envoyé",
       description: "Merci pour votre message",
     })
-  }, [])
+  })
 
   async function handleOnSubmit(e) {
     e.preventDefault()

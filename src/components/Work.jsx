@@ -33,27 +33,6 @@ export default function Work() {
   const [animating, setAnimating] = useState(false)
   const toggle = useRef()
 
-  console.log(SheetClose)
-
-  function resetUrlQuery(el) {
-    if (typeof window !== "undefined") {
-      router.replace(pathname)
-    }
-  }
-
-  function topFunction() {
-    if (typeof window !== "undefined") {
-      document.body.scrollTop = 1 // For Safari
-      document.documentElement.scrollTop = 1
-    } // For Chrome, Firefox, IE and Opera
-  }
-
-  const fadeEls = toggle.current
-
-  // useEffect(() => {
-  //   if (open) router.push("/")
-  // }, [open])
-
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {
       setAnimating(true)
@@ -81,7 +60,7 @@ export default function Work() {
         <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
           <div className="flex-col md:flex-row flex flex-wrap w-full justify-center items-center gap-4 [&>button]:z-10">
             {projects.map((project, index) => (
-              <Sheet key={index}>
+              <Sheet key={project.title}>
                 <SheetTrigger
                   className={clsx(
                     "w-[calc(80%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
@@ -101,7 +80,9 @@ export default function Work() {
                       src={project.image}
                       alt={project.title}
                       loading="lazy"
-                      fill={true}
+                      width={500}
+                      height={500}
+                      style={{ objectFit: "cover" }}
                       className="object-cover absolute top-0 left-0 -z-10 w-full h-full"
                       onError={() => setSrc("/error.png")}
                     />
@@ -143,7 +124,7 @@ export default function Work() {
                     .map((project, index) => (
                       <>
                         <SheetHeader
-                          key={project.title}
+                          key={index}
                           className={clsx(
                             animating ? "active" : "notactive",
                             "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
@@ -158,7 +139,7 @@ export default function Work() {
                           <Image src={project.image} width={700} height={450} />
                           {project.imgproject.map((image, index) => (
                             <Image
-                              key={index}
+                              key={project.imgproject}
                               src={image}
                               width={700}
                               height={450}

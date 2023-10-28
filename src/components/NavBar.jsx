@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import clsx from "clsx"
 import { Button } from "@/components/ui/Button"
+import Image from "next/image"
 import Link from "next/link"
 import { z } from "zod"
 
@@ -27,29 +28,18 @@ export default function NavBar() {
       <header
         className={`${
           scrollPosition === 0
-            ? "border-b-0 py-6"
-            : "shadow border-1 border-b-black py-4"
+            ? "border-b-0 py-4"
+            : "shadow border-1 border-b-black py-2"
         } animate-fade-in-down z-50 transition-all duration-_250ms_ px-4 sm:px-10 bg-background flex md:items-center justify-between sticky top-0`}
       >
         <div className="flex justify-center items-center md:w-1/2 md:justify-start md:items-start">
-          <h2
-            className={clsx(
-              "moli",
-              "text-3xl",
-              "font-medium",
-              "cursor-pointers",
-              "m-0",
-              "flex",
-              "justify-end",
-              "items-end",
-              "gap-2",
-              "text-black",
-              "z-[-1]"
-            )}
-          >
-            Portfolio
-            <span className="flex justify-baseline rounded-lg bg-secondary w-3 h-3 mb-1.5"></span>
-          </h2>
+          <Image
+            className="z-[-1]"
+            src="vwsolution.svg"
+            width={100}
+            height={100}
+            alt="logo"
+          />
         </div>
 
         {/*Burger*/}
@@ -81,10 +71,10 @@ export default function NavBar() {
           } pb-6 lg:pb-0 lg:py-0 lg:bg-inherit bg-secondary lg:text-inherit text-black lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:pl-0 lg:opacity-100 transition-all`}
         >
           <ul className="flex flex-col lg:flex-row items-start justify-start mt-4 lg:mt-0 z-10">
-            <li className="w-full lg:mx-4 px-2 lg:my-0 mt-6 ">
+            <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
-                href="#home"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                href="#projects"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 Home
               </Link>
@@ -92,7 +82,7 @@ export default function NavBar() {
             <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
                 href="#projects"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xlrounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 Projects
               </Link>

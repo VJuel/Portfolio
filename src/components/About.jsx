@@ -20,24 +20,30 @@ export default function About() {
           </div>
           <div className="w-full lg:w-[55%] p-3 lg:p-7 text-black text-lg text-center md:text-left">
             <h2 className="mb-4">
-              👋 Salut ! Je suis passionné par le monde du développement web.
-              Avec plusieurs années d'expérience dans le secteur, j'ai pu
-              acquérir une solide expertise en programmation front-end et
-              back-end.
+              👋 Salut ! <br />
+              Je suis passionné par le monde du Développement Web.
+              <br />
+              Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une
+              solide expertise en programmation <b>front-end</b> et{" "}
+              <b>back-end</b>.
             </h2>
             <p className="mb-4">
-              🛠️ Compétences techniques : Je suis spécialisé dans la création de
-              sites et applications web. Ma pile technologique comprend des
-              technologies modernes comme <b>React</b> et <b>Next.js</b>, ce qui
-              me permet de développer des solutions rapides, évolutives et de
-              créer des composants <b>SSR</b> (Server-Side Rendering) et{" "}
-              <b>SSG</b> (Static Site Generation).
+              🛠️ <span className="underline">Compétences techniques</span> :{" "}
+              <br />
+              Je suis spécialisé dans la création de <b>sites</b> et{" "}
+              <b>applications web</b>.
+              <br />
+              Ma pile technologique comprend des technologies modernes comme{" "}
+              <b>React</b> et <b>Next.js</b>, ce qui me permet de développer des
+              solutions rapides, évolutives et de créer des composants{" "}
+              <b>SSR</b> (Server-Side Rendering) et <b>SSG</b> (Static Site
+              Generation).
             </p>
             <p className="mb-4">
-              🤝 Travaillons ensemble : Si vous cherchez quelqu'un qui peut
-              transformer votre idée en une solution digitale complète,
-              n'hésitez pas à me contacter. Ensemble, transformons vos idées en
-              réalité.
+              🤝 Travaillons ensemble ! <br />
+              Si vous cherchez quelqu&apos;un qui peut transformer votre idée{" "}
+              <br /> en une solution digitale complète, n&apos;hésitez pas à me
+              contacter. <br /> Ensemble, transformons vos idées en réalité !
             </p>
           </div>
         </div>

@@ -7,13 +7,13 @@ export function ButtonToTop() {
     if (typeof window !== "undefined") {
       document.body.scrollTop = 0 // For Safari
       document.documentElement.scrollTop = 0
-    } // For Chrome, Firefox, IE and Opera
+    }
   }
 
   return (
     <>
       <Button
-        className="absolute bottom-8 right-10 rounded-[100%] shadow-xl w-12 h-12 flex justify-center items-center bg-primary text-secondary text-xl"
+        className="absolute bottom-12 right-6 lg:bottom-8 lg:right-10 rounded-[100%] shadow-xl w-12 h-12 flex justify-center items-center bg-primary text-secondary text-xl"
         onClick={topFunction}
       >
         <FaArrowUp />
