@@ -55,7 +55,7 @@ export default function Hero() {
         }
       }
     }
-  }, [])
+  }, [containerRef.current])
 
   return (
     <section

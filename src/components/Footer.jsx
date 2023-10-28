@@ -19,9 +19,11 @@ export default function Footer() {
       <div className="footer relative flex lg:flex-row lg:justify-start items-start justify-start max-w-4xl m-auto py-10 flex-col w-full gap-8">
         <div className="[&>p]:text-lg w-full lg:w-[65%] px-5 text-left relative border-0 lg:border-r-2 border-black flex flex-col">
           <h2 className="text-xl mb-4">Développeur Informatique indépendant</h2>
-          <p className="mb-2">Merci d'avoir regardé mon profil en entier !</p>
           <p className="mb-2">
-            S'il vous interresse, envoyer moi un email et/ou <br />
+            Merci d&apos;avoir regardé mon profil en entier !
+          </p>
+          <p className="mb-2">
+            S&apos;il vous interresse, envoyer moi un email et/ou <br />
             Merci de le partager à tout votre réseau !
           </p>
           <p> Au plaisir de collaborer avec vous...</p>
