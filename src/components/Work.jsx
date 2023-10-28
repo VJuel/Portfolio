@@ -136,7 +136,12 @@ export default function Work() {
                           <SheetDescription>
                             {project.description}
                           </SheetDescription>
-                          <Image src={project.image} width={700} height={450} />
+                          <Image
+                            src={project.image}
+                            width={700}
+                            height={450}
+                            alt={project.title}
+                          />
                           {project.imgproject.map((image, index) => (
                             <Image
                               key={project.imgproject}
@@ -145,6 +150,7 @@ export default function Work() {
                               height={450}
                               loader={Spinner}
                               unoptimized
+                              alt={project.title}
                             />
                           ))}
                           <div className="w-full flex justify-center items-center !mt-6">

@@ -19,6 +19,7 @@ const SignupForm = () => {
   const [email, setEmail] = useState("")
   const [tel, setTel] = useState("")
   const [message, setMessage] = useState("")
+  const [send, setSend] = useState(false)
   const { toast } = useToast()
 
   const renderSimpleComponent = useCallback(() => {
@@ -26,7 +27,7 @@ const SignupForm = () => {
       title: "Message envoyé",
       description: "Merci pour votre message",
     })
-  })
+  }, [send])
 
   async function handleOnSubmit(e) {
     e.preventDefault()
@@ -96,6 +97,7 @@ const SignupForm = () => {
           setTel("")
           setMessage("")
           setValidationError([])
+          setSend(!send)
           renderSimpleComponent()
         },
         (error) => {
