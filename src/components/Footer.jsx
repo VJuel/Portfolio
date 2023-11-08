@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLink } from "react-icons/fa"
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
 import { ButtonToTop } from "@/components/ButtonToTop"
 import { Banner } from "@/components/Banner"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
@@ -32,7 +32,7 @@ export default function Footer() {
           <h2 className="lg:pl-[3.4rem] text-xl text-start lg:mx-auto mb-4">
             Mes coordonées
           </h2>
-          <ul className="flex flex-col gap-2 mt-2 items-start justify-start list-footer w-full lg:m-auto">
+          <ul className="footerlist flex flex-col gap-2 mt-2 items-start justify-start list-footer w-full lg:m-auto lg:pl-[3rem]">
             <li className="list-me">
               <FaPhone />
               <span>07 85 66 40 42</span>

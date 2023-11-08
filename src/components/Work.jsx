@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { projects } from "@/lib/projects"
 import { Badge } from "@/components/ui/Badge"
@@ -9,7 +9,6 @@ import Link from "next/link"
 import {
   Sheet,
   SheetContent,
-  SheetClose,
   SheetDescription,
   SheetHeader,
   SheetTitle,
@@ -60,10 +59,11 @@ export default function Work() {
         <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
           <div className="flex-col md:flex-row flex flex-wrap w-full justify-center items-center gap-4 [&>button]:z-10">
             {projects.map((project, index) => (
-              <Sheet key={project.title}>
+              <Sheet>
                 <SheetTrigger
+                  key={project.title}
                   className={clsx(
-                    "w-[calc(80%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
+                    "w-[calc(90%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
                   )}
                 >
                   <div
@@ -94,7 +94,7 @@ export default function Work() {
                         <Badge
                           key={index}
                           style={{
-                            transitionDelay: `${index * 0.1 + 0.1}s`,
+                            transitionDelay: `${index * 0.1 + 0.3}s`,
                             AnimationDelay: `${index * 0.1 + 0.1}s`,
                           }}
                           className={clsx(
@@ -103,7 +103,6 @@ export default function Work() {
                             "animation-badge",
                             "badge",
                             "z-50",
-                            "transitiom-all",
                             "opacity-0"
                           )}
                         >
@@ -143,15 +142,17 @@ export default function Work() {
                             alt={project.title}
                           />
                           {project.imgproject.map((image, index) => (
-                            <Image
-                              key={project.imgproject}
-                              src={image}
-                              width={700}
-                              height={450}
-                              loader={Spinner}
-                              unoptimized
-                              alt={project.title}
-                            />
+                            <>
+                              <Image
+                                key={project.imgproject}
+                                src={image}
+                                width={700}
+                                height={450}
+                                loader={Spinner}
+                                unoptimized
+                                alt={project.title}
+                              />
+                            </>
                           ))}
                           <div className="w-full flex justify-center items-center !mt-6">
                             <Button className="text-center m-auto">

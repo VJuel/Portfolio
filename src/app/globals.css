@@ -199,6 +199,10 @@ a:hover::before {
   padding-bottom: 270px;
 }
 
+.footerlist .reseaux {
+  @apply flex lg:hidden;
+}
+
 .heroImg {
   left: unset;
   height: auto;
@@ -207,7 +211,7 @@ a:hover::before {
 }
 
 nav > ul > li {
-  @apply border-neutral-200 lg:block hidden justify-start items-start py-1 w-full;
+  @apply border-neutral-200 lg:block justify-start items-start py-1 w-full;
 }
 
 nav > ul > li {
@@ -300,12 +304,13 @@ section > div > h2 {
 }
 
 .card-work h3 {
+  transition: all 0.3s ease-in-out;
   position: relative;
   z-index: 50;
 }
 
 .card-work:before {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
   content: "";
   position: absolute;
   bottom: 0;
@@ -314,34 +319,34 @@ section > div > h2 {
   height: 0;
   background-color: var(--secondary);
   opacity: 1;
+  border-top: 2px solid noir;
 }
 
 .card-work:hover:before {
   height: 100%;
+  opacity: 1;
+  border-top: 2px solid noir;
 }
 
 .card-work:hover h3 {
-  transition: all 0.3s ease-in-out;
-  opacity: 1;
-  transition-delay: 0.3s;
+  opacity: 1 !important;
 }
 
 .card-work {
+  transition: all 0.3s ease-in-out;
   transition-property: opacity;
-  opacity: 1;
 }
 
 .card-work:hover .badge {
-  animation: animation-badge 1s ease forwards;
   transition-property: opacity;
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /* // Animation // */
 
 @media (max-width: 1024px) {
   .animation-spin {
-    animation: 0.8s spin 1.4s forwards;
+    animation: 1s spin 1.4s ease-in-out forwards;
   }
 }
 
@@ -349,7 +354,6 @@ section > div > h2 {
   from {
     transform: rotate(0deg);
     opacity: 0;
-    display: block;
   }
   to {
     transform: rotate(360deg);
@@ -422,9 +426,9 @@ section > div > h2 {
 }
 
 .animate-fade-img {
-  animation: 2s fade-img 1.3s ease-out forwards;
+  animation: fade-img 1.3s ease-out forwards;
   @media (max-width: 768px) {
-    animation: fade-img 1s 3s ease-out forwards;
+    animation: fade-img 3s ease-out forwards;
   }
 }
 

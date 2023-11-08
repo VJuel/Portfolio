@@ -4,13 +4,10 @@ import ImageBlur from "@/components/Image"
 import Image from "next/image"
 import me from "../../public/moi.png"
 import meColor from "../../public/mecolor.png"
-import { useState, useEffect, useRef, useLayoutEffect, forwardRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/Button"
 import clsx from "clsx"
-import { gsap } from "gsap"
-import Spinner from "./Spinner"
-import useStateRef from "@/lib/useStateRef"
 
 export default function Hero() {
   const router = useRouter()
@@ -105,7 +102,7 @@ export default function Hero() {
             alt="Picture of the author"
             className={clsx(
               imgClass,
-              "animate-fade-img relative z-1 shadow-md min-h-[300px] min-w-[300px relative]"
+              "animate-fade-img relative z-1 shadow-md min-h-[250px] lg:min-h-[300px] min-w-[300px] relative"
             )}
             onError={() => setSrc("/assets/image-error.png")}
           />
@@ -138,7 +135,7 @@ export default function Hero() {
             height={250}
             alt="Hover me"
             className={clsx(
-              `animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
+              `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10 !opacity-0`
             )}
           />
           <div className="animate-fade-img min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />

@@ -22,7 +22,7 @@ const SignupForm = () => {
   const [send, setSend] = useState(false)
   const { toast } = useToast()
 
-  const renderSimpleComponent = useCallback(() => {
+  const renderToastComponent = useCallback(() => {
     return toast({
       title: "Message envoyé",
       description: "Merci pour votre message",
@@ -98,7 +98,7 @@ const SignupForm = () => {
           setMessage("")
           setValidationError([])
           setSend(!send)
-          renderSimpleComponent()
+          renderToastComponent()
         },
         (error) => {
           console.log(error.text)
