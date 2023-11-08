@@ -1,6 +1,6 @@
 import "./globals.css"
 import Head from "next/head"
-import { Roboto, Montserrat } from "next/font/google"
+import { Roboto } from "next/font/google"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import { Toaster } from "@/components/ui/Toaster"
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <body className={roboto.className}>
+      <body className={roboto.className} antialiased>
         <NavBar />
         <main>
           <div className="flex justify-center items-start w-full">
