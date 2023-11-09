@@ -3,8 +3,8 @@
 import { useRef, useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { projects } from "@/lib/projects"
-import { Badge } from "@/components/ui/Badge"
-import { Button } from "@/components/ui/Button"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import {
   Sheet,

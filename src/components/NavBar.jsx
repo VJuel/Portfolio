@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
-import { Button } from "@/components/ui/Button"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 
