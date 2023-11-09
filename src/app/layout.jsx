@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <body className={roboto.className} antialiased>
+      <body className={roboto.className}>
         <NavBar />
         <main>
           <div className="flex justify-center items-start w-full">

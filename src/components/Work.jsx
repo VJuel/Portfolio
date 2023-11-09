@@ -123,7 +123,7 @@ export default function Work() {
                     .map((project, index) => (
                       <>
                         <SheetHeader
-                          key={index}
+                          key={project.title}
                           className={clsx(
                             animating ? "active" : "notactive",
                             "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
