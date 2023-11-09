@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useCallback } from "react"
+import { useState, useRef } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/Button"
@@ -22,12 +22,12 @@ const SignupForm = () => {
   const [send, setSend] = useState(false)
   const { toast } = useToast()
 
-  const renderToastComponent = useCallback(() => {
+  const renderToastComponent = () => {
     return toast({
       title: "Message envoyé",
       description: "Merci pour votre message",
     })
-  }, [])
+  }
 
   async function handleOnSubmit(e) {
     e.preventDefault()
