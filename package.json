@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -33,7 +33,6 @@
     "gsap": "^3.12.2",
     "input": "^1.0.1",
     "next": "14.0.1",
-    "node": "^18.14.0",
     "pnpm": "^8.10.2",
     "postcss": "8.4.29",
     "react": "18.2.0",
