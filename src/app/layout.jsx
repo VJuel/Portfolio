@@ -3,7 +3,7 @@ import Head from "next/head"
 import { Roboto } from "next/font/google"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
-import { Toaster } from "@/components/ui/Toaster"
+import { Toaster } from "@/components/ui/toaster"
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
