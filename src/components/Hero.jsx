@@ -22,10 +22,11 @@ export default function Hero() {
   useEffect(() => {
     if (typeof window != "undefined") {
       let mql = window.matchMedia("(max-width: 900px)")
+      const containerImage = containerRef.current
 
       const handleMouseMove = (e) => {
-        const rect = containerRef.current.getBoundingClientRect()
-        containerRef.current.style.cursor = "none"
+        const rect = containerImage.getBoundingClientRect()
+        containerImage.style.cursor = "none"
         setCircleAttributes({
           cx: e.clientX - rect.left,
           cy: e.clientY - rect.top,
@@ -37,22 +38,19 @@ export default function Hero() {
         setCircleAttributes((prevAttributes) => ({ ...prevAttributes, r: 0 }))
       }
 
-      if (containerRef.current) {
-        containerRef.current.addEventListener("mousemove", handleMouseMove)
-        containerRef.current.addEventListener("mouseleave", handleMouseLeave)
+      if (containerImage) {
+        containerImage.addEventListener("mousemove", handleMouseMove)
+        containerImage.addEventListener("mouseleave", handleMouseLeave)
       }
 
       return () => {
-        if (containerRef.current) {
-          containerRef.current.removeEventListener("mousemove", handleMouseMove)
-          containerRef.current.removeEventListener(
-            "mouseleave",
-            handleMouseLeave
-          )
+        if (containerImage) {
+          containerImage.removeEventListener("mousemove", handleMouseMove)
+          containerImage.removeEventListener("mouseleave", handleMouseLeave)
         }
       }
     }
-  }, [containerRef.current])
+  })
 
   return (
     <section

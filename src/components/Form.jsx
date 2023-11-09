@@ -27,7 +27,7 @@ const SignupForm = () => {
       title: "Message envoyé",
       description: "Merci pour votre message",
     })
-  }, [send])
+  }, [])
 
   async function handleOnSubmit(e) {
     e.preventDefault()

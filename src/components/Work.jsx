@@ -59,9 +59,8 @@ export default function Work() {
         <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
           <div className="flex-col md:flex-row flex flex-wrap w-full justify-center items-center gap-4 [&>button]:z-10">
             {projects.map((project, index) => (
-              <Sheet>
+              <Sheet key={project.title}>
                 <SheetTrigger
-                  key={project.title}
                   className={clsx(
                     "w-[calc(90%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
                   )}
