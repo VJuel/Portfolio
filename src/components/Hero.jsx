@@ -100,7 +100,7 @@ export default function Hero() {
             alt="Picture of the author"
             className={clsx(
               imgClass,
-              "animate-fade-img relative z-1 shadow-md min-h-[250px] lg:min-h-[300px] min-w-[300px] relative"
+              "animate-fade-img z-1 shadow-md min-h-[250px] lg:min-h-[300px] min-w-[300px] relative"
             )}
             onError={() => setSrc("/assets/image-error.png")}
           />
@@ -133,7 +133,7 @@ export default function Hero() {
             height={250}
             alt="Hover me"
             className={clsx(
-              `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10 !opacity-0`
+              `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
             )}
           />
           <div className="animate-fade-img min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />

@@ -30,6 +30,7 @@ export const projects = [
         ],
       },
     ],
+    github: "https://github.com/VJuel/NextJs-e-commerce",
     link: "https://next-js-e-commerce-wine-nu.vercel.app",
   },
   {
@@ -45,6 +46,7 @@ export const projects = [
       "/natours/section5-natours.png",
       "/natours/section6-natours.png",
     ],
+    github: "https://github.com/VJuel/Natours-Project",
     link: "https://natours-project-seven.vercel.app/",
   },
   {
@@ -60,6 +62,7 @@ export const projects = [
       "/netflix/signout-netflix.png",
       "/netflix/account-netflix.png",
     ],
+    github: "https://github.com/VJuel/Netflix-clone",
     link: "https://netflix-clone-w7b9.vercel.app/",
   },
   {
@@ -74,6 +77,7 @@ export const projects = [
       "/omnifood/pricing-omnifood.png",
       "/omnifood/footer-omnifood.png",
     ],
+    github: "https://github.com/VJuel/Omnifood",
     link: "https://omnifood-roan-mu.vercel.app",
   },
 ]

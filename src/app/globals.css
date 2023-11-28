@@ -344,18 +344,18 @@ section > div > h2 {
 
 /* // Animation // */
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .animation-spin {
-    animation: 1s spin 1.4s ease-in-out forwards;
+    animation: 1.5s spin ease-in-out forwards;
   }
 }
 
 @keyframes spin {
-  from {
+  0% {
     transform: rotate(0deg);
     opacity: 0;
   }
-  to {
+  100% {
     transform: rotate(360deg);
     opacity: 1;
   }

@@ -215,6 +215,15 @@ export default function Work() {
                                 ))}
                               </Fragment>
                             ))}
+                          <p>
+                            Lisez le{" "}
+                            <Link
+                              href={project.github}
+                              className="border-none !text-blue-700 text-center before:content-none"
+                            >
+                              READ.ME Github
+                            </Link>
+                          </p>
                           <div className="w-full flex justify-center items-center pt-6">
                             <Button className="text-center m-auto">
                               <Link
