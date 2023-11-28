@@ -25,13 +25,13 @@ import {
 import Spinner from "@/components/Spinner"
 
 export default function Work() {
-  const [open, setOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const pathname = usePathname()
   const router = useRouter()
   const projetData = Object.values(projects)
-  const [animating, setAnimating] = useState(false)
   const sheetRef = useRef()
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [open, setOpen] = useState(false)
+  const [animating, setAnimating] = useState(false)
   const [observer, setObserver] = useState(null)
 
   useEffect(() => {
@@ -187,6 +187,7 @@ export default function Work() {
                                 <Image
                                   src={image}
                                   width={700}
+                                  loading="lazy"
                                   height={450}
                                   loader={Spinner}
                                   unoptimized
@@ -204,6 +205,7 @@ export default function Work() {
                                   <Image
                                     key={index}
                                     src={image}
+                                    loading="lazy"
                                     width={700}
                                     height={450}
                                     loader={Spinner}
