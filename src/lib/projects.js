@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Next-js E-commerce",
     description:
-      "E-commerce website built with React, Redux, Firebase, Stripe, and Sass.",
+      "Une plateforme e-commerce puissante et intuitive, développée avec Next.js, MongoDB et Tailwind. Gérez facilement votre boutique en ligne grâce à une interface d'administration complète et offrez une expérience client exceptionnelle.",
     image: "https://i.ibb.co/7QpKsCX/ecommerce.png",
     technologies: [
       "React",
@@ -12,13 +12,40 @@ export const projects = [
       "MongoDB",
       "NextAuth",
     ],
+    image: "/ecommerce/home-ecommerce.png",
+    imgpgroup: [
+      {
+        title: "Homepage",
+        images: [
+          "/ecommerce/home-ecommerce.png",
+          "/ecommerce/section2-ecommerce.png",
+          "/ecommerce/section3-ecommerce.png",
+        ],
+      },
+      {
+        title: "Dashboard",
+        images: [
+          "/ecommerce/section4-ecommerce.png",
+          "/ecommerce/section5-ecommerce.png",
+        ],
+      },
+    ],
+    link: "https://next-js-e-commerce-wine-nu.vercel.app",
+  },
+  {
+    title: "Natours-Projects",
+    description:
+      "Natours est un site web de réservation de voyages. Il est construit avec HTML5 et CSS3, et utilise Sass pour le préprocesseur CSS.",
+    technologies: ["Sass", "html", "css"],
+    link: "https://ecommerce-website-1.herokuapp.com/",
     image: "/natours/home-natours.png",
     imgproject: [
-      "/netflix/movies-netflix.png",
-      "/netflix/signin-netflix.png",
-      "/netflix/signout-netflix.png",
-      "/netflix/account-netflix.png",
+      "/natours/section2-natours.png",
+      "/natours/section3-natours.png",
+      "/natours/section5-natours.png",
+      "/natours/section6-natours.png",
     ],
+    link: "https://natours-project-seven.vercel.app/",
   },
   {
     title: "Netflix clone",
@@ -33,21 +60,7 @@ export const projects = [
       "/netflix/signout-netflix.png",
       "/netflix/account-netflix.png",
     ],
-  },
-  {
-    title: "Natours-Projects",
-    description:
-      "Natours est un site web de réservation de voyages. Il est construit avec HTML5 et CSS3, et utilise Sass pour le préprocesseur CSS.",
-    technologies: ["Sass", "html", "css"],
-    link: "https://ecommerce-website-1.herokuapp.com/",
-    image: "/natours/home-natours.png",
-    imgproject: [
-      "/natours/section2-natours.png",
-      "/natours/section3-natours.png",
-      "/natours/section4-natours.png",
-      "/natours/section5-natours.png",
-      "/natours/section6-natours.png",
-    ],
+    link: "https://netflix-clone-w7b9.vercel.app/",
   },
   {
     title: "Omnifood",
@@ -61,5 +74,6 @@ export const projects = [
       "/omnifood/pricing-omnifood.png",
       "/omnifood/footer-omnifood.png",
     ],
+    link: "https://omnifood-roan-mu.vercel.app",
   },
 ]

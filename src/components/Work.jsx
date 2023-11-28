@@ -1,6 +1,7 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
+import { Fragment } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { projects } from "@/lib/projects"
 import { Badge } from "@/components/ui/badge"
@@ -30,7 +31,44 @@ export default function Work() {
   const router = useRouter()
   const projetData = Object.values(projects)
   const [animating, setAnimating] = useState(false)
-  const toggle = useRef()
+  const sheetRef = useRef()
+  const [observer, setObserver] = useState(null)
+
+  useEffect(() => {
+    const checkAndObserve = () => {
+      if (sheetRef.current) {
+        const newObserver = new MutationObserver((mutationsList) => {
+          for (let mutation of mutationsList) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "data-state"
+            ) {
+              if (sheetRef.current.getAttribute("data-state") === "closed") {
+                console.log("closed")
+                router.replace(pathname)
+              }
+            }
+          }
+        })
+
+        newObserver.observe(sheetRef.current, { attributes: true })
+        setObserver(newObserver)
+      } else {
+        // Si l'élément n'est pas encore monté, on vérifie à nouveau après un délai
+        setTimeout(checkAndObserve, 100)
+      }
+    }
+
+    if (typeof window !== "undefined") {
+      checkAndObserve()
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect()
+      }
+    }
+  }, [observer])
 
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {
@@ -112,17 +150,17 @@ export default function Work() {
                   </div>
                 </SheetTrigger>
                 <SheetContent
-                  ref={toggle}
+                  ref={sheetRef}
                   className={clsx(
                     "w-[400px] sm:w-[800px] lg:max-w-2xl overflow-scroll"
                   )}
+                  data-test="test"
                 >
                   {projetData
                     .filter((_, index) => index === currentIndex)
                     .map((project, index) => (
-                      <>
+                      <Fragment key={project.title}>
                         <SheetHeader
-                          key={project.title}
                           className={clsx(
                             animating ? "active" : "notactive",
                             "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
@@ -134,30 +172,53 @@ export default function Work() {
                           <SheetDescription>
                             {project.description}
                           </SheetDescription>
-                          <Image
-                            src={project.image}
-                            width={700}
-                            height={450}
-                            alt={project.title}
-                          />
-                          {project.imgproject.map((image, index) => (
-                            <>
-                              <Image
-                                key={project.imgproject}
-                                src={image}
-                                width={700}
-                                height={450}
-                                loader={Spinner}
-                                unoptimized
-                                alt={project.title}
-                              />
-                            </>
-                          ))}
-                          <div className="w-full flex justify-center items-center !mt-6">
+                          {!project.imgpgroup ? (
+                            <Image
+                              src={project.image}
+                              width={700}
+                              height={450}
+                              alt={project.title}
+                            />
+                          ) : null}
+
+                          {project.imgproject &&
+                            project.imgproject.map((image, index) => (
+                              <Fragment key={index}>
+                                <Image
+                                  src={image}
+                                  width={700}
+                                  height={450}
+                                  loader={Spinner}
+                                  unoptimized
+                                  alt={project.title}
+                                />
+                              </Fragment>
+                            ))}
+                          {project.imgpgroup &&
+                            project.imgpgroup.map((imageGroup, index) => (
+                              <Fragment key={index}>
+                                <h3 className="font-semibold">
+                                  {imageGroup.title}
+                                </h3>
+                                {imageGroup.images.map((image, index) => (
+                                  <Image
+                                    key={index}
+                                    src={image}
+                                    width={700}
+                                    height={450}
+                                    loader={Spinner}
+                                    unoptimized
+                                    alt={project.title}
+                                  />
+                                ))}
+                              </Fragment>
+                            ))}
+                          <div className="w-full flex justify-center items-center pt-6">
                             <Button className="text-center m-auto">
                               <Link
                                 className="flex justify-center items-center gap-2"
-                                href="/"
+                                href={project.link}
+                                target="_blank"
                               >
                                 Accédez au site <FaExternalLinkAlt />
                               </Link>
@@ -165,7 +226,7 @@ export default function Work() {
                           </div>
                         </SheetHeader>
 
-                        <div className="flex justify-center items-center mt-2">
+                        <div className="flex justify-center items-center mt-2 w-full">
                           {currentIndex !== 0 && (
                             <>
                               <Button
@@ -190,7 +251,7 @@ export default function Work() {
                             </>
                           )}
                         </div>
-                      </>
+                      </Fragment>
                     ))}
                 </SheetContent>
               </Sheet>
