@@ -10,10 +10,10 @@ export default function Footer() {
       <div className="w-full bg-secondary border-b-2 border-t-2 border-black">
         <div className="flex flex-col sm:flex-row justify-start items-start sm:justify-between sm:items-center max-w-4xl m-auto h-1/5 px-5 py-4 w-full text-black">
           <div className="flex items-baseline bandeau">
-            <h2 className="text-3xl font-medium">Portfolio</h2>
-            <div className="w-2 h-2 bg-black rounded-lg ml-1"></div>
+            <h2 className="text-3xl font-bold">Portfolio</h2>
+            <div className="w-2 h-2 bg-accent border-[2px] border-solid border-black rounded-lg ml-1"></div>
           </div>
-          <div className="text-2xl font-semibold">Développeur Full Stack</div>
+          <div className="text-2xl font-medium">Développeur Full Stack</div>
         </div>
       </div>
       <div className="footer relative flex lg:flex-row lg:justify-start items-start justify-start max-w-4xl m-auto py-10 flex-col w-full gap-8">

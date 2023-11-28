@@ -427,7 +427,10 @@ section > div > h2 {
 
 .animate-fade-img {
   animation: fade-img 1.3s ease-out forwards;
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 820px) {
+  .animate-fade-img {
     animation: fade-img 3s ease-out forwards;
   }
 }
@@ -435,6 +438,12 @@ section > div > h2 {
 @keyframes fade-img {
   0% {
     opacity: 0;
+  }
+  20% {
+    opacity: 10%;
+  }
+  40% {
+    opacity: 20%;
   }
   100% {
     opacity: 1;

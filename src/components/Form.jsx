@@ -108,7 +108,7 @@ const SignupForm = () => {
 
   return (
     <form
-      className="flex flex-col gap-4 w-full md:w-1/2"
+      className="flex flex-col gap-4 w-full md:w-[80%]"
       onSubmit={handleOnSubmit}
       ref={form}
     >
