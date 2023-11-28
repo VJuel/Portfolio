@@ -23,7 +23,7 @@ export default function Footer() {
             Merci d&apos;avoir regardé mon profil en entier !
           </p>
           <p className="mb-2">
-            S&apos;il vous interresse, envoyer moi un email et/ou <br />
+            S&apos;il vous intéresse, envoyer moi un e-mail et/ou <br />
             Merci de le partager à tout votre réseau !
           </p>
           <p> Au plaisir de collaborer avec vous...</p>

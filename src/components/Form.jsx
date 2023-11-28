@@ -14,18 +14,34 @@ const SignupForm = () => {
   const form = useRef()
   const errorForm = "text-red-500 text-sm"
   const [validationError, setValidationError] = useState([])
-  const [name, setName] = useState("")
-  const [firstname, setFirstName] = useState("")
-  const [email, setEmail] = useState("")
-  const [tel, setTel] = useState("")
-  const [message, setMessage] = useState("")
-  const [send, setSend] = useState(false)
   const { toast } = useToast()
+
+  const [emailSend, setEmailSend] = useState({
+    name: "",
+    firstname: "",
+    email: "",
+    tel: "",
+    message: "",
+  })
+
+  const handleUpdate = (key, value) => {
+    const newEmailSend = { ...emailSend, [key]: value }
+    setEmailSend(newEmailSend)
+    console.log(emailSend)
+  }
 
   const renderToastComponent = () => {
     return toast({
       title: "Message envoyé",
       description: "Merci pour votre message",
+    })
+  }
+
+  const renderToastErrorComponent = () => {
+    return toast({
+      variant: "destructive",
+      title: "Uh oh! Email non envoyé.",
+      description: "Merci de remplir tous les champs du formulair.",
     })
   }
 
@@ -57,30 +73,29 @@ const SignupForm = () => {
     })
 
     const { success, error: zodError } = emailSchema.safeParse({
-      name,
-      firstname,
-      email,
-      tel,
-      message,
+      name: emailSend.name,
+      firstname: emailSend.firstname,
+      email: emailSend.email,
+      tel: emailSend.tel,
+      message: emailSend.message,
     })
-
-    console.log(success)
 
     if (!success) {
       setValidationError(zodError.format())
+      renderToastErrorComponent()
       return
     }
 
     const templateParms = {
-      from_name: name,
-      from_firstname: firstname,
-      from_email: email,
-      from_tel: tel,
-      message: message,
+      from_name: emailSend.name,
+      from_firstname: emailSend.firstname,
+      from_email: emailSend.email,
+      from_tel: emailSend.tel,
+      message: emailSend.message,
       to_name: "Vicktor",
     }
 
-    emailjs
+    const result = emailjs
       .send(
         "service_s9qbox6",
         "template_mogbx6a",
@@ -90,14 +105,15 @@ const SignupForm = () => {
       .then((res) => res)
       .then(
         (result) => {
-          console.log(result.text)
-          setName("")
-          setFirstName("")
-          setEmail("")
-          setTel("")
-          setMessage("")
+          if (result.text === false) {
+            renderToastErrorComponent()
+          }
+          emailSend.name = ""
+          emailSend.firstname = ""
+          emailSend.email = ""
+          emailSend.tel = ""
+          emailSend.message = ""
           setValidationError([])
-          setSend(!send)
           renderToastComponent()
         },
         (error) => {
@@ -112,15 +128,15 @@ const SignupForm = () => {
       onSubmit={handleOnSubmit}
       ref={form}
     >
-      <div className="flex">
+      <div className="flex justify-center items-center">
         <div className="flex-col w-1/2">
           <Label>Nom</Label>
           <Input
             placeholder="Wayne"
             type="text"
             name="from_name"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            onChange={(e) => handleUpdate("name", e.target.value)}
+            value={emailSend.name}
           />
           {validationError?.name && (
             <p className={errorForm}>
@@ -135,8 +151,8 @@ const SignupForm = () => {
             placeholder="Bruce"
             type="text"
             name="from_firstname"
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstname}
+            onChange={(e) => handleUpdate("firstname", e.target.value)}
+            value={emailSend.firstname}
           />
           {validationError?.name && (
             <p className={errorForm}>
@@ -151,8 +167,8 @@ const SignupForm = () => {
         placeholder="bruce@gotham.org"
         type="text"
         name="from_email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
+        onChange={(e) => handleUpdate("email", e.target.value)}
+        value={emailSend.email}
       />
       {validationError?.email && (
         <p className={errorForm}>{validationError.email._errors.join(", ")}</p>
@@ -162,8 +178,8 @@ const SignupForm = () => {
         placeholder="02 99 99 99 99"
         type="text"
         name="from_tel"
-        onChange={(e) => setTel(e.target.value)}
-        value={tel}
+        onChange={(e) => handleUpdate("tel", e.target.value)}
+        value={emailSend.tel}
       />
       {validationError?.tel && (
         <p className={errorForm}>{validationError.tel._errors.join(", ")}</p>
@@ -171,8 +187,8 @@ const SignupForm = () => {
       <Label>Message</Label>
       <Textarea
         placeholder="Waouh super site !"
-        onChange={(e) => setMessage(e.target.value)}
-        value={message}
+        onChange={(e) => handleUpdate("message", e.target.value)}
+        value={emailSend.message}
       />
       {validationError?.message && (
         <p className={errorForm}>
@@ -180,7 +196,7 @@ const SignupForm = () => {
         </p>
       )}
       <Button
-        className="flex justify-center items-center"
+        className="flex justify-center items-center lg:w-fit text-center"
         variable="default"
         type="submit"
         value="Send"
@@ -192,7 +208,7 @@ const SignupForm = () => {
           })
         }}
       >
-        Envoyez moi un email
+        Envoyez moi un e-mail
       </Button>
     </form>
   )

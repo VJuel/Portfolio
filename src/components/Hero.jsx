@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
 
           <p className="mb-2 green animate-fade-in animation-delay-200">
-            Vous recherchez un Développeur Web <br />
+            Vous recherchez un Developpeur Web <br />
             jeune, dynamique et motivé
             <br />
             pour une mission de courte ou longue durée.
@@ -77,7 +77,7 @@ export default function Hero() {
             <br />
             je vous propose
             <br />
-            mes compétences et mon éxpérience.
+            mes compétences et mon expérience.
           </p>
           <p className="mb-2 orange animate-fade-in animation-delay-600">
             Mon profil vous intéresse ?
