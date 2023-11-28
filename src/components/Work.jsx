@@ -32,7 +32,6 @@ export default function Work() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [open, setOpen] = useState(false)
   const [animating, setAnimating] = useState(false)
-  const sheetRef = useRef()
   const [observer, setObserver] = useState(null)
 
   useEffect(() => {
