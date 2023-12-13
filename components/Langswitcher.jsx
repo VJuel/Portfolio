@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive"
 
 import { i18n } from "@/i18n.config"
 
-export default function BtnSwitcher({ lang }) {
+export function BtnSwitcher({ lang }) {
   const isTablette = useMediaQuery({
     query: "(min-width: 1024px)",
   })
