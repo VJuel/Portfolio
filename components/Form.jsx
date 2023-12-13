@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useRef } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -10,7 +9,7 @@ import z from "zod"
 import emailjs from "@emailjs/browser"
 import Spinner from "./Spinner"
 
-const SignupForm = () => {
+const SignupForm = ({ dict }) => {
   const form = useRef()
   const errorForm = "text-red-500 text-sm"
   const [validationError, setValidationError] = useState([])
@@ -27,7 +26,6 @@ const SignupForm = () => {
   const handleUpdate = (key, value) => {
     const newEmailSend = { ...emailSend, [key]: value }
     setEmailSend(newEmailSend)
-    console.log(emailSend)
   }
 
   const renderToastComponent = () => {
@@ -130,9 +128,9 @@ const SignupForm = () => {
     >
       <div className="flex justify-center items-center">
         <div className="flex-col w-1/2">
-          <Label>Nom</Label>
+          <Label>{dict.nom.label}</Label>
           <Input
-            placeholder="Wayne"
+            placeholder="Doe"
             type="text"
             name="from_name"
             onChange={(e) => handleUpdate("name", e.target.value)}
@@ -146,9 +144,9 @@ const SignupForm = () => {
         </div>
 
         <div className="flex-col w-1/2 pl-4">
-          <Label>Prénom</Label>
+          <Label>{dict.prenom.label}</Label>
           <Input
-            placeholder="Bruce"
+            placeholder="John"
             type="text"
             name="from_firstname"
             onChange={(e) => handleUpdate("firstname", e.target.value)}
@@ -162,9 +160,9 @@ const SignupForm = () => {
         </div>
       </div>
 
-      <Label>Email</Label>
+      <Label>{dict.email.label}</Label>
       <Input
-        placeholder="bruce@gotham.org"
+        placeholder="johndoe@exemple.com"
         type="text"
         name="from_email"
         onChange={(e) => handleUpdate("email", e.target.value)}
@@ -173,7 +171,7 @@ const SignupForm = () => {
       {validationError?.email && (
         <p className={errorForm}>{validationError.email._errors.join(", ")}</p>
       )}
-      <Label>Téléphone</Label>
+      <Label>{dict.tel.label}</Label>
       <Input
         placeholder="02 99 99 99 99"
         type="text"
@@ -186,7 +184,7 @@ const SignupForm = () => {
       )}
       <Label>Message</Label>
       <Textarea
-        placeholder="Waouh super site !"
+        placeholder={dict.message.placeholder}
         onChange={(e) => handleUpdate("message", e.target.value)}
         value={emailSend.message}
       />
@@ -208,7 +206,7 @@ const SignupForm = () => {
           })
         }}
       >
-        Envoyez moi un e-mail
+        {dict.btn}
       </Button>
     </form>
   )

@@ -7,6 +7,7 @@ import { projects } from "@/lib/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { imgEcommerce } from "@/lib/images"
 import {
   Sheet,
   SheetContent,
@@ -24,7 +25,7 @@ import {
 } from "react-icons/fa"
 import Spinner from "@/components/Spinner"
 
-export default function Work() {
+export default function Work({ lang }) {
   const pathname = usePathname()
   const router = useRouter()
   const projetData = Object.values(projects)
@@ -33,6 +34,7 @@ export default function Work() {
   const [open, setOpen] = useState(false)
   const [animating, setAnimating] = useState(false)
   const [observer, setObserver] = useState(null)
+  console.log(lang)
 
   useEffect(() => {
     const checkAndObserve = () => {
@@ -44,7 +46,6 @@ export default function Work() {
               mutation.attributeName === "data-state"
             ) {
               if (sheetRef.current.getAttribute("data-state") === "closed") {
-                console.log("closed")
                 router.replace(pathname)
               }
             }
@@ -68,7 +69,7 @@ export default function Work() {
         observer.disconnect()
       }
     }
-  }, [observer])
+  }, [])
 
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {
@@ -114,14 +115,13 @@ export default function Work() {
                     )}
                   >
                     <Image
-                      src={project.image}
+                      src={project.images[0]}
                       alt={project.title}
                       loading="lazy"
                       width={500}
                       height={500}
                       style={{ objectFit: "cover" }}
                       className="object-cover absolute top-0 left-0 -z-10 w-full h-full"
-                      onError={() => setSrc("/error.png")}
                     />
                     <h3 className="text-2xl text-center mb-4 z-50 opacity-0">
                       {project.title}
@@ -156,65 +156,34 @@ export default function Work() {
                   )}
                   data-test="test"
                 >
-                  {projetData
-                    .filter((_, index) => index === currentIndex)
-                    .map((project, index) => (
-                      <Fragment key={project.title}>
-                        <SheetHeader
-                          className={clsx(
-                            animating ? "active" : "notactive",
-                            "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
-                          )}
-                        >
+                  <SheetHeader
+                    className={clsx(
+                      animating ? "active" : "notactive",
+                      "transition content-project duration-1000 flex justify-center items-center md:justify-start md:items-start p-2 pl-6 md:p-auto"
+                    )}
+                  >
+                    {projetData
+                      .filter((_, index) => index === currentIndex)
+                      .map((project, index) => (
+                        <Fragment key={project.title}>
                           <SheetTitle className="text-2xl">
                             {project.title}
                           </SheetTitle>
                           <SheetDescription>
-                            {project.description}
+                            {project.description[lang]}
                           </SheetDescription>
-                          {!project.imgpgroup ? (
+
+                          {project.images.map((image, index) => (
                             <Image
-                              src={project.image}
+                              key={index}
+                              src={image}
                               width={700}
+                              loading="lazy"
                               height={450}
                               alt={project.title}
                             />
-                          ) : null}
+                          ))}
 
-                          {project.imgproject &&
-                            project.imgproject.map((image, index) => (
-                              <Fragment key={index}>
-                                <Image
-                                  src={image}
-                                  width={700}
-                                  loading="lazy"
-                                  height={450}
-                                  loader={Spinner}
-                                  unoptimized
-                                  alt={project.title}
-                                />
-                              </Fragment>
-                            ))}
-                          {project.imgpgroup &&
-                            project.imgpgroup.map((imageGroup, index) => (
-                              <Fragment key={index}>
-                                <h3 className="font-semibold">
-                                  {imageGroup.title}
-                                </h3>
-                                {imageGroup.images.map((image, index) => (
-                                  <Image
-                                    key={index}
-                                    src={image}
-                                    loading="lazy"
-                                    width={700}
-                                    height={450}
-                                    loader={Spinner}
-                                    unoptimized
-                                    alt={project.title}
-                                  />
-                                ))}
-                              </Fragment>
-                            ))}
                           <p>
                             Lisez le{" "}
                             <Link
@@ -235,35 +204,35 @@ export default function Work() {
                               </Link>
                             </Button>
                           </div>
-                        </SheetHeader>
+                        </Fragment>
+                      ))}
+                  </SheetHeader>
 
-                        <div className="flex justify-center items-center mt-2 w-full">
-                          {currentIndex !== 0 && (
-                            <>
-                              <Button
-                                variant="ghost"
-                                onClick={handlePrev}
-                                className="mr-auto w-fit text-xl"
-                              >
-                                <FaRegArrowAltCircleLeft />
-                              </Button>
-                            </>
-                          )}
+                  <div className="flex justify-center items-center mt-2 w-full">
+                    {currentIndex !== 0 && (
+                      <>
+                        <Button
+                          variant="ghost"
+                          onClick={handlePrev}
+                          className="mr-auto w-fit text-xl"
+                        >
+                          <FaRegArrowAltCircleLeft />
+                        </Button>
+                      </>
+                    )}
 
-                          {currentIndex < projetData.length - 1 && (
-                            <>
-                              <Button
-                                onClick={handleNext}
-                                variant="ghost"
-                                className="ml-auto w-fit text-xl"
-                              >
-                                <FaRegArrowAltCircleRight />
-                              </Button>
-                            </>
-                          )}
-                        </div>
-                      </Fragment>
-                    ))}
+                    {currentIndex < projetData.length - 1 && (
+                      <>
+                        <Button
+                          onClick={handleNext}
+                          variant="ghost"
+                          className="ml-auto w-fit text-xl"
+                        >
+                          <FaRegArrowAltCircleRight />
+                        </Button>
+                      </>
+                    )}
+                  </div>
                 </SheetContent>
               </Sheet>
             ))}

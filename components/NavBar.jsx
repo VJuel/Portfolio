@@ -2,15 +2,20 @@
 import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import { Button } from "@/components/ui/button"
+import LangSwitcher from "@/components/langswitcher"
 import Image from "next/image"
 import Link from "next/link"
+import logoSolus from "@/public/vwsolution.svg"
 
-export default function NavBar() {
+export default function NavBar({ lang }) {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [isOpen, setIsOpen] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     if (typeof window != "undefined") {
+      // const el = window.matchMedia("(min-width: 768px)").matches
+
       const updatePosition = () => {
         setScrollPosition(window.scrollY)
       }
@@ -18,6 +23,7 @@ export default function NavBar() {
       window.addEventListener("scroll", updatePosition)
       updatePosition()
 
+      setIsMounted(true)
       return () => window.removeEventListener("scroll", updatePosition)
     }
   }, [])
@@ -25,6 +31,8 @@ export default function NavBar() {
   function handleIsOpen() {
     setIsOpen(!isOpen)
   }
+
+  // if (!isMounted) return null
 
   return (
     <>
@@ -37,8 +45,8 @@ export default function NavBar() {
       >
         <div className="flex justify-center items-center md:justify-start md:items-start">
           <Image
-            className="z-[-1]"
-            src="vwsolution.svg"
+            className=" z-[-1]"
+            src={logoSolus}
             sizes="(min-width: 1024px) 50px 50px, (max-width: 1024px) 60px, 100px"
             width={100}
             height={75}
@@ -78,8 +86,8 @@ export default function NavBar() {
             <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
                 onClick={handleIsOpen}
-                href="#home"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                href={`${lang}/#home`}
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500   lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 Home
               </Link>
@@ -87,8 +95,8 @@ export default function NavBar() {
             <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
                 onClick={handleIsOpen}
-                href="#projects"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                href={`${lang}/#projects`}
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm  md:text-lg duration-500   lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 Projects
               </Link>
@@ -96,8 +104,8 @@ export default function NavBar() {
             <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
                 onClick={handleIsOpen}
-                href="#about"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-50 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                href={`${lang}/#about`}
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-50   lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 About
               </Link>
@@ -105,22 +113,27 @@ export default function NavBar() {
             <li className="w-full lg:mx-4 px-2 lg:my-0">
               <Link
                 onClick={handleIsOpen}
-                href="#contact"
-                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-500 font-semibold lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
+                href={`${lang}/#contact`}
+                className="w-full px-2 lg:py-0 lg:px-0 text-xl rounded-r-sm md:text-lg duration-500   lg:font-normal lg:bg-background hover:shadinner hover:bg-opacity-70 bg-opacity-0 transition-opacity lg:hover:bg-background lg:hover:bg-opacity-1 lg:bg-opacity-1"
               >
                 Contact
               </Link>
             </li>
           </ul>
-          <Button className="ml-2 lg:ml-6 whitespace-nowrap w-auto lg:w-full">
-            <Link
-              href="#contact"
-              className="px-4 md:font-bold"
-              onClick={handleIsOpen}
-            >
-              Get started
-            </Link>
-          </Button>
+
+          <div className="flex justify-start items-center px-4 lg:px-2 gap-2 mt-[8px] lg:mt-0">
+            <LangSwitcher lang={lang} className="ml-0 lg:ml-6" />
+
+            <Button className="lg:order-first md:order-last whitespace-nowrap w-auto lg:w-full">
+              <Link
+                href="#contact"
+                className="px-4 md:font-bold"
+                onClick={handleIsOpen}
+              >
+                Get started
+              </Link>
+            </Button>
+          </div>
         </nav>
       </header>
     </>

@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Fullstack Web Developer",
+    "description": {
+      "p1": "You're looking for a young,",
+      "p11": "dynamic and motivated Web Developer",
+      "p12": "for a short or long-term assignment.",
+      "p2": "On fixed-term or permanent contract or even freelance,",
+      "p21": "I offer you",
+      "p22": "my skills and experience.",
+      "p3": "Are you interested in my profile?",
+      "btn": "Contact me!"
+    }
+  },
+  "projects": {
+    "title": "My projects",
+    "description": "Here are some of the projects I've worked on:"
+  },
+  "about": {
+    "title": "About me",
+    "description": {
+      "p1": "👋 Hi !</br>I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in <b>front-end</b> and <b>back-end</b> programming.",
+      "p2": "🛠️ Technical skills:<br/>I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create <b>SSR</b> (Server-Side Rendering) and <b>SSG</b> (Static Site Generation) components.",
+      "p3": "🤝 Let's work together!<br/>If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Here are the technologies I use on a daily basis:"
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "nom": {
+      "label": "Name"
+    },
+    "prenom": {
+      "label": "Firstname"
+    },
+    "email": {
+      "label": "Email"
+    },
+    "tel": {
+      "label": "Phone"
+    },
+    "message": {
+      "placeholder": "I would like to have more information about..."
+    },
+    "btn": "Send me an email"
+  },
+  "footer": {
+    "description": "Fullstack Web Developer",
+    "coordonees": {
+      "title": "My contact details",
+      "tel": "Phone",
+      "email": "Email",
+      "adresse": "Address"
+    },
+    "left": {
+      "title": "Freelance web developer",
+      "description": {
+        "p1": "Thank you for viewing my entire profile!",
+        "p2": "If you're interested, send me an e-mail and/or<br/> Please share it with your entire network!",
+        "p3": "We look forward to working with you..."
+      }
+    },
+    "banner": "Made with Nextjs, Tailwind 😜"
+  }
+}

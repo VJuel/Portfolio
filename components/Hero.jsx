@@ -2,14 +2,15 @@
 import Link from "next/link"
 import ImageBlur from "@/components/Image"
 import Image from "next/image"
-import me from "../../public/moi.png"
-import meColor from "../../public/mecolor.png"
+import me from "@/public/moi.png"
+import meColor from "@/public/mecolor.png"
+import hoverme from "@/public/hoverme.svg"
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import clsx from "clsx"
 
-export default function Hero() {
+export default function Hero({ dict, lang }) {
   const router = useRouter()
   const imgClass = `w-[80%] lg:w-full lg:h-full rounded-lg shadow-md z-[-1]`
   const [circleAttributes, setCircleAttributes] = useState({
@@ -61,37 +62,33 @@ export default function Hero() {
         <div className="w-full lg:w-1/2 pr-0 lg:pr-10 text-center lg:text-left">
           <div className="relative z-0 pl-4">
             <h1 className="text-4xl">Vicktor Juhel</h1>
-            <h2 className="text-3xl">Developpeur Web</h2>
-            <h2 className="mb-[18px] lg:mb-4 text-3xl">Fullstack</h2>
+            <h2 className="mb-[18px] lg:mb-4 text-3xl">{dict.title}</h2>
             <div className="hidden lg:block animate-title-discover h-full bg-secondary absolute top-0 left-0 rounded-[2px]"></div>
           </div>
 
           <p className="mb-2 green animate-fade-in animation-delay-200">
-            Vous recherchez un Developpeur Web <br />
-            jeune, dynamique et motivé
-            <br />
-            pour une mission de courte ou longue durée.
+            <span>{dict.description.p1}</span>
+            <span>{dict.description.p11}</span>
+            <span>{dict.description.p12}</span>
           </p>
-          <p className="mb-2 purple animate-fade-in animation-delay-400">
-            Sous contrat en CDD ou CDI ou même Freelance,
-            <br />
-            je vous propose
-            <br />
-            mes compétences et mon expérience.
+          <p className="mb-2 green animate-fade-in animation-delay-400">
+            <span>{dict.description.p2}</span>
+            <span>{dict.description.p21}</span>
+            {dict.description.p22}
           </p>
-          <p className="mb-2 orange animate-fade-in animation-delay-600">
-            Mon profil vous intéresse ?
+          <p className="mb-2 green animate-fade-in animation-delay-600">
+            {dict.description.p3}
           </p>
           <Button
-            onClick={() => router.push("#contact")}
+            onClick={() => router.push("/#contact")}
             className="mt-4 animate-fade-in animation-delay-800 w-fit"
           >
-            <Link href="contact">Contactez-moi !</Link>
+            <Link href="contact">{dict.description.btn}</Link>
           </Button>
         </div>
         <div
           ref={containerRef}
-          className="imgcontainer lg:block relative w-full lg:w-1/2 h-auto max-w-2xl flex justify-center z-1"
+          className="imgcontainer lg:block relative md:w-[70%] lg:w-1/2 h-auto max-w-2xl flex justify-center z-1"
         >
           <ImageBlur
             src={me}
@@ -105,7 +102,7 @@ export default function Hero() {
             onError={() => setSrc("/assets/image-error.png")}
           />
 
-          <svg width="0" height="0">
+          <svg width="0" height="0" border="2px">
             <clipPath id="clipping">
               <circle
                 cx={circleAttributes.cx}
@@ -118,8 +115,8 @@ export default function Hero() {
 
           <Image
             src={meColor}
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             alt="Picture of the author"
             className={clsx(
               imgClass,
@@ -128,7 +125,7 @@ export default function Hero() {
           />
 
           <Image
-            src="/hoverme.svg"
+            src={hoverme}
             width={250}
             height={250}
             alt="Hover me"

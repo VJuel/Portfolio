@@ -190,6 +190,9 @@ a:hover::before {
     width: 4px;
   }
 }
+.green {
+  @apply [&>span]:block;
+}
 
 .unset {
   position: unset;
@@ -218,6 +221,11 @@ nav > ul > li {
   width: calc(100% - 2.5rem);
 }
 
+nav > ul > li > a {
+  display: block;
+  width: 100%;
+}
+
 footer {
   @apply bg-red-400 text-sm !text-[var(--footer-text)];
 }
@@ -243,7 +251,7 @@ footer {
 }
 
 .list-footer > li {
-  @apply flex items-center justify-between gap-4 text-lg;
+  @apply flex items-center justify-between gap-4 text-lg w-full;
 }
 
 .list-footer > li > svg {
@@ -263,6 +271,11 @@ footer {
   left: 1.25rem;
   width: calc(100% - 2.5rem);
   height: 1px;
+}
+
+.before-none a::before {
+  content: none;
+  display: none;
 }
 
 .before::before {
@@ -353,6 +366,9 @@ section > div > h2 {
 @keyframes spin {
   0% {
     transform: rotate(0deg);
+    opacity: 0;
+  }
+  60% {
     opacity: 0;
   }
   100% {

@@ -35,7 +35,7 @@ export default function Reseaux() {
 
   return (
     <>
-      <div className="animate-fade-in-right reseaux hidden mr-auto sm:flex flex-col justify-center items-start w-fit fixed md:top-[15%] lg:top-[25%] left-[2%] [&>a]:before:hidden rounded-full shadow-lg px-2 py-4 bg-foreground [&>*]:transition-all z-40">
+      <div className="animate-fade-in-right reseaux hidden mr-auto sm:flex flex-col justify-center items-start w-fit fixed top-[20%] lg:top-[15%] left-[2%] [&>a]:before:hidden rounded-full shadow-lg px-2 py-4 bg-foreground [&>*]:transition-all z-40">
         <Link
           href="https://www.linkedin.com/in/vicktor-juhel-294421231/"
           target="_blank"

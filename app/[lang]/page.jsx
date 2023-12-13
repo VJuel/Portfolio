@@ -4,15 +4,19 @@ import About from "@/components/About"
 import Contact from "@/components/Contact"
 import Reseaux from "@/components/Reseaux"
 
-export default function Page() {
+import { getDictionary } from "@/lib/dictionary"
+
+export default async function Page({ params: { lang } }) {
+  const dict = await getDictionary(lang)
+
   return (
     <>
       <Reseaux />
       <div className="flex flex-col justify-center items-center">
-        <Hero />
-        <Work />
-        <About />
-        <Contact />
+        <Hero dict={dict.hero} lang={lang} />
+        <Work dict={dict.work} lang={lang} />
+        <About dict={dict.about} />
+        <Contact dict={dict.contact} />
       </div>
     </>
   )

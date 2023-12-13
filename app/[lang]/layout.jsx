@@ -1,9 +1,11 @@
 import "./globals.css"
-import Head from "next/head"
 import { Roboto } from "next/font/google"
-import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
+import NavBar from "@/components/NavBar"
+import Footer from "@/components/Footer"
 import { Toaster } from "@/components/ui/toaster"
+import { getDictionary } from "@/lib/dictionary"
+
+import { i18n } from "@/i18n.config"
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -16,17 +18,24 @@ export const metadata = {
     "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
 }
 
-export default function RootLayout({ children }) {
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
+export default async function RootLayout({ children, params }) {
+  const { lang } = params
+  const dict = await getDictionary(lang)
+
   return (
-    <html lang="fr">
-      <body className={roboto.className}>
-        <NavBar />
+    <html lang={params.lang}>
+      <body>
+        <NavBar lang={params.lang} />
         <main>
           <div className="flex justify-center items-start w-full">
             {children}
           </div>
         </main>
-        <Footer />
+        <Footer dict={dict} />
         <Toaster />
       </body>
     </html>
