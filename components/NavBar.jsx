@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import { Button } from "@/components/ui/button"
-import BtnSwitcher from "@/components/langswitcher"
+import BtnSwitcherLang from "@/components/langswitcher"
 import Image from "next/image"
 import Link from "next/link"
 import logoSolus from "@/public/vwsolution.svg"
@@ -116,7 +116,7 @@ export default function NavBar({ lang }) {
           </ul>
 
           <div className="flex justify-start items-center px-4 lg:px-2 gap-2 mt-[8px] lg:mt-0">
-            <BtnSwitcher lang={lang} className="ml-0 lg:ml-6" />
+            <BtnSwitcherLang lang={lang} className="ml-0 lg:ml-6" />
 
             <Button className="lg:order-first md:order-last whitespace-nowrap w-auto lg:w-full">
               <Link
