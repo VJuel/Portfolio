@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import { Button } from "@/components/ui/button"
+import logoSolus from "@/public/vwsolution.svg"
 import LangSwitcher from "@/components/LangSwitcher"
 import Image from "next/image"
 import Link from "next/link"
-import logoSolus from "@/public/vwsolution.svg"
 
 export default function NavBar({ lang }) {
   const [scrollPosition, setScrollPosition] = useState(0)
