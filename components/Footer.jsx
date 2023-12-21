@@ -1,12 +1,12 @@
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
-import { ButtonToTop } from "@/components/ButtonToTop"
 import { Banner } from "@/components/Banner"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import { FaExternalLinkAlt } from "react-icons/fa"
+import { ButtonToTop } from "@/components/ButtonToTop"
 
 export default function Footer({ dict }) {
   return (
-    <footer className="mt-auto bg-accent !text-gray-200 relative pb-6">
+    <footer className="mt-auto bg-accent !text-gray-200 relative ">
       <div className="w-full bg-secondary border-b-2 border-t-2 border-black">
         <div className="flex flex-col sm:flex-row justify-start items-start sm:justify-between sm:items-center max-w-4xl m-auto h-1/5 px-5 py-4 w-full text-black">
           <div className="flex items-baseline bandeau">

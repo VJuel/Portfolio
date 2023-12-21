@@ -23,9 +23,8 @@ import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa"
-import Spinner from "@/components/Spinner"
 
-export default function Work({ lang }) {
+export default function Work({ dict, lang }) {
   const pathname = usePathname()
   const router = useRouter()
   const projetData = Object.values(projects)
@@ -34,7 +33,6 @@ export default function Work({ lang }) {
   const [open, setOpen] = useState(false)
   const [animating, setAnimating] = useState(false)
   const [observer, setObserver] = useState(null)
-  console.log(lang)
 
   useEffect(() => {
     const checkAndObserve = () => {
@@ -94,7 +92,7 @@ export default function Work({ lang }) {
   return (
     <section className="w-full h-auto pb-8 mt-[4.5rem]" id="projects">
       <div className="py-6">
-        <h2 className="mb-6">Mes Projets</h2>
+        <h2 className="mb-6">{dict.title}</h2>
         <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
           <div className="flex-col md:flex-row flex flex-wrap w-full justify-center items-center gap-4 [&>button]:z-10">
             {projects.map((project, index) => (

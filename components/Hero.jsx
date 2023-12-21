@@ -18,20 +18,23 @@ export default function Hero({ dict, lang }) {
     cy: 0,
     r: 0,
   })
+  const [isMediaQuery, setIsMediaQuery] = useState(false)
   const containerRef = useRef(null)
 
   useEffect(() => {
     if (typeof window != "undefined") {
-      let mql = window.matchMedia("(max-width: 900px)")
+      setIsMediaQuery(window.matchMedia("(max-width: 900px)").matches)
       const containerImage = containerRef.current
 
       const handleMouseMove = (e) => {
         const rect = containerImage.getBoundingClientRect()
-        containerImage.style.cursor = "none"
+        isMediaQuery.matches
+          ? (containerImage.style.cursor = "normal")
+          : (containerImage.style.cursor = "none")
         setCircleAttributes({
           cx: e.clientX - rect.left,
           cy: e.clientY - rect.top,
-          r: mql.matches ? 60 : 140,
+          r: isMediaQuery.matches ? 60 : 140,
         })
       }
 
@@ -102,37 +105,42 @@ export default function Hero({ dict, lang }) {
             onError={() => setSrc("/assets/image-error.png")}
           />
 
-          <svg width="0" height="0" border="2px">
-            <clipPath id="clipping">
-              <circle
-                cx={circleAttributes.cx}
-                cy={circleAttributes.cy}
-                r={circleAttributes.r}
-                id="target"
+          {!isMediaQuery ? (
+            <>
+              <svg width="0" height="0" border="2px">
+                <clipPath id="clipping">
+                  <circle
+                    cx={circleAttributes.cx}
+                    cy={circleAttributes.cy}
+                    r={circleAttributes.r}
+                    id="target"
+                  />
+                </clipPath>
+              </svg>
+
+              <Image
+                src={meColor}
+                width={300}
+                height={300}
+                alt="Picture of the author"
+                className={clsx(
+                  imgClass,
+                  `heroImg !absolute top-0 left-0 z-1 shadow-md min-h-[300px] min-w-[300px]`
+                )}
               />
-            </clipPath>
-          </svg>
 
-          <Image
-            src={meColor}
-            width={300}
-            height={300}
-            alt="Picture of the author"
-            className={clsx(
-              imgClass,
-              `heroImg !absolute top-0 left-0 z-1 shadow-md min-h-[300px] min-w-[300px]`
-            )}
-          />
+              <Image
+                src={hoverme}
+                width={250}
+                height={250}
+                alt="Hover me"
+                className={clsx(
+                  `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
+                )}
+              />
+            </>
+          ) : null}
 
-          <Image
-            src={hoverme}
-            width={250}
-            height={250}
-            alt="Hover me"
-            className={clsx(
-              `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem] -z-10`
-            )}
-          />
           <div className="animate-fade-img min-w-[300px] w-[80%] z-[-1] absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
         </div>
       </div>

@@ -14,7 +14,7 @@ export default async function Page({ params: { lang } }) {
       <Reseaux />
       <div className="flex flex-col justify-center items-center">
         <Hero dict={dict.hero} lang={lang} />
-        <Work dict={dict.work} lang={lang} />
+        <Work dict={dict.projects} lang={lang} />
         <About dict={dict.about} />
         <Contact dict={dict.contact} />
       </div>

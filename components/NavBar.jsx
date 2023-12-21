@@ -43,6 +43,7 @@ export default function NavBar({ lang }) {
         <div className="flex justify-center items-center md:justify-start md:items-start">
           <Image
             className=" z-[-1]"
+            style={{ height: "auto" }}
             src={logoSolus}
             sizes="(min-width: 1024px) 50px 50px, (max-width: 1024px) 60px, 100px"
             width={100}

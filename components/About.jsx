@@ -13,6 +13,7 @@ export default function About({ dict }) {
         <div className="max-w-6xl w-full flex justify-center items-center p-10 flex-col lg:flex-row">
           <div className="h-auto flex mb-10 lg:mb-0 w-[80%] lg:w-[45%] justify-center items-center">
             <Image
+              style={{ width: "auto" }}
               src={aboutImg}
               width={500}
               height={500}
