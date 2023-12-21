@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import { Button } from "@/components/ui/button"
 import logoSolus from "@/public/vwsolution.svg"
-import { LangSwitcher } from "@/components/LangSwitcher"
+import { LangSwitcher } from "@/components/langswitcher"
 import Image from "next/image"
 import Link from "next/link"
 
