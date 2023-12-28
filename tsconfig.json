@@ -29,9 +29,7 @@
     ".next/types/**/*.ts",
     "app/[lang]/layout.jsx",
     "components/ui/use-toast.js",
-    "app/[lang]/page.jsx",
-    "i18n.config.ts",
-    "middleware.ts"
+    "app/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
