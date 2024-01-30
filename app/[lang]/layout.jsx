@@ -7,7 +7,7 @@ import { getDictionary } from "@/lib/dictionary"
 
 import { i18n } from "@/i18n.config"
 
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata({ params }) {
   const dict = await getDictionary(params.lang)
 
   return {
