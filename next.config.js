@@ -1,28 +1,8 @@
-// @ts-check
+const createNextIntlPlugin = require("next-intl/plugin")
 
-/**
- * @type {import('next').NextConfig}
- **/
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-        // ...
-      },
-      {
-        protocol: "https",
-        hostname: "https://www.pexels.com/",
-        // ...
-      },
-      {
-        protocol: "http",
-        hostname: "localhost",
-        // ...
-      },
-    ],
-  },
-}
+const withNextIntl = createNextIntlPlugin()
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+
+module.exports = withNextIntl(nextConfig)

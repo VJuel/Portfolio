@@ -1,0 +1,117 @@
+{
+  "Metadata": {
+    "title": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en developpement de site web",
+    "description": "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
+    "contact": {
+      "title": "Contactez-moi",
+      "description": "Vous avez un projet en tête ? Vous cherchez un développeur web pour une mission de courte ou longue durée ? N&apos;hésitez pas à me contacter pour discuter de votre projet !"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
+    },
+    "services": {
+      "title": "Services",
+      "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !"
+    },
+    "blog": {
+      "title": "Blog's",
+      "description": "Découvrez mes articles sur le développement web, les technologies, et bien plus encore !"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact",
+    "blog": "Blog's"
+  },
+  "hero": {
+    "h1": "Developpeur Web Fullstack freelance",
+    "title": "Vicktor Juhel",
+    "description": {
+      "p1": "You're looking for a young,",
+      "p1-1": "dynamic and motivated Web Developer",
+      "p1-2": "for a short or long-term assignment.",
+      "p2": "On fixed-term or permanent contract or even freelance,",
+      "p2-1": "I offer you",
+      "p2-2": "my skills and experience.",
+      "p3": "Are you interested in my profile?",
+      "btn": "Contact me!"
+    }
+  },
+  "works": {
+    "title": "My projects",
+    "description": "Here are some of the projects I've worked on:"
+  },
+  "about": {
+    "title": "About me",
+    "description": {
+      "p1": "👋 Hi !</br>I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in <b>front-end</b> and <b>back-end</b> programming.",
+      "p2": "🛠️ Technical skills:<br/>I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create <b>SSR</b> (Server-Side Rendering) and <b>SSG</b> (Static Site Generation) components.",
+      "p3": "🤝 Let's work together!<br/>If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Here are the technologies I use on a daily basis:"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
+    "formule": {
+      "vitrine": {
+        "title": "Formule Vitrine",
+        "description": "Vous avez besoin d&apos;un site web vitrine pour présenter votre entreprise, vos services, ou vos produits ? Je vous propose une solution sur-mesure, adaptée à vos besoins."
+      },
+      "ecommerce": {
+        "title": "Formule E-commerce",
+        "description": "Vous souhaitez vendre vos produits en ligne ? Je vous propose une solution e-commerce complète, avec un design personnalisé et des fonctionnalités avancées."
+      },
+      "surmesure": {
+        "title": "Formule Sur-mesure",
+        "description": "Vous avez un projet spécifique en tête ? Je vous propose une solution sur-mesure, adaptée à vos besoins, pour répondre à vos besoins spécifiques."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "formSection": {
+      "name": {
+        "name": "Name",
+        "placeholder": "John"
+      },
+      "firstname": {
+        "name": "Firstname",
+        "placeholder": "Doe"
+      },
+      "email": {
+        "name": "Email",
+        "placeholder": "Send me an email"
+      },
+      "tel": {
+        "name": "Phone",
+        "placeholder": "Your phone number"
+      },
+      "message": "I would like to have more information about...",
+      "btn": "Send me email",
+      "pending": "Sending..."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, fr {FR Francais} en {🇺🇸 English} other {Unknown}}"
+  },
+  "footer": {
+    "description": "Fullstack Web Developer",
+    "coordoneesTitle": "My contact details",
+    "coordoneesTel": "Phone",
+    "coordoneesEmail": "Email",
+    "coordoneesAdress": "Address",
+    "leftTitle": "Freelance web developer",
+    "description1": "Thank you for viewing my entire profile!",
+    "description2": "If you're interested, send me an e-mail and/or<br/> Please share it with your entire network!",
+    "description3": "We look forward to working with you...",
+    "banner": "Made with Nextjs, Tailwind 😜"
+  }
+}

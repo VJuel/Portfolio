@@ -1,0 +1,122 @@
+{
+  "Metadata": {
+    "title": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en developpement de site web",
+    "description": "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
+    "contact": {
+      "title": "Contactez-moi",
+      "description": "Vous avez un projet en tête ? Vous cherchez un développeur web pour une mission de courte ou longue durée ? N&apos;hésitez pas à me contacter pour discuter de votre projet !"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
+    },
+    "services": {
+      "title": "Mes différents services",
+      "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !"
+    },
+    "blog": {
+      "title": "Blog's",
+      "description": "Découvrez mes articles sur le développement web, les technologies, et bien plus encore !"
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact",
+    "blog": "Blog's"
+  },
+  "hero": {
+    "h1": "Developpeur Web Fullstack Freelance\nVicktor Juhel",
+    "title": "",
+    "description": {
+      "p1": "Vous recherchez un Developpeur Web",
+      "p1-1": "jeune, dynamique et motivé",
+      "p1-2": "pour une mission de courte ou longue durée.",
+      "p2": "Sous contrat en CDD ou CDI ou même Freelance,",
+      "p2-1": "je vous propose",
+      "p2-2": " mes compétences et mon expérience.",
+      "p3": "Mon profil vous intéresse ?",
+      "btn": "Contactez-moi !"
+    }
+  },
+  "HomePortfolio": {
+    "title": "Portfolio",
+    "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :",
+    "btn": "Voir mex "
+  },
+  "portfolio": {
+    "title": "Mes projets",
+    "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
+  },
+  "about": {
+    "title": "A propos de moi",
+    "description": {
+      "p1": "👋 Salut !<br/>Je suis passionné par le monde du Développement Web. <br /> Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une solide expertise en programmation front-end et back-end.",
+      "p2": "🛠️ Compétences techniques:<br/>Je suis spécialisé dans la création de sites et applications web. <br /> Ma pile technologique comprend des technologies modernes comme React et Next.js, ce qui me permet de développer des solutions rapides, évolutives et de créer des composants SSR (Server-Side Rendering) et SSG (Static Site Generation).",
+      "p3": "🤝 Travaillons ensemble !<br/>Si vous cherchez quelqu&apos;un qui peut transformer votre idée en une solution digitale complète, n&apos;hésitez pas à me contacter. Ensemble, transformons vos idées en réalité !"
+    },
+    "skills": {
+      "title": "Compétences",
+      "description": "Voici les technologies que j&apos;utilise au quotidien :"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
+    "formule": {
+      "vitrine": {
+        "title": "Formule Vitrine",
+        "description": "Vous avez besoin d&apos;un site web vitrine pour présenter votre entreprise, vos services, ou vos produits ? Je vous propose une solution sur-mesure, adaptée à vos besoins."
+      },
+      "ecommerce": {
+        "title": "Formule E-commerce",
+        "description": "Vous souhaitez vendre vos produits en ligne ? Je vous propose une solution e-commerce complète, avec un design personnalisé et des fonctionnalités avancées."
+      },
+      "surmesure": {
+        "title": "Formule Sur-mesure",
+        "description": "Vous avez un projet spécifique en tête ? Je vous propose une solution sur-mesure, adaptée à vos besoins, pour répondre à vos besoins spécifiques."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "formSection": {
+      "name": {
+        "name": "Nom",
+        "placeholder": "John"
+      },
+      "firstname": {
+        "name": "Prenom",
+        "placeholder": "Doe"
+      },
+      "email": {
+        "name": "E-mail",
+        "placeholder": "Votre adresse e-mail"
+      },
+      "tel": {
+        "name": "Téléphone",
+        "placeholder": "Votre numéro de téléphone"
+      },
+      "message": "J'aimerais rentrer en contact avec vous pour...",
+      "btn": "Envoyer moi un e-mail !",
+      "pending": "Envoi en cours..."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, fr {FR} en {🇺🇸 English} other {Unknown}}"
+  },
+  "footer": {
+    "description": "Développeur Web Fullstack",
+    "coordoneesTitle": "Mes Coordonnées",
+    "coordoneesTel": "Telephone",
+    "coordoneesEmail": "E-mail",
+    "coordoneesAdress": "Addresse",
+    "leftTitle": "Développeur Informatique indépendant",
+    "description1": "Merci d&apos;avoir regardé mon profil en entier !",
+    "description2": "S&apos;il vous intéresse, envoyer moi un e-mail et/ou<br/> Merci de le partager à tout votre réseau !",
+    "description3": "Au plaisir de collaborer avec vous...",
+    "banner": "Fait avec Nextjs, Tailwind 😜"
+  }
+}

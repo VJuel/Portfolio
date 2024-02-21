@@ -1,6 +1,7 @@
 "use client"
 import { FaArrowUp } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
+import Spinner from "./Spinner"
 
 export function ButtonToTop() {
   function topFunction() {
