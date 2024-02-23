@@ -6,7 +6,6 @@ import { projects } from "@/lib/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { imgEcommerce } from "@/lib/images"
 import {
   Sheet,
   SheetContent,
@@ -17,12 +16,7 @@ import {
 } from "@/components/ui/sheet"
 import Image from "next/image"
 import clsx from "clsx"
-
-import {
-  FaExternalLinkAlt,
-  FaRegArrowAltCircleLeft,
-  FaRegArrowAltCircleRight,
-} from "lucide-react"
+import { ExternalLink, ArrowLeftCircle, ArrowRightCircle } from "lucide-react"
 
 export default function ProjetsCard({ portfolio }) {
   const pathname = usePathname()
@@ -164,7 +158,7 @@ export default function ProjetsCard({ portfolio }) {
                       {project.title}
                     </SheetTitle>
                     <SheetDescription>
-                      {project.description[lang]}
+                      {/* {project.description[lang]} */}
                     </SheetDescription>
 
                     {project.images.map((image, index) => (
@@ -179,7 +173,7 @@ export default function ProjetsCard({ portfolio }) {
                     ))}
 
                     <p>
-                      Lisez le{" "}
+                      Lisez le
                       <Link
                         href={project.github}
                         className="border-none !text-blue-700 text-center before:content-none"
@@ -194,7 +188,7 @@ export default function ProjetsCard({ portfolio }) {
                           href={project.link}
                           target="_blank"
                         >
-                          Accédez au site <FaExternalLinkAlt />
+                          Accédez au site <ExternalLink />
                         </Link>
                       </Button>
                     </div>
@@ -210,7 +204,7 @@ export default function ProjetsCard({ portfolio }) {
                     onClick={handlePrev}
                     className="mr-auto w-fit text-xl"
                   >
-                    <FaRegArrowAltCircleLeft />
+                    <ArrowLeftCircle />
                   </Button>
                 </>
               )}
@@ -222,7 +216,7 @@ export default function ProjetsCard({ portfolio }) {
                     variant="ghost"
                     className="ml-auto w-fit text-xl"
                   >
-                    <FaRegArrowAltCircleRight />
+                    <ArrowRightCircle />
                   </Button>
                 </>
               )}

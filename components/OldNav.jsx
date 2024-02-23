@@ -2,7 +2,6 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi"
 import logoSolus from "@/public/vwsolution.svg"
-import LocaleSwitcherSelect from "@/components/LocaleSwitcherSelect"
 import LocaleSwitcher from "@/components/Langswitcher"
 import { useTranslations } from "next-intl"
 import NavLinkItem from "@/components/NavLinkItem"
@@ -21,7 +20,7 @@ export default function Header() {
       className={`${
         scrollPosition === 0
           ? "bg-transparent border-b-0 py-2"
-          : "shadow border-1 border-b-black py-1"
+          : "shadow border-b-1 border-b-black py-1"
       } animate-fade-in-down z-50 transition-all duration-_250ms_ px-4 lg:px-8 sm:px-10 bg-background flex items-center justify-between sticky top-0`}
     >
       <div className="flex justify-center items-center md:justify-start md:items-start">

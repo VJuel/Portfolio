@@ -44,6 +44,10 @@
     "title": "My projects",
     "description": "Here are some of the projects I've worked on:"
   },
+  "portfolio": {
+    "title": "Mes projets",
+    "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
+  },
   "about": {
     "title": "About me",
     "description": {
@@ -100,7 +104,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, fr {FR Francais} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, fr {FR} en {EN} other {Unknown}}"
   },
   "footer": {
     "description": "Fullstack Web Developer",

@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react"
 import { useFormStatus, useFormState } from "react-dom"
-import { sendEmail } from "@/lib/actions"
+import sendEmail from "@/lib/actions"
 import {
   renderToastErrorComponent,
   renderToastSendComponent,

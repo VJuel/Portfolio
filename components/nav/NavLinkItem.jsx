@@ -2,10 +2,9 @@
 
 import clsx from "clsx"
 import { useSelectedLayoutSegment } from "next/navigation"
-import { ComponentProps } from "react"
-import { Link } from "../navigation"
+import { Link } from "../../navigation"
 
-export default function NavLinkItem({ href, ...rest }) {
+export default function NavLinkItem({ href, children }) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/"
   const isActive = pathname === href
@@ -14,11 +13,14 @@ export default function NavLinkItem({ href, ...rest }) {
     <Link
       aria-current={isActive ? "page" : undefined}
       className={clsx(
-        "inline-block px-2 py-3 transition-colors",
-        isActive ? "text-secondary" : "text-dark hover:text-destructive"
+        "inline-block px-2 py-2 lg:py-3 transition-colors",
+        isActive
+          ? "border-nav active text-slate-600"
+          : "text-dark hover:text-dark"
       )}
       href={href}
-      {...rest}
-    />
+    >
+      {children}
+    </Link>
   )
 }

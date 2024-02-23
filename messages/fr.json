@@ -105,7 +105,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, fr {FR} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, fr {FR} en {EN} other {Unknown}}"
   },
   "footer": {
     "description": "Développeur Web Fullstack",

@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer relative flex lg:flex-row md:justify-between items-start justify-start max-w-4xl m-auto px-4 py-6 flex-col w-full gap-4">
-        <div className="w-[65%] [&>p]:text-lg md:w-[65%] text-left relative border-0 lg:border-r-2 border-black flex flex-col">
+        <div className="w-[65%] md:w-[75%] [&>p]:text-lg text-left relative border-0 lg:border-r-2 border-black flex flex-col">
           <h2 className={clsx(robotoSlab.className, "text-xl mb-2 md:mb-4")}>
             {t("leftTitle")}
           </h2>
@@ -41,11 +41,11 @@ export default function Footer() {
           ></p>
           <p>{t("description3")}</p>
         </div>
-        <div className="w-full md:w-[35%] text-left flex flex-col justify-start md:justify-end lg:items-end items-start md:mt-8 mt-0">
+        <div className="w-full md:w-[35%] lg:w-[55%] text-left lg:text-right flex flex-col justify-start md:justify-end coord md:mt-8 mt-0">
           <h2
             className={clsx(
               robotoSlab.className,
-              "lg:pl-[3.4rem] text-xl text-start lg:text-end lg:ml-auto mb-2 md:mb-4"
+              "coord lg:pl-[3.4rem] text-xl lg:ml-auto mb-2 md:mb-4"
             )}
           >
             {t("coordoneesTitle")}
@@ -108,11 +108,11 @@ export default function Footer() {
                   {t("coordoneesAdress")}
                 </span>
               </div>
-              <div className="flex flex-col text-right">
+              <div className="block-adress flex flex-col items-end">
                 <span className="whitespace-wrap md:whitespace-nowrap">
                   18 Quai Louis Durand
                 </span>
-                <span>17000 La Rochelle</span>
+                <span className="text-right">17000 La Rochelle</span>
               </div>
             </li>
           </ul>

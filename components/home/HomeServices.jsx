@@ -22,7 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-
+import { Newspaper, Handshake } from "lucide-react"
 export default function HomeServices() {
   const t = useTranslations("HomePortfolio")
   return (
@@ -32,9 +32,9 @@ export default function HomeServices() {
           Services
         </h2>
 
-        <article className="h-auto md:h-[570px] mt-10 flex flex-col md:flex-row justify-center items-center gap-14">
+        <article className="w-full md:w-[80%] lg:w-full h-auto lg:h-[570px] mt-10 flex flex-col lg:flex-row justify-center items-center gap-14 m-auto">
           {/* Card Nextjs */}
-          <Card className="w-[360px] h-full flex flex-col">
+          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-inherit">
             <Image
               src="/nextjs-logo.jpg"
               width={400}
@@ -52,13 +52,13 @@ export default function HomeServices() {
               l'expérience de vos visiteurs.
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button variant="accent">Offerings</Button>
-              <Button variant="default">Articles</Button>
+              <ButtonNav href="/services" t="Offerings" />
+              <ButtonNav variant="accent" href="/blog" t="Articles" />
             </CardFooter>
           </Card>
 
           {/* Card Wordpress */}
-          <Card className="w-[350px] h-full flex flex-col">
+          <Card className="w-[350px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-inherit">
             <Image
               src="/WordPress-Logo.png"
               width={400}
@@ -76,8 +76,10 @@ export default function HomeServices() {
               besoins.
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button variant="accent">Offerings</Button>
-              <Button variant="default">Articles</Button>
+              <ButtonNav href="/services" t="Voir les offres" />
+              <ButtonNav variant="accent" href="/blog" t="Articles">
+                <Newspaper className="text-[--text]" />
+              </ButtonNav>
             </CardFooter>
           </Card>
         </article>

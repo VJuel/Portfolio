@@ -23,10 +23,10 @@ export default function Blog(params) {
   // const t = await getTranslations("services")
 
   return (
-    <section id="contact" className="w-full h-auto pb-8">
-      <div className="py-6">
-        <div className="w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
-          <Image src="/blog/commingsoon.png" width={400} height={400} />
+    <section id="contact" className="w-full h-[calc(100vh-15rem)] calc-pb-8">
+      <div className="py-6 h-full">
+        <div className="h-full w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
+          <Image src="/blog/commingsoon.png" width={600} height={600} />
         </div>
       </div>
     </section>

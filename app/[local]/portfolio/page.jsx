@@ -9,7 +9,7 @@ import { InputTest } from "@/components/InputTest"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 import { useTranslations } from "next-intl"
-import ProjetsCard from "@/components/ProjetsCard"
+import ProjetsCard from "@/components/portfolio/ProjetsCard"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -24,7 +24,7 @@ export default function Portfolio() {
   const portfolio = useTranslations("portfolio")
 
   return (
-    <section id="portfolio" className="w-full h-auto pb-8">
+    <section id="portfolio" className="w-full h-auto pb-8 my-10 lg:my-20">
       <div className="py-6">
         <div className="w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
           <h1 className={clsx(robotoSlab.className, "text-3xl font-bold mb-8")}>

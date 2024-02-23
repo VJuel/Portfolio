@@ -5,7 +5,6 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
   darkMode: ["class"],
   important: false,
-
   content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     container: {
@@ -13,6 +12,8 @@ module.exports = {
       padding: "2rem",
     },
     screens: {
+      xlg: "1240px",
+      xs: "475px",
       ...defaultTheme.screens,
     },
     safelist: ["dark"],

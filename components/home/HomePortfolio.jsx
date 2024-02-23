@@ -9,8 +9,8 @@ export default function HomePortfolio() {
   const t = useTranslations("HomePortfolio")
   return (
     <section className="w-full bg-secondary py-14">
-      <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl m-auto w-full px-4 md:px-6 ">
-        <div className="flex flex-col justify-center w-full pr-0 md:pr-14 mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl m-auto w-full px-4 md:px-[3.25rem]">
+        <div className="flex flex-col justify-center w-full pr-0 md:pr-10 mb-8 md:mb-0">
           <h2 className={clsx(robotoSlab.className, "text-3xl mb-2 font-bold")}>
             Portfolio
           </h2>

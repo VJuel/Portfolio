@@ -9,28 +9,14 @@
     --text: #ffffff;
     --card: rgb(255, 255, 255);
     --card-foreground: hsl(222.2, 84%, 4.9%);
-
     --popover: #1e293b;
     --popover-foreground: hsl(222.2, 84%, 4.9%);
-
     --primary: hsl(222.2, 47.4%, 11.2%);
-    --primary-foreground: hsl(210, 40%, 98%);
-
     --secondary: rgb(255, 222, 89);
-    --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
-
     --muted: #000;
-    --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-
     --accent: #06d6a0;
-    --accent-foreground: hsl(222.2, 47.4%, 11.2%);
-
     --destructive: hsl(0, 84.2%, 60.2%);
-    --destructive-foreground: hsl(210, 40%, 98%);
-
     --warning: hsl(38 92% 50%);
-    --warning-foreground: 48 96% 89%;
-
     --border: hsl(214.3, 31.8%, 91.4%);
     --input: hsl(214.3, 31.8%, 91.4%);
     --ring: hsl(222.2, 84%, 4.9%);
@@ -41,36 +27,6 @@
     --font-monterrat: "Montserrat", sans-serif;
 
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: hsl(222.2, 84%, 4.9%);
-    --foreground: hsl(210, 40%, 98%);
-
-    --card: hsl(222.2, 84%, 4.9%);
-    --card-foreground: hsl(210, 40%, 98%);
-
-    --popover: hsl(222.2, 84%, 4.9%);
-    --popover-foreground: hsl(210, 40%, 98%);
-
-    --primary: hsl(210, 40%, 98%);
-    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
-
-    --secondary: hsl(217.2, 32.6%, 17.5%);
-    --secondary-foreground: hsl(210, 40%, 98%);
-
-    --muted: hsl(217.2, 32.6%, 17.5%);
-    --muted-foreground: hsl(215, 20.2%, 65.1%);
-
-    --accent: hsl(217.2, 32.6%, 17.5%);
-    --accent-foreground: hsl(210, 40%, 98%);
-
-    --destructive: hsl(0, 62.8%, 30.6%);
-    --destructive-foreground: hsl(210, 40%, 98%);
-
-    --border: hsl(217.2, 32.6%, 17.5%);
-    --input: hsl(217.2, 32.6%, 17.5%);
-    --ring: hsl(212.7, 26.8%, 83.9%);
   }
 }
 
@@ -146,50 +102,6 @@
   }
 }
 
-a {
-  position: relative;
-}
-
-a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  border-radius: 4px;
-  background-color: #18272f;
-  bottom: 0;
-  left: 0;
-  transform-origin: right bottom;
-  transform: scale(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-a:hover::before {
-  transform-origin: left;
-  transform: scale(1);
-}
-
-@media (max-width: 1024px) {
-  a:before {
-    width: 2px;
-    height: 100%;
-    transform-origin: left bottom;
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  a:hover::before {
-    transform: scale(1);
-    transform-origin: left top;
-    transition: transform 0.3s ease-in-out;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 900px) {
-  a:before {
-    width: 4px;
-  }
-}
 .green {
   @apply [&>span]:block;
 }
@@ -225,6 +137,10 @@ a:hover::before {
 }
 
 /* Nav */
+#nav a:hover {
+  @apply text-slate-600;
+}
+
 nav > ul > li {
   @apply border-neutral-200 lg:block justify-start items-start py-1 w-full;
 }
@@ -238,13 +154,62 @@ nav > ul > li > a {
   width: 100%;
 }
 
+a {
+  position: relative;
+}
+
+.border-nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right bottom;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.border-nav:hover::before {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.border-nav.active:before {
+  transform: scale(1) !important;
+}
+
+@media (max-width: 1024px) {
+  .border-nav:before {
+    width: 2px;
+    height: 100%;
+    transform-origin: left bottom;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .border-nav:hover::before {
+    transform: scale(1);
+    transform-origin: left top;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .border-nav:before {
+    width: 4px;
+  }
+}
+
 #menu-toggle:checked ~ nav {
   opacity: 1;
   transform: translateY(0);
 }
 
 #menu-toggle:checked ~ label > div:first-child {
-  display: block;
+  display: none;
 }
 
 #menu-toggle:checked ~ label > div:last-child {
@@ -254,6 +219,18 @@ nav > ul > li > a {
 #menu-toggle:checked ~ .overlay {
   display: block;
   z-index: 5;
+}
+
+@media screen and (min-width: 1024px) {
+  #menu-toggle {
+    @apply hidden;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #nav {
+    @apply relative w-full bg-transparent;
+  }
 }
 
 /* Footer */
@@ -297,6 +274,18 @@ footer {
   position: initial !important;
 }
 
+.coord {
+  @apply lg:items-end items-start;
+}
+
+.block-adress {
+  @apply flex items-end justify-center;
+}
+.block-adress > span {
+  text-align: right;
+}
+
+/*  */
 .before::before {
   position: absolute;
   content: "";
@@ -575,4 +564,9 @@ section > div > h2 {
 
 .list-card > li {
   font-size: 14px;
+}
+
+/* Services */
+.stroke-text {
+  -webkit-text-stroke: 1px black;
 }
