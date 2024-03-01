@@ -5,16 +5,20 @@ export const locales = ["fr", "en"] as const
 export const pathnames = {
   "/": "/",
   "/portfolio": {
-    fr: "/portfolio",
-    en: "/portfolio",
+    fr: "/portfolio-et-realisation",
+    en: "/portfolio-and-realization",
   },
   "/services": {
-    fr: "/services",
-    en: "/services",
+    fr: "/offres-et-services",
+    en: "/offers-and-services",
   },
   "/contact": {
-    fr: "/contact",
-    en: "/contact",
+    fr: "/contacter-developpeur-freelance",
+    en: "/contact-developer-freelance",
+  },
+  "/faq": {
+    fr: "/foire-aux-questions",
+    en: "/frequently-asked-questions",
   },
   "/blog": {
     fr: "/blog",

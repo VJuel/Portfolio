@@ -1,3 +1,3 @@
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }) {
   return children
 }

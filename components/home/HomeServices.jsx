@@ -13,28 +13,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Newspaper, Handshake } from "lucide-react"
 export default function HomeServices() {
-  const t = useTranslations("HomePortfolio")
+  const t = useTranslations("home.HomeServices")
+
   return (
     <section className="w-full bg-background my-10 md:my-20">
       <div className="max-w-4xl m-auto">
         <h2 className={clsx(robotoSlab.className, "text-3xl mb-2 font-bold")}>
-          Services
+          {t("title")}
         </h2>
 
         <article className="w-full md:w-[80%] lg:w-full h-auto lg:h-[570px] mt-10 flex flex-col lg:flex-row justify-center items-center gap-14 m-auto">
           {/* Card Nextjs */}
-          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-inherit">
+          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-lg justify-between items-center">
             <Image
               src="/nextjs-logo.jpg"
               width={400}
@@ -42,23 +34,21 @@ export default function HomeServices() {
               className="h-[200px]"
             />
             <CardHeader>
-              <CardTitle>Developpement avec NextJs</CardTitle>
-              <CardDescription className="flex-grow-3"></CardDescription>
+              <CardTitle>{t("nextjs.title")}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <strong>Next.js</strong> aide à construire des sites web rapides
-              qui s'affichent mieux dans les résultats de recherche, en rendant
-              vos pages plus accessibles aux moteurs de recherche et améliorant
-              l'expérience de vos visiteurs.
+            <CardContent className="text-center lg:text-left">
+              <strong>{t("nextjs.strong")}</strong> {t("nextjs.description")}
             </CardContent>
-            <CardFooter className="flex justify-between">
-              <ButtonNav href="/services" t="Offerings" />
-              <ButtonNav variant="accent" href="/blog" t="Articles" />
+            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1">
+              <ButtonNav href="/services" t={t("btn1")} />
+              <ButtonNav variant="secondary" href="/blog" t="Articles">
+                <Newspaper className="text-[--text]" />
+              </ButtonNav>
             </CardFooter>
           </Card>
 
           {/* Card Wordpress */}
-          <Card className="w-[350px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-inherit">
+          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-lg justify-between items-center">
             <Image
               src="/WordPress-Logo.png"
               width={400}
@@ -67,17 +57,18 @@ export default function HomeServices() {
             />
             <CardHeader>
               <CardTitle>Developpemnt avec Wordpress</CardTitle>
-              <CardDescription className="flex-grow-3"></CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="text-center lg:text-left">
               <strong>WordPress</strong> est la solution idéale pour créer
               facilement votre site web ou blog, offrant une grande variété de
               designs et la possibilité d'ajouter des fonctionnalités selon vos
               besoins.
+              <br />
+              <br className="hidden md:block" />
             </CardContent>
-            <CardFooter className="flex justify-between">
+            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1">
               <ButtonNav href="/services" t="Voir les offres" />
-              <ButtonNav variant="accent" href="/blog" t="Articles">
+              <ButtonNav variant="secondary" href="/blog" t="Articles">
                 <Newspaper className="text-[--text]" />
               </ButtonNav>
             </CardFooter>
@@ -86,10 +77,4 @@ export default function HomeServices() {
       </div>
     </section>
   )
-}
-
-{
-  /* <ButtonNav href="/portfolio" t="Voir les realisation">
-  <Palette className="text-[--text]" />
-</ButtonNav> */
 }

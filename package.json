@@ -32,6 +32,8 @@
     "autoprefixer": "10.4.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-react": "^8.0.0",
     "eslint": "8.48.0",
     "eslint-config-next": "14.0.4",
     "gsap": "^3.12.2",

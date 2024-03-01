@@ -94,16 +94,6 @@ export default function ImageHero() {
               `heroImg !absolute top-0 left-0 z-10 shadow-md min-h-[300px] min-w-[300px]`
             )}
           />
-
-          <Image
-            src={hoverme}
-            width={250}
-            height={250}
-            alt="Hover me"
-            className={clsx(
-              `transition-all duration-_250ms_ animation-spin lg:w-[250px] hidden lg:block !absolute -top-[6rem] lg:-top-[7rem] -right-[4rem] lg:-right-[4rem] xl:-right-[7rem]`
-            )}
-          />
         </>
       ) : null}
 

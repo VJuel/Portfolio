@@ -1,11 +1,4 @@
-import { getTranslations } from "next-intl/server"
-import FormSection from "@/components/form/FormSection"
-import {
-  FormField,
-  FormTextAreaField,
-  ButtonSumitContact,
-} from "@/components/form/FormFields"
-import { InputTest } from "@/components/InputTest"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 import { useTranslations } from "next-intl"
@@ -20,14 +13,17 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Portfolio() {
+export default function Portfolio(params) {
+  unstable_setRequestLocale(params.locale)
   const portfolio = useTranslations("portfolio")
 
   return (
-    <section id="portfolio" className="w-full h-auto pb-8 my-10 lg:my-20">
-      <div className="py-6">
-        <div className="w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
-          <h1 className={clsx(robotoSlab.className, "text-3xl font-bold mb-8")}>
+    <section id="portfolio" className="w-full h-auto set-page">
+      <div className="flex flex-col justify-center items-center">
+        <div className="w-full max-w-6xl flex m-auto flex-col justify-center items-center">
+          <h1
+            className={clsx(robotoSlab.className, "text-3xl font-bold mb-14")}
+          >
             {portfolio("title")}
           </h1>
           <div className="w-full max-w-6xl flex m-auto justify-center items-center ">

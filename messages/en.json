@@ -14,6 +14,10 @@
       "title": "Services",
       "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !"
     },
+    "faq": {
+      "title": "FAQ's",
+      "description": "Vous avez des questions ? Voici quelques réponses aux questions que l'on peut demander a un developpeur web freelace :"
+    },
     "blog": {
       "title": "Blog's",
       "description": "Découvrez mes articles sur le développement web, les technologies, et bien plus encore !"
@@ -24,20 +28,93 @@
     "portfolio": "Portfolio",
     "services": "Services",
     "contact": "Contact",
+    "faq": "FAQ's",
     "blog": "Blog's"
   },
-  "hero": {
-    "h1": "Developpeur Web Fullstack freelance",
-    "title": "Vicktor Juhel",
-    "description": {
-      "p1": "You're looking for a young,",
-      "p1-1": "dynamic and motivated Web Developer",
-      "p1-2": "for a short or long-term assignment.",
-      "p2": "On fixed-term or permanent contract or even freelance,",
-      "p2-1": "I offer you",
-      "p2-2": "my skills and experience.",
-      "p3": "Are you interested in my profile?",
-      "btn": "Contact me!"
+  "faq": {
+    "title": "FAQ's",
+    "description": "Vous avez des questions ? Voici quelques réponses aux questions les plus fréquemment posées :",
+    "questions": {
+      "q1": {
+        "title": "Quels sont vos tarifs ?",
+        "description": "Mes tarifs varient en fonction de la complexité de votre projet. N&apos;hésitez pas à me contacter pour obtenir un devis personnalisé !"
+      },
+      "q2": {
+        "title": "Quelle est votre disponibilité ?",
+        "description": "Je suis disponible pour des missions de courte ou longue durée. N&apos;hésitez pas à me contacter pour discuter de votre projet !"
+      },
+      "q3": {
+        "title": "Quels sont vos délais de livraison ?",
+        "description": "Les délais de livraison varient en fonction de la complexité de votre projet. N&apos;hésitez pas à me contacter pour obtenir un devis personnalisé !"
+      },
+      "q4": {
+        "title": "Quels sont vos moyens de paiement ?",
+        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N&apos;hésitez pas à me contacter pour obtenir plus d&apos;informations !"
+      }
+    }
+  },
+  "home": {
+    "about": {
+      "title": "About me",
+      "description": {
+        "p1": "👋 Hi !<br/>I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in front-end and back-end programming.",
+        "p2": "🛠️ Technical skills:<br/>I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create SSR (Server-Side Rendering) and SSG (Static Site Generation) components.",
+        "p3": "🤝 Let's work together!<br/>If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
+      },
+      "skills": {
+        "title": "Skills",
+        "description": "Here are the technologies I use on a daily basis:"
+      }
+    },
+    "hero": {
+      "h1": "Developpeur Web Fullstack freelance",
+      "title": "Vicktor Juhel",
+      "description": {
+        "p1": "You're looking for a young,",
+        "p1-1": "dynamic and motivated Web Developer",
+        "p1-2": "for a short or long-term assignment.",
+        "p2": "On fixed-term or permanent contract or even freelance,",
+        "p2-1": "I offer you",
+        "p2-2": "my skills and experience.",
+        "p3": "Are you interested in my profile?",
+        "btn": "Contact me!"
+      }
+    },
+    "HomeServices": {
+      "title": "My offerings",
+      "nextjs": {
+        "title": "Developpement avec NextJs",
+        "strong": "Next.js",
+        "description": "aide à construire des sites web rapides qui s'affichent mieux dans les résultats de recherche, en rendant vos pages plus accessibles aux moteurs de recherche et améliorant l'expérience de vos visiteurs."
+      },
+      "wordpress": {
+        "title": "Developpement avec WordPress",
+        "strong": "WordPress",
+        "description": "est un système de gestion de contenu (CMS) open source qui permet de créer et de gérer facilement des sites web dynamiques, des blogs et des applications."
+      },
+      "btn1": "Voir mes offres",
+      "btn2": "Articles"
+    },
+    "HomePortfolio": {
+      "title": "Portfolio",
+      "description": "This is my portfolio, where you can find some of the projects I've worked on:",
+      "btn": "Show my projects"
+    },
+    "freelance": {
+      "title": "I'm a freelancer",
+      "tarifs": "My freelance rates",
+      "tjm": "Developpeur Web ADR",
+      "day": "Day",
+      "list": {
+        "design": "Design",
+        "optimisation": "Optimization",
+        "solution": "Adapted Solution",
+        "rapide": "Fast website",
+        "responsive": "Responsive",
+        "seo": "SEO",
+        "authentification": "Authentification",
+        "analytique": "Analytics"
+      }
     }
   },
   "works": {
@@ -48,18 +125,7 @@
     "title": "Mes projets",
     "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
   },
-  "about": {
-    "title": "About me",
-    "description": {
-      "p1": "👋 Hi !</br>I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in <b>front-end</b> and <b>back-end</b> programming.",
-      "p2": "🛠️ Technical skills:<br/>I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create <b>SSR</b> (Server-Side Rendering) and <b>SSG</b> (Static Site Generation) components.",
-      "p3": "🤝 Let's work together!<br/>If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
-    },
-    "skills": {
-      "title": "Skills",
-      "description": "Here are the technologies I use on a daily basis:"
-    }
-  },
+
   "services": {
     "title": "Services",
     "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
@@ -76,7 +142,46 @@
         "title": "Formule Sur-mesure",
         "description": "Vous avez un projet spécifique en tête ? Je vous propose une solution sur-mesure, adaptée à vos besoins, pour répondre à vos besoins spécifiques."
       }
-    }
+    },
+    "card": {
+      "title": "A Quel Prix ?",
+      "vitrine": {
+        "title": "Site Vitrine",
+        "description": "Lancez votre présence en ligne avec un site vitrine.",
+        "list": {
+          "li1": "Design personnalisé et responsive",
+          "li2": "Optimisation SEO",
+          "li3": "Intégration de contenu jusqu’à 5 pages",
+          "li4": "Formulaire de contact sécurisé",
+          "li5": "Hébergement et nom de domaine pour 1 an inclus"
+        }
+      },
+      "ecommerce": {
+        "title": "Site E-commerce",
+        "description": "Commencez à vendre en ligne avec un site web de commerce électronique personnalisé.",
+        "list": {
+          "li1": "Gestion de Produits Intuitive",
+          "li2": "Panier d'Achat et Paiements Sécurisés",
+          "li3": "Personnalisation du Parcours Client          ",
+          "li4": "Outils de Marketing Intégrés",
+          "li5": "Analytique et Reporting          "
+        }
+      },
+      "surmesure": {
+        "title": "Site Custom",
+        "description": "Choisir un services avec plus de personnalisation",
+        "list": {
+          "li1": "Conception Sur Mesure",
+          "li2": "Fonctionnalités Avancées",
+          "li3": "Optimisation Performance",
+          "li4": "Accessibilité Web",
+          "li5": "Intégration de Systèmes Tiers",
+          "li6": "Conseil Stratégique"
+        }
+      }
+    },
+    "apartir": "Starting at",
+    "devis": "Prices on request"
   },
   "contact": {
     "title": "Contact me",

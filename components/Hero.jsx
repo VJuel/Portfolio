@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl"
 import { ButtonNav } from "@/components/ButtonNav"
 
 export default function Hero({ lang }) {
-  const t = useTranslations("hero")
+  const t = useTranslations("home.hero")
 
   return (
     <section
@@ -34,7 +34,13 @@ export default function Hero({ lang }) {
           <p className="mb-2 green animate-fade-in animation-delay-600">
             {t("description.p3")}
           </p>
-          <ButtonNav href="/contact" t={t("description.btn")} />
+          <div className="flex lg:justify-start lg:items-start justify-center items-center">
+            <ButtonNav
+              className="m-auto"
+              href="/contact"
+              t={t("description.btn")}
+            />
+          </div>
         </div>
         <ImageHero />
       </div>

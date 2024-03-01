@@ -34,7 +34,7 @@
   :root {
     --background: hsl(0 0% 100%);
     --dark: hsl(222.2 47.4% 11.2%);
-
+    --foreground: hwb(223 1% 91%);
     --muted: hsl(227 14% 38%);
     --muted-foreground: hsa(0 0% 91%);
 
@@ -93,12 +93,24 @@
     @apply font-normal monterrat;
   }
 
-  button {
-    background-color: initial;
-  }
-
   .absolute-default {
     @apply top-0 left-0 h-full w-full;
+  }
+}
+
+.set-page {
+  @apply py-28 sm:py-[5rem] md:py-[6rem] lg:py-28;
+}
+
+.margin-section {
+  padding: 100px 0 100px 0;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-section {
+    padding: 70px 0 70px 0;
+    margin: 0 auto;
   }
 }
 
@@ -137,6 +149,9 @@
 }
 
 /* Nav */
+#nav {
+  @apply hidden lg:flex justify-start lg:justify-end items-start lg:items-center;
+}
 #nav a:hover {
   @apply text-slate-600;
 }
@@ -203,8 +218,14 @@ a {
   }
 }
 
+@media (max-width: 1024px) {
+  .border-nav:before {
+    left: -15px;
+  }
+}
+
 #menu-toggle:checked ~ nav {
-  opacity: 1;
+  display: flex;
   transform: translateY(0);
 }
 
@@ -569,4 +590,9 @@ section > div > h2 {
 /* Services */
 .stroke-text {
   -webkit-text-stroke: 1px black;
+}
+
+.shadow-freelance {
+  box-shadow: 0 0 0.2rem #06d6a0, 0 0 0.8rem #06d6a0, 0 0 2rem #06d6a0,
+    0 0 0.8rem #06d6a0, 0 0 2.8rem #06d6a0, inset 0 0 1.3rem #06d6a0;
 }

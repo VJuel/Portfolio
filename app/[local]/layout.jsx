@@ -7,8 +7,7 @@ import { unstable_setRequestLocale } from "next-intl/server"
 import { getTranslations } from "next-intl/server"
 import MyCustomNextIntlClientProvider from "@/src/features/providers/MyCustomNextIntlClientProvider"
 import { locales } from "@/config"
-const timeZone = "Europe/Paris"
-import { useMessages } from "next-intl"
+import Reseaux from "@/components/Reseaux"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -25,7 +24,6 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function RootLayout({ children, params }) {
   unstable_setRequestLocale(params.locale)
-  const messages = useMessages(params.locale)
   return (
     <html lang={params.local} className="w-full">
       <MyCustomNextIntlClientProvider locale={params.local}>
@@ -35,6 +33,7 @@ export default function RootLayout({ children, params }) {
           <NavBar lang={params.local} />
 
           <main className="flex flex-col justify-center items-start w-full">
+            <Reseaux />
             {children}
           </main>
           <Footer />

@@ -16,7 +16,7 @@ export default function IconCard({ icon, title, description }) {
         <CardTitle className="text-center mb-4">{title}</CardTitle>
         <Image src={icon} width={120} height={150} />
       </CardHeader>
-      <CardContent>{description}</CardContent>
+      <CardContent className="text-center">{description}</CardContent>
     </Card>
   )
 }

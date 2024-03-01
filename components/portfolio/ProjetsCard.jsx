@@ -89,7 +89,7 @@ export default function ProjetsCard({ portfolio }) {
         <Sheet key={project.title}>
           <SheetTrigger
             className={clsx(
-              "w-[calc(90%-1rem)] lg:w-[calc(40%-1rem)] h-[250px]"
+              "w-full md:w-[70%] lg:w-[calc(40%-1rem)] h-[250px]"
             )}
           >
             <div

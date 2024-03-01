@@ -14,12 +14,14 @@ export async function FormField({
   type,
 }) {
   const t = await getTranslations("contact.formSection")
-
   return (
     <>
       <div className="flex-col w-1/2">
-        <Label htmlFor={label}>{t(label + ".name")}</Label>
+        <Label htmlFor={label} className="text-[--text] lg:text-inherit">
+          {t(label + ".name")}
+        </Label>
         <Input
+          className="bg-background"
           placeholder={t(label + ".placeholder")}
           type="text"
           name={label}
@@ -34,8 +36,14 @@ export async function FormTextAreaField({ label, value }) {
 
   return (
     <>
-      <Label htmlFor={label}>Message</Label>
-      <Textarea name={label} placeholder={t(label)} />
+      <Label htmlFor={label} className="text-[--text] lg:text-inherit">
+        Message
+      </Label>
+      <Textarea
+        className=" bg-background"
+        name={label}
+        placeholder={t(label)}
+      />
     </>
   )
 }
@@ -47,8 +55,8 @@ export async function ButtonSumitContact() {
   return (
     <>
       <Button
-        className="flex justify-center items-center lg:w-fit text-center"
-        variable="default"
+        className="flex justify-center items-center w-fit text-center text-[--dark] font-semibold"
+        variant={"secondary"}
         type="submit"
         // value={pending ? t("pending") : t("btn")}
         // aria-disabled={pending}

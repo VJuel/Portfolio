@@ -21,6 +21,10 @@ module.exports = {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
+      backgroundImage: {
+        freelanceBg: "url('/home/globe-freelance.png')",
+        about: "url('/ellips-down-righte.png')",
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

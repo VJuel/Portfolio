@@ -1,12 +1,10 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import FormSection from "@/components/form/FormSection"
 import {
   FormField,
   FormTextAreaField,
   ButtonSumitContact,
 } from "@/components/form/FormFields"
-import { InputTest } from "@/components/InputTest"
-import { Faq } from "@/components/Faq"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 
@@ -20,15 +18,26 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function ContactPage(params) {
+  unstable_setRequestLocale(params.locale)
   const t = await getTranslations("contact")
 
   return (
-    <section id="contact" className="w-full h-auto pb-8">
-      <div className="py-6">
-        <div className="w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
-          <h1 className={clsx(robotoSlab.className, "text-3xl font-bold mb-8")}>
-            Contact me
+    <section
+      id="contact"
+      className="w-full lg:h-screen h-auto m-auto set-page lg:py-0 bg-gray-900 lg:bg-background"
+    >
+      <div className="w-full flex m-auto flex-col lg:flex-row justify-center items-center h-full">
+        <div className="flex justify-center items-center bg-gray-900 w-full md:w-[55%] h-full">
+          <h1
+            className={clsx(
+              robotoSlab.className,
+              "text-3xl font-bold text-secondary"
+            )}
+          >
+            {t("title")}
           </h1>
+        </div>
+        <div className="flex justify-center items-center w-full xs:w-[80%] lg:w-1/2 max-w-3xl px-4 mt-14 lg:mt-0">
           <FormSection>
             <div className="flex justify-center items-center [&>*:first-child]:pr-4">
               <FormField label={"name"} />
@@ -42,8 +51,6 @@ export default async function ContactPage(params) {
             <ButtonSumitContact />
           </FormSection>
         </div>
-
-        <Faq />
       </div>
     </section>
   )

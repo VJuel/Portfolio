@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en developpement de site web",
+    "title": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en optimisation de site web",
     "description": "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
     "contact": {
       "title": "Contactez-moi",
@@ -14,6 +14,10 @@
       "title": "Mes différents services",
       "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !"
     },
+    "faq": {
+      "title": "FAQ",
+      "description": "Vous avez des questions ? Voici quelques réponses aux questions que l'on peut demander a un developpeur web freelace :"
+    },
     "blog": {
       "title": "Blog's",
       "description": "Découvrez mes articles sur le développement web, les technologies, et bien plus encore !"
@@ -24,60 +28,150 @@
     "portfolio": "Portfolio",
     "services": "Services",
     "contact": "Contact",
+    "faq": "FAQ",
     "blog": "Blog's"
   },
-  "hero": {
-    "h1": "Developpeur Web Fullstack Freelance\nVicktor Juhel",
-    "title": "",
-    "description": {
-      "p1": "Vous recherchez un Developpeur Web",
-      "p1-1": "jeune, dynamique et motivé",
-      "p1-2": "pour une mission de courte ou longue durée.",
-      "p2": "Sous contrat en CDD ou CDI ou même Freelance,",
-      "p2-1": "je vous propose",
-      "p2-2": " mes compétences et mon expérience.",
-      "p3": "Mon profil vous intéresse ?",
-      "btn": "Contactez-moi !"
+  "home": {
+    "hero": {
+      "h1": "Developpeur Web Fullstack Freelance\nVicktor Juhel",
+      "title": "",
+      "description": {
+        "p1": "Vous recherchez un Developpeur Web",
+        "p1-1": "jeune, dynamique et motivé",
+        "p1-2": "pour une mission de courte ou longue durée.",
+        "p2": "Sous contrat en CDD ou CDI ou même Freelance,",
+        "p2-1": "je vous propose",
+        "p2-2": " mes compétences et mon expérience.",
+        "p3": "Mon profil vous intéresse ?",
+        "btn": "Contactez-moi !"
+      }
+    },
+    "HomeServices": {
+      "title": "Mes Services",
+      "nextjs": {
+        "title": "Developpement avec NextJs",
+        "strong": "Next.js",
+        "description": "aide à construire des sites web rapides qui s'affichent mieux dans les résultats de recherche, en rendant vos pages plus accessibles aux moteurs de recherche et améliorant l'expérience de vos visiteurs."
+      },
+      "wordpress": {
+        "title": "Developpement avec WordPress",
+        "strong": "WordPress",
+        "description": "est un système de gestion de contenu (CMS) open source qui permet de créer et de gérer facilement des sites web dynamiques, des blogs et des applications."
+      },
+      "btn1": "Voir mes offres",
+      "btn2": "Articles"
+    },
+    "HomePortfolio": {
+      "title": "Portfolio",
+      "description": "Voici quelques projets sur lesquels j'ai travaillé",
+      "btn": "Voir mes réalisations"
+    },
+    "freelance": {
+      "title": "Je suis Freelance",
+      "tarifs": "Mes Tarifs freelance",
+      "tjm": "Developpeur Web TJM",
+      "day": "Jour",
+      "list": {
+        "design": "Design",
+        "optimisation": "Optimisation",
+        "solution": "Solution Adapte",
+        "rapide": "Site rapide",
+        "responsive": "Responsive",
+        "seo": "SEO",
+        "authentification": "Authentification",
+        "analytique": "Analytique"
+      }
+    },
+    "about": {
+      "title": "A propos de moi",
+      "description": {
+        "p1": "👋 Salut !<br/>Je suis passionné par le monde du Développement Web. <br /> Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une solide expertise en programmation front-end et back-end.",
+        "p2": "🛠️ Compétences techniques:<br/>Je suis spécialisé dans la création de sites et applications web. <br /> Ma pile technologique comprend des technologies modernes comme React et Next.js, ce qui me permet de développer des solutions rapides, évolutives et de créer des composants SSR (Server-Side Rendering) et SSG (Static Site Generation).",
+        "p3": "🤝 Travaillons ensemble !<br/>Si vous cherchez quelqu&apos;un qui peut transformer votre idée en une solution digitale complète, n&apos;hésitez pas à me contacter. Ensemble, transformons vos idées en réalité !"
+      },
+      "skills": {
+        "title": "Compétences",
+        "description": "Voici les technologies que j&apos;utilise au quotidien :"
+      }
     }
-  },
-  "HomePortfolio": {
-    "title": "Portfolio",
-    "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :",
-    "btn": "Voir mex "
   },
   "portfolio": {
     "title": "Mes projets",
     "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
   },
-  "about": {
-    "title": "A propos de moi",
-    "description": {
-      "p1": "👋 Salut !<br/>Je suis passionné par le monde du Développement Web. <br /> Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une solide expertise en programmation front-end et back-end.",
-      "p2": "🛠️ Compétences techniques:<br/>Je suis spécialisé dans la création de sites et applications web. <br /> Ma pile technologique comprend des technologies modernes comme React et Next.js, ce qui me permet de développer des solutions rapides, évolutives et de créer des composants SSR (Server-Side Rendering) et SSG (Static Site Generation).",
-      "p3": "🤝 Travaillons ensemble !<br/>Si vous cherchez quelqu&apos;un qui peut transformer votre idée en une solution digitale complète, n&apos;hésitez pas à me contacter. Ensemble, transformons vos idées en réalité !"
-    },
-    "skills": {
-      "title": "Compétences",
-      "description": "Voici les technologies que j&apos;utilise au quotidien :"
-    }
-  },
   "services": {
     "title": "Services",
     "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
+    "solutions": {
+      "title": "Transformez Votre Vision en Réalité avec les solutions Next.js et WordPress",
+      "description": "Le choix de la solutions depend de vos besoins et objectifs",
+      "nextjs": {
+        "title": "Next.js",
+        "description": "Framework React pour la creation de site web"
+      },
+      "wordpress": {
+        "title": "WordPress",
+        "description": "CMS pour la creation de site web"
+      }
+    },
     "formule": {
+      "title": "Quel Site Web pour Votre Entreprise ?",
       "vitrine": {
-        "title": "Formule Vitrine",
-        "description": "Vous avez besoin d&apos;un site web vitrine pour présenter votre entreprise, vos services, ou vos produits ? Je vous propose une solution sur-mesure, adaptée à vos besoins."
+        "title": "Site Vitrine",
+        "description": "Élevez Votre Présence en Ligne :",
+        "text": "Notre service de création de site vitrine est la solutionidéale pour les entreprises souhaitant marquer leur présencesur le web avec élégance et professionnalisme. Nous vousoffrons un design responsive, une optimisation SEO de pointe,une intégration fluide des réseaux sociaux, et un système degestion de contenu intuitif pour une mise à jour facile devotre site."
       },
       "ecommerce": {
-        "title": "Formule E-commerce",
-        "description": "Vous souhaitez vendre vos produits en ligne ? Je vous propose une solution e-commerce complète, avec un design personnalisé et des fonctionnalités avancées."
+        "title": "Site E-commerce",
+        "description": "Transformez les Clics en Clients :",
+        "text": "Notre plateforme e-commerce sur mesure vous permet de vendrevos produits et services en ligne avec efficacité et sécurité.Profitez d'une gestion intuitive de vos produits, de processusde paiement sécurisés, d'expériences d'achat personnalisées, d'outils de marketing intégrés, et d'analyses en temps réelpour booster vos ventes."
       },
       "surmesure": {
-        "title": "Formule Sur-mesure",
-        "description": "Vous avez un projet spécifique en tête ? Je vous propose une solution sur-mesure, adaptée à vos besoins, pour répondre à vos besoins spécifiques."
+        "title": "Site Custom",
+        "description": "Conception Unique pour Visions Uniques :",
+        "text": "Chaque entreprise est unique, et votre site web devrait l'êtreaussi. Notre service de site personnalisé se concentre sur lacréation de concepts de design créatifs, l'intégration defonctionnalités avancées et interactives, une stratégie SEOcomplète, et une expérience utilisateur personnalisée pourrépondre précisément à vos besoins et objectifs."
       }
-    }
+    },
+    "card": {
+      "title": "A Quel Prix ?",
+      "vitrine": {
+        "title": "Site Vitrine",
+        "description": "Lancez votre présence en ligne avec un site vitrine.",
+        "list": {
+          "li1": "Design personnalisé et responsive",
+          "li2": "Optimisation SEO",
+          "li3": "Intégration de contenu jusqu’à 5 pages",
+          "li4": "Formulaire de contact sécurisé",
+          "li5": "Hébergement et nom de domaine pour 1 an inclus"
+        }
+      },
+      "ecommerce": {
+        "title": "Site E-commerce",
+        "description": "Commencez à vendre en ligne avec un site web de commerce électronique personnalisé.",
+        "list": {
+          "li1": "Gestion de Produits Intuitive",
+          "li2": "Panier d'Achat et Paiements Sécurisés",
+          "li3": "Personnalisation du Parcours Client          ",
+          "li4": "Outils de Marketing Intégrés",
+          "li5": "Analytique et Reporting          "
+        }
+      },
+      "surmesure": {
+        "title": "Site Custom",
+        "description": "Choisir un services avec plus de personnalisation",
+        "list": {
+          "li1": "Conception Sur Mesure",
+          "li2": "Fonctionnalités Avancées",
+          "li3": "Optimisation Performance",
+          "li4": "Accessibilité Web",
+          "li5": "Intégration de Systèmes Tiers",
+          "li6": "Conseil Stratégique"
+        }
+      }
+    },
+    "apartir": "A partir de",
+    "devis": "Prix sur devis",
+    "gratuit": "Devis gratuit"
   },
   "contact": {
     "title": "Contactez-moi",
@@ -101,6 +195,36 @@
       "message": "J'aimerais rentrer en contact avec vous pour...",
       "btn": "Envoyer moi un e-mail !",
       "pending": "Envoi en cours..."
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "description": "Vous avez des questions ? Voici quelques réponses aux questions les plus fréquemment posées :",
+    "questions": {
+      "q1": {
+        "title": "Quels sont mes tarifs ?",
+        "description": "Mes tarifs varient en fonction de la complexité de votre projet. N'hésitez pas à me contacter pour obtenir un devis personnalisé et gratuit!"
+      },
+      "q2": {
+        "title": "Comment me contacter ?",
+        "description": "Je suis disponible pour des missions de courte ou longue durée. N'hésitez pas à me contacter pour discuter de votre projet !"
+      },
+      "q3": {
+        "title": "Quels outils de programmation j'utilise ?",
+        "description": "Les délais de livraison varient en fonction de la complexité de votre projet. N'hésitez pas à me contacter pour obtenir un devis personnalisé !"
+      },
+      "q4": {
+        "title": "Comment je m'occupe de l'hebergement ?",
+        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
+      },
+      "q5": {
+        "title": "Quels sont mes moyens de paiement ?",
+        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
+      },
+      "q6": {
+        "title": "Quels sont mes moyens de paiement ?",
+        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
+      }
     }
   },
   "LocaleSwitcher": {
