@@ -2,12 +2,8 @@
 import { useEffect } from "react"
 import { useFormStatus, useFormState } from "react-dom"
 import sendEmail from "@/lib/actions"
-import {
-  renderToastErrorComponent,
-  renderToastSendComponent,
-} from "@/components/Toasts"
 import { useRouter } from "next/navigation"
-import { revalidePath } from "next/cache"
+import { useToast } from "@/components/ui/use-toast"
 
 const initialState = {
   message: null,
@@ -18,18 +14,24 @@ export default function FormSection({ children }) {
   const status = useFormStatus()
   const errorForm = "text-red-500 text-sm"
   const router = useRouter()
+  const { toast } = useToast()
 
   async function senderEmail(state, formData) {
     const { results, error } = await sendEmail(state, formData)
-    const { toast } = useToast()
 
     if (results?.ok) {
-      return { message: "Votre message a bien été envoyé." }
+      toast({
+        title: "Message envoyé",
+        description: "Votre message a bien été envoyé.",
+      })
     } else {
-      return renderToastErrorComponent(error)
+      return toast({
+        variant: "destructive",
+        title: error,
+      })
     }
 
-    revalidePath("/contact")
+    // formData.reset()
   }
 
   useEffect(() => {

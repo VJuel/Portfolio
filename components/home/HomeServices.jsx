@@ -36,7 +36,7 @@ export default function HomeServices() {
             <CardHeader>
               <CardTitle>{t("nextjs.title")}</CardTitle>
             </CardHeader>
-            <CardContent className="text-center lg:text-left">
+            <CardContent className="text-justify">
               <strong>{t("nextjs.strong")}</strong> {t("nextjs.description")}
             </CardContent>
             <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1">
@@ -56,13 +56,11 @@ export default function HomeServices() {
               className="h-[200px]"
             />
             <CardHeader>
-              <CardTitle>Developpemnt avec Wordpress</CardTitle>
+              <CardTitle>{t("wordpress.title")}</CardTitle>
             </CardHeader>
-            <CardContent className="text-center lg:text-left">
-              <strong>WordPress</strong> est la solution idéale pour créer
-              facilement votre site web ou blog, offrant une grande variété de
-              designs et la possibilité d'ajouter des fonctionnalités selon vos
-              besoins.
+            <CardContent className="text-justify">
+              <strong>{t("wordpress.strong")}</strong>{" "}
+              {t("wordpress.description")}
               <br />
               <br className="hidden md:block" />
             </CardContent>

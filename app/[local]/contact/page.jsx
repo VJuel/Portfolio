@@ -27,15 +27,17 @@ export default async function ContactPage(params) {
       className="w-full lg:h-screen h-auto m-auto set-page lg:py-0 bg-gray-900 lg:bg-background"
     >
       <div className="w-full flex m-auto flex-col lg:flex-row justify-center items-center h-full">
-        <div className="flex justify-center items-center bg-gray-900 w-full md:w-[55%] h-full">
+        <div className="flex justify-center items-center flex-col bg-gray-900 w-full md:w-[55%] h-full">
           <h1
             className={clsx(
               robotoSlab.className,
-              "text-3xl font-bold text-secondary"
+              "text-5xl font-bold text-secondary mb-6"
             )}
           >
             {t("title")}
           </h1>
+          <h2 className="text-[--accent]">{t("description")}</h2>
+          <h2 className="text-[--accent]">{t("description2")}</h2>
         </div>
         <div className="flex justify-center items-center w-full xs:w-[80%] lg:w-1/2 max-w-3xl px-4 mt-14 lg:mt-0">
           <FormSection>

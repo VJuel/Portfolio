@@ -14,10 +14,10 @@ export function ButtonToTop() {
   return (
     <>
       <Button
-        className="absolute bottom-10 right-6 lg:bottom-10 lg:right-10 rounded-[100%] shadow-xl w-12 h-12 flex justify-center items-center bg-primary text-secondary text-xl"
+        className="absolute bottom-10 right-6 lg:bottom-10 lg:right-10 rounded-[100%] shadow-xl w-10 h-10 md:w-12 md:h-12 flex justify-center items-center bg-primary text-secondary text-xl"
         onClick={topFunction}
       >
-        <FaArrowUp />
+        <FaArrowUp size={32} />
       </Button>
     </>
   )

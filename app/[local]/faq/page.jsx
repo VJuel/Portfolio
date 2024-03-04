@@ -69,7 +69,7 @@ export default function Faq() {
               >
                 {notification.title}
               </h2>
-              <p className="text-md text-black mb-10">
+              <p className="text-md text-black mb-10 pr-6">
                 {faq("questions.q" + notification.id + ".description")}
               </p>
             </div>

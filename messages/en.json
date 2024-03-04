@@ -25,47 +25,17 @@
   },
   "nav": {
     "home": "Home",
-    "portfolio": "Portfolio",
-    "services": "Services",
+    "portfolio": "Projects",
+    "services": "Offerings",
     "contact": "Contact",
     "faq": "FAQ's",
     "blog": "Blog's"
   },
-  "faq": {
-    "title": "FAQ's",
-    "description": "Vous avez des questions ? Voici quelques réponses aux questions les plus fréquemment posées :",
-    "questions": {
-      "q1": {
-        "title": "Quels sont vos tarifs ?",
-        "description": "Mes tarifs varient en fonction de la complexité de votre projet. N&apos;hésitez pas à me contacter pour obtenir un devis personnalisé !"
-      },
-      "q2": {
-        "title": "Quelle est votre disponibilité ?",
-        "description": "Je suis disponible pour des missions de courte ou longue durée. N&apos;hésitez pas à me contacter pour discuter de votre projet !"
-      },
-      "q3": {
-        "title": "Quels sont vos délais de livraison ?",
-        "description": "Les délais de livraison varient en fonction de la complexité de votre projet. N&apos;hésitez pas à me contacter pour obtenir un devis personnalisé !"
-      },
-      "q4": {
-        "title": "Quels sont vos moyens de paiement ?",
-        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N&apos;hésitez pas à me contacter pour obtenir plus d&apos;informations !"
-      }
-    }
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, fr {FR} en {EN} other {Unknown}}"
   },
   "home": {
-    "about": {
-      "title": "About me",
-      "description": {
-        "p1": "👋 Hi !<br/>I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in front-end and back-end programming.",
-        "p2": "🛠️ Technical skills:<br/>I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create SSR (Server-Side Rendering) and SSG (Static Site Generation) components.",
-        "p3": "🤝 Let's work together!<br/>If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
-      },
-      "skills": {
-        "title": "Skills",
-        "description": "Here are the technologies I use on a daily basis:"
-      }
-    },
     "hero": {
       "h1": "Developpeur Web Fullstack freelance",
       "title": "Vicktor Juhel",
@@ -85,19 +55,21 @@
       "nextjs": {
         "title": "Developpement avec NextJs",
         "strong": "Next.js",
-        "description": "aide à construire des sites web rapides qui s'affichent mieux dans les résultats de recherche, en rendant vos pages plus accessibles aux moteurs de recherche et améliorant l'expérience de vos visiteurs."
+        "description": "helps you build fast websites that display better in search results, making your pages more accessible to search engines and improving your visitors' experience."
       },
       "wordpress": {
         "title": "Developpement avec WordPress",
         "strong": "WordPress",
-        "description": "est un système de gestion de contenu (CMS) open source qui permet de créer et de gérer facilement des sites web dynamiques, des blogs et des applications."
+        "description": "is the ideal solution for easily creating your website or blog, offering a wide variety of designs and the possibility of adding features to suit your needs."
       },
       "btn1": "Voir mes offres",
       "btn2": "Articles"
     },
     "HomePortfolio": {
       "title": "Portfolio",
-      "description": "This is my portfolio, where you can find some of the projects I've worked on:",
+      "description1": "This is my portfolio, where you can find some of the projects I've worked on,",
+      "description2": "to help you discover",
+      "description3": "my skills and experience.",
       "btn": "Show my projects"
     },
     "freelance": {
@@ -115,76 +87,107 @@
         "authentification": "Authentification",
         "analytique": "Analytics"
       }
+    },
+    "about": {
+      "title": "About me",
+      "title1": "👋 Hi!",
+      "title2": "🛠️ Technical skills",
+      "title3": "🤝 Let's work together!",
+      "description": {
+        "p1": "I'm passionate about the world of Web Development. With several years of experience, I've been able to acquire solid expertise in front-end and back-end programming.",
+        "p2": "I specialize in the creation of web sites and applications. My technology stack includes modern technologies like React and Next.js, enabling me to develop fast, scalable solutions and create SSR (Server-Side Rendering) and SSG (Static Site Generation) components.",
+        "p3": "If you're looking for someone who can turn your idea into a complete digital solution, don't hesitate to contact me. Let's work together to turn your ideas into reality!"
+      },
+      "skills": {
+        "title": "Skills",
+        "description": "Here are the technologies I use on a daily basis:"
+      }
     }
   },
-  "works": {
+  "portfolio": {
     "title": "My projects",
     "description": "Here are some of the projects I've worked on:"
   },
-  "portfolio": {
-    "title": "Mes projets",
-    "description": "Voici quelques projets sur lesquels j&apos;ai travaillé :"
-  },
-
   "services": {
-    "title": "Services",
-    "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
+    "title": "Offerings",
+    "description": "I offer my services for the creation of websites, web applications, and much more. Discover my skills and experience!",
+    "solutions": {
+      "title": "Turn Your Vision into Reality with Next.js and WordPress solutions",
+      "description": "I'll choose a solution tailored to your needs and objectives",
+      "nextjs": {
+        "title": "Next.js",
+        "description": "Framework React"
+      },
+      "wordpress": {
+        "title": "WordPress",
+        "description": "CMS"
+      }
+    },
     "formule": {
+      "title": "Which website for your company?",
       "vitrine": {
-        "title": "Formule Vitrine",
-        "description": "Vous avez besoin d&apos;un site web vitrine pour présenter votre entreprise, vos services, ou vos produits ? Je vous propose une solution sur-mesure, adaptée à vos besoins."
+        "title": "Showcase site",
+        "description": "Raise Your Online Presence:",
+        "text": "Our website creation service is the ideal solution for companies wishing to mark their presence on the web with elegance and professionalism.",
+        "text2": "We offer you responsive design, SEO optimization and seamless integration of your site's social networks..."
       },
       "ecommerce": {
-        "title": "Formule E-commerce",
-        "description": "Vous souhaitez vendre vos produits en ligne ? Je vous propose une solution e-commerce complète, avec un design personnalisé et des fonctionnalités avancées."
+        "title": "E-commerce site",
+        "description": "Turn Clicks into Customers:",
+        "text": "Our tailor-made e-commerce platform enables you to sell your products and services online efficiently and securely.",
+        "text2": "Benefit from intuitive product management, secure payment processes, personalized shopping experiences, integrated marketing tools and real-time analytics to boost your sales."
       },
       "surmesure": {
-        "title": "Formule Sur-mesure",
-        "description": "Vous avez un projet spécifique en tête ? Je vous propose une solution sur-mesure, adaptée à vos besoins, pour répondre à vos besoins spécifiques."
+        "title": "Custom site",
+        "description": "Unique Design for Unique Visions:",
+        "text": "Every business is unique, and your website should be too. Our custom website service focuses on the creation of creative design concepts, the integration of advanced and interactive features, a comprehensive SEO strategy, and a personalized user experience to meet your precise needs and objectives."
       }
     },
     "card": {
-      "title": "A Quel Prix ?",
+      "title": "At what price?",
       "vitrine": {
-        "title": "Site Vitrine",
-        "description": "Lancez votre présence en ligne avec un site vitrine.",
+        "title": "Showcase site",
+        "description": "Launch your online presence with a showcase site.",
         "list": {
-          "li1": "Design personnalisé et responsive",
-          "li2": "Optimisation SEO",
-          "li3": "Intégration de contenu jusqu’à 5 pages",
-          "li4": "Formulaire de contact sécurisé",
-          "li5": "Hébergement et nom de domaine pour 1 an inclus"
+          "li1": "Customized, responsive design",
+          "li2": "SEO optimization",
+          "li3": "Content integration for up to 5 pages",
+          "li4": "Secure contact form",
+          "li5": "Hosting and domain name for 1 year included"
         }
       },
       "ecommerce": {
-        "title": "Site E-commerce",
-        "description": "Commencez à vendre en ligne avec un site web de commerce électronique personnalisé.",
+        "title": "E-commerce site",
+        "description": "Start selling online with a personalized website.",
         "list": {
-          "li1": "Gestion de Produits Intuitive",
-          "li2": "Panier d'Achat et Paiements Sécurisés",
-          "li3": "Personnalisation du Parcours Client          ",
-          "li4": "Outils de Marketing Intégrés",
-          "li5": "Analytique et Reporting          "
+          "li1": "Intuitive Product Management",
+          "li2": "Shopping Cart and Secure Payments",
+          "li3": "Personalizing the customer journey",
+          "li4": "Integrated Marketing Tools",
+          "li5": "Analytics and Reporting"
         }
       },
       "surmesure": {
-        "title": "Site Custom",
-        "description": "Choisir un services avec plus de personnalisation",
+        "title": "Custom site",
+        "description": "Choose a service with more personalization",
         "list": {
-          "li1": "Conception Sur Mesure",
-          "li2": "Fonctionnalités Avancées",
-          "li3": "Optimisation Performance",
-          "li4": "Accessibilité Web",
-          "li5": "Intégration de Systèmes Tiers",
-          "li6": "Conseil Stratégique"
+          "li1": "Custom design",
+          "li2": "Advanced features",
+          "li3": "Optimization Performance",
+          "li4": "Web accessibility",
+          "li5": "Third-Party Systems Integration",
+          "li6": "Strategic Consulting"
         }
       }
     },
     "apartir": "Starting at",
-    "devis": "Prices on request"
+    "devis": "Prices on request",
+    "gratuit": "Free quotation"
   },
   "contact": {
     "title": "Contact me",
+    "description": "Do you have a project in mind?",
+    "description2": "Don't hesitate to contact me to discuss your project!",
     "formSection": {
       "name": {
         "name": "Name",
@@ -207,9 +210,35 @@
       "pending": "Sending..."
     }
   },
-  "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, fr {FR} en {EN} other {Unknown}}"
+  "faq": {
+    "title": "FAQ",
+    "description": "Vous avez des questions ? Voici quelques réponses aux questions les plus fréquemment posées :",
+    "questions": {
+      "q1": {
+        "title": "What programming tools do I use?",
+        "description": "I work with modern technologies like React, Next.js, WordPress."
+      },
+      "q2": {
+        "title": "How can you contact me?",
+        "description": "You can contact me by e-mail, telephone or via the contact form on my website."
+      },
+      "q3": {
+        "title": "What are my rates?",
+        "description": "My rates vary according to the complexity of your project. Don't hesitate to contact me for a free personalized quote!"
+      },
+      "q4": {
+        "title": "How do I arrange accommodation?",
+        "description": "Hosting is included in my offers. I take care of everything for you, from buying the domain name to putting your website online."
+      },
+      "q5": {
+        "title": "What are my payment options?",
+        "description": "I offer several payment methods, including bank transfers and online payments. Don't hesitate to contact me for more information!"
+      },
+      "q6": {
+        "title": "How do I choose the right solution?",
+        "description": "After studying your project, I'll choose the solution best suited to your needs and expectations."
+      }
+    }
   },
   "footer": {
     "description": "Fullstack Web Developer",

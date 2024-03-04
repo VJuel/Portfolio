@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en optimisation de site web",
-    "description": "Portfolio Vicktor Juhel, Developpeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
+    "description": "Portfolio Vicktor Juhel, Développeur Web Full Stack en Freelance et à votre service pour n'importe quel mission plus ou moins longue, n'hésitez pas à me contacter",
     "contact": {
       "title": "Contactez-moi",
       "description": "Vous avez un projet en tête ? Vous cherchez un développeur web pour une mission de courte ou longue durée ? N&apos;hésitez pas à me contacter pour discuter de votre projet !"
@@ -29,19 +29,19 @@
     "services": "Services",
     "contact": "Contact",
     "faq": "FAQ",
-    "blog": "Blog's"
+    "blog": "Blog"
   },
   "home": {
     "hero": {
-      "h1": "Developpeur Web Fullstack Freelance\nVicktor Juhel",
+      "h1": "Développeur Web Fullstack Freelance\nVicktor Juhel",
       "title": "",
       "description": {
         "p1": "Vous recherchez un Developpeur Web",
         "p1-1": "jeune, dynamique et motivé",
         "p1-2": "pour une mission de courte ou longue durée.",
-        "p2": "Sous contrat en CDD ou CDI ou même Freelance,",
-        "p2-1": "je vous propose",
-        "p2-2": " mes compétences et mon expérience.",
+        "p2": "Je vous propose mes compétences et mon expérience,",
+        "p2-1": "sous contrat Freelance, et même CDD ou CDI.",
+        "p2-2": "",
         "p3": "Mon profil vous intéresse ?",
         "btn": "Contactez-moi !"
       }
@@ -49,12 +49,12 @@
     "HomeServices": {
       "title": "Mes Services",
       "nextjs": {
-        "title": "Developpement avec NextJs",
+        "title": "Développement avec NextJs",
         "strong": "Next.js",
         "description": "aide à construire des sites web rapides qui s'affichent mieux dans les résultats de recherche, en rendant vos pages plus accessibles aux moteurs de recherche et améliorant l'expérience de vos visiteurs."
       },
       "wordpress": {
-        "title": "Developpement avec WordPress",
+        "title": "Développement avec WordPress",
         "strong": "WordPress",
         "description": "est un système de gestion de contenu (CMS) open source qui permet de créer et de gérer facilement des sites web dynamiques, des blogs et des applications."
       },
@@ -63,13 +63,15 @@
     },
     "HomePortfolio": {
       "title": "Portfolio",
-      "description": "Voici quelques projets sur lesquels j'ai travaillé",
+      "description1": "Voici des projets sur lesquels j'ai travaillé",
+      "description2": "pour vous permettre de découvrir",
+      "description3": "mes compétences et mon expérience.",
       "btn": "Voir mes réalisations"
     },
     "freelance": {
       "title": "Je suis Freelance",
       "tarifs": "Mes Tarifs freelance",
-      "tjm": "Developpeur Web TJM",
+      "tjm": "Développeur Web TJM",
       "day": "Jour",
       "list": {
         "design": "Design",
@@ -84,10 +86,13 @@
     },
     "about": {
       "title": "A propos de moi",
+      "title1": "👋 Salut !",
+      "title2": "🛠️ Compétences techniques :",
+      "title3": "🤝 Travaillons ensemble !",
       "description": {
-        "p1": "👋 Salut !<br/>Je suis passionné par le monde du Développement Web. <br /> Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une solide expertise en programmation front-end et back-end.",
-        "p2": "🛠️ Compétences techniques:<br/>Je suis spécialisé dans la création de sites et applications web. <br /> Ma pile technologique comprend des technologies modernes comme React et Next.js, ce qui me permet de développer des solutions rapides, évolutives et de créer des composants SSR (Server-Side Rendering) et SSG (Static Site Generation).",
-        "p3": "🤝 Travaillons ensemble !<br/>Si vous cherchez quelqu&apos;un qui peut transformer votre idée en une solution digitale complète, n&apos;hésitez pas à me contacter. Ensemble, transformons vos idées en réalité !"
+        "p1": "Je suis passionné par le monde du Développement Web. <br /> Avec plusieurs années d&apos;expérience, j&apos;ai pu acquérir une solide expertise en programmation front-end et back-end.",
+        "p2": "Je suis spécialisé dans la création de sites et applications web. <br /> Ma pile technologique comprend des technologies modernes comme React et Next.js, ce qui me permet de développer des solutions rapides, évolutives et de créer des composants SSR (Server-Side Rendering) et SSG (Static Site Generation).",
+        "p3": "Si vous cherchez quelqu&apos;un qui peut transformer votre idée en une solution digitale complète, n&apos;hésitez pas à me contacter. Ensemble, transformons vos idées en réalité !"
       },
       "skills": {
         "title": "Compétences",
@@ -104,14 +109,14 @@
     "description": "Je propose mes services pour la création de sites web, applications web, et bien plus encore. Découvrez mes compétences et mon expérience !",
     "solutions": {
       "title": "Transformez Votre Vision en Réalité avec les solutions Next.js et WordPress",
-      "description": "Le choix de la solutions depend de vos besoins et objectifs",
+      "description": "Je choisis pour vous, la solution personnalisée à vos besoins et vos objectifs",
       "nextjs": {
         "title": "Next.js",
-        "description": "Framework React pour la creation de site web"
+        "description": "Framework React"
       },
       "wordpress": {
         "title": "WordPress",
-        "description": "CMS pour la creation de site web"
+        "description": "CMS"
       }
     },
     "formule": {
@@ -119,17 +124,19 @@
       "vitrine": {
         "title": "Site Vitrine",
         "description": "Élevez Votre Présence en Ligne :",
-        "text": "Notre service de création de site vitrine est la solutionidéale pour les entreprises souhaitant marquer leur présencesur le web avec élégance et professionnalisme. Nous vousoffrons un design responsive, une optimisation SEO de pointe,une intégration fluide des réseaux sociaux, et un système degestion de contenu intuitif pour une mise à jour facile devotre site."
+        "text": "Notre service de création de site vitrine est la solution idéale pour les entreprises souhaitant marquer leur présence sur le web avec élégance et professionnalisme.",
+        "text2": "Nous vous offrons un design responsive, une optimisation du référencement et une intégration fluide des réseaux sociaux de votre site..."
       },
       "ecommerce": {
         "title": "Site E-commerce",
         "description": "Transformez les Clics en Clients :",
-        "text": "Notre plateforme e-commerce sur mesure vous permet de vendrevos produits et services en ligne avec efficacité et sécurité.Profitez d'une gestion intuitive de vos produits, de processusde paiement sécurisés, d'expériences d'achat personnalisées, d'outils de marketing intégrés, et d'analyses en temps réelpour booster vos ventes."
+        "text": "Notre plateforme e-commerce sur mesure vous permet de vendre vos produits et services en ligne avec efficacité et sécurité.",
+        "text2": "Profitez d'une gestion intuitive de vos produits, de processus de paiement sécurisés, d'expériences d'achats personnalisées, d'outils de marketing intégrés et d'analyses en temps réel pour booster vos ventes."
       },
       "surmesure": {
         "title": "Site Custom",
         "description": "Conception Unique pour Visions Uniques :",
-        "text": "Chaque entreprise est unique, et votre site web devrait l'êtreaussi. Notre service de site personnalisé se concentre sur lacréation de concepts de design créatifs, l'intégration defonctionnalités avancées et interactives, une stratégie SEOcomplète, et une expérience utilisateur personnalisée pourrépondre précisément à vos besoins et objectifs."
+        "text": "Chaque entreprise est unique, et votre site web devrait l'être aussi. Notre service de site personnalisé se concentre sur la création de concepts de design créatifs, l'intégration de fonctionnalités avancées et interactives, une stratégie SEO complète, et une expérience utilisateur personnalisée pour répondre précisément à vos besoins et objectifs."
       }
     },
     "card": {
@@ -147,10 +154,10 @@
       },
       "ecommerce": {
         "title": "Site E-commerce",
-        "description": "Commencez à vendre en ligne avec un site web de commerce électronique personnalisé.",
+        "description": "Commencez à vendre en ligne avec un site web personnalisé.",
         "list": {
           "li1": "Gestion de Produits Intuitive",
-          "li2": "Panier d'Achat et Paiements Sécurisés",
+          "li2": "Panier d'Achats et Paiements Sécurisés",
           "li3": "Personnalisation du Parcours Client          ",
           "li4": "Outils de Marketing Intégrés",
           "li5": "Analytique et Reporting          "
@@ -175,6 +182,8 @@
   },
   "contact": {
     "title": "Contactez-moi",
+    "description": "Vous avez un projet en tête ?",
+    "description2": "N'hésitez pas à me contacter pour discuter de votre projet !",
     "formSection": {
       "name": {
         "name": "Nom",
@@ -202,28 +211,28 @@
     "description": "Vous avez des questions ? Voici quelques réponses aux questions les plus fréquemment posées :",
     "questions": {
       "q1": {
-        "title": "Quels sont mes tarifs ?",
-        "description": "Mes tarifs varient en fonction de la complexité de votre projet. N'hésitez pas à me contacter pour obtenir un devis personnalisé et gratuit!"
+        "title": "Quels outils de programmation j'utilise ?",
+        "description": "Je travaille avec des technologies modernes comme React, Next.js, WordPress."
       },
       "q2": {
         "title": "Comment me contacter ?",
-        "description": "Je suis disponible pour des missions de courte ou longue durée. N'hésitez pas à me contacter pour discuter de votre projet !"
+        "description": "Vous pouvez me contacter par e-mail, téléphone ou via le formulaire de contact sur mon site web."
       },
       "q3": {
-        "title": "Quels outils de programmation j'utilise ?",
-        "description": "Les délais de livraison varient en fonction de la complexité de votre projet. N'hésitez pas à me contacter pour obtenir un devis personnalisé !"
+        "title": "Quels sont mes tarifs ?",
+        "description": "Mes tarifs varient en fonction de la complexité de votre projet. N'hésitez pas à me contacter pour obtenir un devis personnalisé et gratuit !"
       },
       "q4": {
-        "title": "Comment je m'occupe de l'hebergement ?",
-        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
+        "title": "Comment je m'occupe de l'hébergement ?",
+        "description": "L'hébergement est inclus dans mes offres. Je m'occupe de tout pour vous, de l'achat du nom de domaine à la mise en ligne de votre site web."
       },
       "q5": {
         "title": "Quels sont mes moyens de paiement ?",
         "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
       },
       "q6": {
-        "title": "Quels sont mes moyens de paiement ?",
-        "description": "Je propose plusieurs moyens de paiement, y compris les virements bancaires et les paiements en ligne. N'hésitez pas à me contacter pour obtenir plus d'informations !"
+        "title": "Comment je choisis la solution adaptée ?",
+        "description": "Je choisis pour vous après étude de votre projet, la solution personnalisée à votre demande et à vos attentes."
       }
     }
   },
@@ -234,12 +243,12 @@
   "footer": {
     "description": "Développeur Web Fullstack",
     "coordoneesTitle": "Mes Coordonnées",
-    "coordoneesTel": "Telephone",
+    "coordoneesTel": "Télephone",
     "coordoneesEmail": "E-mail",
-    "coordoneesAdress": "Addresse",
-    "leftTitle": "Développeur Informatique indépendant",
+    "coordoneesAdress": "Adresse",
+
     "description1": "Merci d&apos;avoir regardé mon profil en entier !",
-    "description2": "S&apos;il vous intéresse, envoyer moi un e-mail et/ou<br/> Merci de le partager à tout votre réseau !",
+    "description2": "S&apos;il vous intéresse, envoyer moi un e-mail et<br/> merci de le partager à tout votre réseau !",
     "description3": "Au plaisir de collaborer avec vous...",
     "banner": "Fait avec Nextjs, Tailwind 😜"
   }

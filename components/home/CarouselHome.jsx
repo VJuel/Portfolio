@@ -23,25 +23,30 @@ export default function CarouselHome() {
       opts={{
         loop: true,
       }}
-      plugins={[
-        Autoplay({
-          delay: 2800,
-        }),
-      ]}
-      className="basis-1 w-full max-w-sm h-[400px] justify-center items-center"
+      plugins={
+        [
+          // Autoplay({
+          //   delay: 2400,
+          // }),
+        ]
+      }
+      className="basis-1/3 w-full max-w-md justify-center items-center h-full"
     >
-      <CarouselContent>
+      <CarouselContent className="h-full w-full">
         {images.map((srcImg, index) => (
-          <CarouselItem key={index} className="basis-2/3 xs:basis-inherit">
+          <CarouselItem
+            key={index}
+            className="embla__slide basis-1 h-full w-full"
+          >
             <div className="p-1 h-full">
               <Card>
-                <CardContent className="flex items-center justify-center p-0 overflow-hidden h-auto">
+                <CardContent className="flex items-center justify-center p-0 overflow-hidden h-full shadow-sm">
                   <Image
                     key={index}
                     src={srcImg}
                     width={400}
                     height={400}
-                    className="w-full h-full cover"
+                    className="w-full h-full object-cover rounded-xs"
                   />
                 </CardContent>
               </Card>
@@ -49,6 +54,8 @@ export default function CarouselHome() {
           </CarouselItem>
         ))}
       </CarouselContent>
+      <CarouselPrevious className="hidden lg:flex" />
+      <CarouselNext className="hidden lg:flex" />
     </Carousel>
   )
 }

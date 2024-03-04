@@ -9,13 +9,19 @@ export default function HomePortfolio() {
   const t = useTranslations("home.HomePortfolio")
   return (
     <section className="w-full bg-secondary py-20">
-      <div className="flex flex-col md:flex-row justify-center items-center max-w-4xl m-auto w-full px-4 md:px-[3.25rem]">
-        <div className="flex flex-col justify-center items-center md:items-start w-full pr-0 md:pr-10 mb-8 md:mb-0">
-          <h2 className={clsx(robotoSlab.className, "text-3xl mb-2 font-bold")}>
+      <div className="flex flex-col md:flex-row justify-center items-center max-w-4xl m-auto w-full p-4 pr-0 lg:px-[3.25rem]">
+        <div className="flex flex-col justify-center items-center md:items-start w-full pl-0 md:pl-6 pr-0 md:pr-10 mb-8 md:mb-0">
+          <h2 className={clsx(robotoSlab.className, "text-3xl mb-4 font-bold")}>
             {t("title")}
           </h2>
           <p className="text-center md:text-start px-6 xs:px-20 md:pr-4 md:pl-0">
-            {t("description")}
+            {t("description1")}
+          </p>
+          <p className="text-center md:text-start px-6 xs:px-20 md:pr-4 md:pl-0">
+            {t("description2")}
+          </p>
+          <p className="text-center md:text-start px-6 xs:px-20 md:pr-4 md:pl-0">
+            {t("description3")}
           </p>
           <ButtonNav href="/portfolio" t={t("btn")}>
             <Palette className="text-[--text]" />

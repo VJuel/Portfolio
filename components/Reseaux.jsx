@@ -21,7 +21,12 @@ export default function Reseaux() {
         <Link
           href="https://www.linkedin.com/in/vicktor-juhel-294421231/"
           target="_blank"
-          className="p-2 rounded-full hover:shadow-[-2px_5px_15px_-9px_#000000] hover:bg-secondary [&>svg]:hover:fill-black"
+          className={clsx(
+            pathname.includes("contact")
+              ? "hover:bg-accent"
+              : "hover:bg-secondary",
+            "p-2 rounded-full hover:shadow-[-2px_5px_15px_-9px_#000000] [&>svg]:hover:fill-black"
+          )}
         >
           <FaLinkedinIn
             className={clsx(
@@ -35,7 +40,12 @@ export default function Reseaux() {
         <Link
           href="https://github.com/VJuel"
           target="_blank"
-          className="p-2 rounded-full hover:shadow-[-2px_5px_15px_-9px_#000000] hover:bg-secondary [&>svg]:hover:fill-black"
+          className={clsx(
+            pathname.includes("contact")
+              ? "hover:bg-accent"
+              : "hover:bg-secondary",
+            "p-2 rounded-full hover:shadow-[-2px_5px_15px_-9px_#000000] [&>svg]:hover:fill-black"
+          )}
         >
           <FaGithub
             className={clsx(
