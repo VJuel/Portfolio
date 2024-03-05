@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { NextIntlProvider } from "next-intl"
+import { NextIntlClientProvider } from "next-intl"
 
 export default function MyCustomNextIntlClientProvider({
   locale,
@@ -15,7 +15,7 @@ export default function MyCustomNextIntlClientProvider({
   props: any
 }) {
   return (
-    <NextIntlProvider
+    <NextIntlClientProvider
       // Define non-serializable props here
       defaultTranslationValues={{
         i: (text: ReactNode) => <i>{text}</i>,
@@ -27,6 +27,6 @@ export default function MyCustomNextIntlClientProvider({
       {...props}
     >
       {children} {/* Pass children to the provider */}
-    </NextIntlProvider>
+    </NextIntlClientProvider>
   )
 }
