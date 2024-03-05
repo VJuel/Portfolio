@@ -61,7 +61,7 @@ export default function ProjetsCard({ portfolio }) {
         observer.disconnect()
       }
     }
-  }, [])
+  }, [observer, pathname, router])
 
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {

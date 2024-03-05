@@ -28,13 +28,6 @@ export default function HomePortfolio() {
           </ButtonNav>
         </div>
         <div className="flex flex-col justify-center items-center md:items-start mt-8 md:mt-0 h-full w-full">
-          {/* <Image
-            src="/home/home-portfolio.png"
-            width={400}
-            height={400}
-            className="w-full h-full cover"
-          /> */}
-
           <CarouselHome />
         </div>
       </div>

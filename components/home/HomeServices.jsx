@@ -32,6 +32,7 @@ export default function HomeServices() {
               width={400}
               height={400}
               className="h-[200px]"
+              alt="logo nextjs"
             />
             <CardHeader>
               <CardTitle>{t("nextjs.title")}</CardTitle>
@@ -54,6 +55,7 @@ export default function HomeServices() {
               width={400}
               height={400}
               className="h-[200px]"
+              alt="logo wordpress"
             />
             <CardHeader>
               <CardTitle>{t("wordpress.title")}</CardTitle>

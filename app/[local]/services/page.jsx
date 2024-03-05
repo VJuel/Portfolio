@@ -90,6 +90,7 @@ export default async function Services(params) {
               </div>
               <aside className="flex order-2 lg:order-1 flex-col justify-center bg-background rounded-sm h-full w-full lg:w-[45%]">
                 <Image
+                  alt="Vitrine web site restaurant"
                   src="/services/vitrine-services.png"
                   width={400}
                   height={400}
@@ -116,6 +117,7 @@ export default async function Services(params) {
               </div>
               <aside className="flex flex-col justify-center bg-background rounded-sm h-full w-full lg:w-[45%] overflow-hidden">
                 <Image
+                  alt="E-commerce web site art"
                   src="/services/ecommerce-services.png"
                   width={420}
                   height={420}
@@ -145,6 +147,7 @@ export default async function Services(params) {
                   className="cover h-full w-full"
                   width={400}
                   height={400}
+                  alt="Custom web site art"
                 />
               </aside>
             </div>

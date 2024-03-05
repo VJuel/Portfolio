@@ -42,6 +42,7 @@ export default function CarouselHome() {
               <Card>
                 <CardContent className="flex items-center justify-center p-0 overflow-hidden h-full shadow-sm">
                   <Image
+                    alt={"Project Image"}
                     key={index}
                     src={srcImg}
                     width={400}

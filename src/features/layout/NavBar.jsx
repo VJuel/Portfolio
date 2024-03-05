@@ -21,7 +21,7 @@ export default function NavBar({ children }) {
             sizes="(min-width: 1024px) 50px, (max-width: 1024px) 60px, 100px"
             width={100}
             height={75}
-            alt="Logo"
+            alt="Logo Vicktor Web Solution || Developpeur Freelance Paris"
             className="z-10"
           />
         </Link>

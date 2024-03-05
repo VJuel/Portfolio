@@ -93,18 +93,6 @@ export default function FormSection({ children }) {
     }
   }
 
-  const onLoad = () => {
-    // this reaches out to the hCaptcha JS API and runs the
-    // execute function on it. you can use other functions as
-    // documented here:
-    // https://docs.hcaptcha.com/configuration#jsapi
-    captchaRef.current.execute()
-  }
-
-  // useEffect(() => {
-  //   if (token) console.log(`hCaptcha Token: ${token}`)
-  // }, [token])
-
   useEffect(() => {
     if (typeof window !== "undefined" && status.pending) {
       const url = new URL(window.location.href)
@@ -112,7 +100,7 @@ export default function FormSection({ children }) {
 
       router.push(url.toString())
     }
-  }, [status.pending])
+  }, [status.pending, router])
 
   return (
     <form

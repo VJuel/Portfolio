@@ -50,7 +50,7 @@ export default function ImageHero() {
         }
       }
     }
-  })
+  }, [isMediaQuery])
 
   return (
     <div

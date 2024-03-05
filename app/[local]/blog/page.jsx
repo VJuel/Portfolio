@@ -17,7 +17,12 @@ export default function Blog({ params }) {
     <section id="blog" className="w-full h-[calc(100vh-5rem)] calc-pb-8">
       <div className="py-6 h-full">
         <div className="h-full w-full max-w-6xl flex m-auto flex-col p-4 md:p-10 justify-center items-center">
-          <Image src="/blog/commingsoon.png" width={600} height={600} />
+          <Image
+            src="/blog/commingsoon.png"
+            width={600}
+            height={600}
+            alt="Blog is comming soon"
+          />
         </div>
       </div>
     </section>

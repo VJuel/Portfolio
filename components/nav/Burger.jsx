@@ -23,7 +23,7 @@ export default function Burger() {
         setIsToggle(!isToggle)
       }
     }
-  }, [local])
+  }, [local, isToggle])
 
   return (
     <>
