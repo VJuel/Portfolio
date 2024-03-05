@@ -7,6 +7,11 @@ export default function MyCustomNextIntlClientProvider({
   timeZone,
   now,
   ...props
+}: {
+  locale: string
+  timeZone: string
+  now: Date
+  props: any
 }) {
   return (
     <NextIntlClientProvider
