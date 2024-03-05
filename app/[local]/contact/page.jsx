@@ -36,8 +36,8 @@ export default async function ContactPage(params) {
           >
             {t("title")}
           </h1>
-          <h2 className="text-[--accent]">{t("description")}</h2>
-          <h2 className="text-[--accent]">{t("description2")}</h2>
+          <h2 className="text-[--accent] text-center">{t("description")}</h2>
+          <h2 className="text-[--accent] text-center">{t("description2")}</h2>
         </div>
         <div className="flex justify-center items-center w-full xs:w-[80%] lg:w-1/2 max-w-3xl px-4 mt-14 lg:mt-0">
           <FormSection>

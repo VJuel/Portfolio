@@ -39,7 +39,7 @@ export default function HomeServices() {
             <CardContent className="text-justify">
               <strong>{t("nextjs.strong")}</strong> {t("nextjs.description")}
             </CardContent>
-            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1">
+            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1 gap-4">
               <ButtonNav href="/services" t={t("btn1")} />
               <ButtonNav variant="secondary" href="/blog" t="Articles">
                 <Newspaper className="text-[--text]" />
@@ -64,7 +64,7 @@ export default function HomeServices() {
               <br />
               <br className="hidden md:block" />
             </CardContent>
-            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1">
+            <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1 gap-4">
               <ButtonNav href="/services" t="Voir les offres" />
               <ButtonNav variant="secondary" href="/blog" t="Articles">
                 <Newspaper className="text-[--text]" />

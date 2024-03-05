@@ -55,7 +55,7 @@ export async function ButtonSumitContact() {
   return (
     <>
       <Button
-        className="flex justify-center items-center w-fit text-center text-[--dark] font-semibold"
+        className="flex justify-center items-center w-fit text-center text-[--dark] font-semibold order-last"
         variant={"secondary"}
         type="submit"
         // value={pending ? t("pending") : t("btn")}

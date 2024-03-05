@@ -31,7 +31,8 @@
     "components/ui/use-toast.js",
     "app/page.jsx",
     "config.js",
-    "components/nav/NavLinkItem.jsx"
+    "components/nav/NavLinkItem.jsx",
+    "app/layout.jsx"
   ],
   "exclude": ["node_modules"]
 }

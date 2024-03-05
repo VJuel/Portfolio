@@ -1,4 +1,5 @@
 "use client"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { useLocale } from "next-intl"
 import clsx from "clsx"
@@ -9,19 +10,38 @@ export default function Burger() {
   const pathname = usePathname()
   const local = useLocale()
   const hasScrolled = useScrollPosition()
+  const [isToggle, setIsToggle] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const toggleBurger = document.querySelector("#menu-toggle")
+      const body = document.querySelector("body")
+      const isCheked = toggleBurger.checked
+
+      if (isCheked) {
+        body.style.toggle = "scroll-nav"
+        setIsToggle(!isToggle)
+      }
+    }
+  }, [local])
 
   return (
     <>
       {/*Burger*/}
-      <input type="checkbox" id="menu-toggle" className="hidden" />
+      <input type="checkbox" id="menu-toggle" className={clsx("hidden")} />
       <label
         htmlFor="menu-toggle"
         id="menu-toggle"
         className={clsx(
-          pathname.includes("contact") && !hasScrolled
-            ? "[&>div>*]:stroke-white"
+          pathname.includes("contact")
+            ? "flex [&>div>*]:stroke-background lg:[&>div>*]:stroke-foreground"
+            : "flex lg:hidden",
+          !hasScrolled
+            ? pathname.includes("contact")
+              ? "[&>div>*]:stroke-background"
+              : "lg:[&>div>*]:stroke-foreground"
             : "[&>div>*]:stroke-foreground",
-          "flex cursor-pointer z-30 mt-2"
+          "cursor-pointer z-30 mt-2"
         )}
       >
         <div className="flex justify-center items-center w-8 h-8 text-xl text-black">

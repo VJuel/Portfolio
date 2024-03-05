@@ -8,6 +8,7 @@ import { getTranslations } from "next-intl/server"
 import MyCustomNextIntlClientProvider from "@/src/features/providers/MyCustomNextIntlClientProvider"
 import { locales } from "@/config"
 import Reseaux from "@/components/Reseaux"
+import { Analytics } from "@vercel/analytics/react"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -38,6 +39,7 @@ export default function RootLayout({ children, params }) {
           </main>
           <Footer />
           <Toaster />
+          <Analytics />
         </body>
       </MyCustomNextIntlClientProvider>
     </html>
