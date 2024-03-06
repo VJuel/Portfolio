@@ -24,7 +24,6 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function RootLayout({ children, params }) {
-  unstable_setRequestLocale(params.locale)
   return (
     <html lang={params.local} className="w-full">
       <MyCustomNextIntlClientProvider locale={params.local}>
