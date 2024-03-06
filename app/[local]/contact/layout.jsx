@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -10,7 +10,5 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function RootLayout({ children, params }) {
-  unstable_setRequestLocale(params.locale)
-
   return children
 }
