@@ -8,6 +8,7 @@ import MyCustomNextIntlClientProvider from "@/src/features/providers/MyCustomNex
 import { locales } from "@/config"
 import Reseaux from "@/components/Reseaux"
 import { Analytics } from "@vercel/analytics/react"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -23,6 +24,8 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function RootLayout({ children, params }) {
+  unstable_setRequestLocale(params.locale)
+
   return (
     <html lang={params.local} className="w-full">
       <MyCustomNextIntlClientProvider locale={params.local}>
