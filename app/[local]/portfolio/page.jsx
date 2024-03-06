@@ -15,7 +15,6 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function Portfolio({ params }) {
   unstable_setRequestLocale(params.locale)
-
   const portfolio = useTranslations("portfolio")
 
   return (

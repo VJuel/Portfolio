@@ -1,9 +1,5 @@
 import { getTranslations } from "next-intl/server"
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
-}
-
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
 
