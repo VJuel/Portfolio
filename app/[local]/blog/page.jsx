@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 
 export async function generateMetadata({ params: { locale } }) {
@@ -11,8 +11,6 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function Blog({ params }) {
-  unstable_setRequestLocale(params.locale)
-
   return (
     <section id="blog" className="w-full h-[calc(100vh-5rem)] calc-pb-8">
       <div className="py-6 h-full">

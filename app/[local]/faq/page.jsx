@@ -1,19 +1,10 @@
 import clsx from "clsx"
 import { robotoSlab, montserrat } from "@/components/fonts"
+import { getTranslations } from "next-intl/server"
 import { useTranslations } from "next-intl"
-import { BellIcon, CheckIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
-
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -25,7 +16,6 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function Faq({ params }) {
-  unstable_setRequestLocale(params.locale)
   const faq = useTranslations("faq")
 
   const notifications = [

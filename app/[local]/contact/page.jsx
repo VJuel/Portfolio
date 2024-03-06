@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 import FormSection from "@/components/form/FormSection"
 import {
   FormField,
@@ -18,7 +18,6 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function ContactPage(params) {
-  unstable_setRequestLocale(params.locale)
   const t = await getTranslations("contact")
 
   return (
