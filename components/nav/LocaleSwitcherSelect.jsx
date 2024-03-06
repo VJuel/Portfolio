@@ -37,7 +37,7 @@ export default function LocaleSwitcherSelect({
     >
       <p className="sr-only">{label}</p>
       <select
-        className="inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground py-2 mt-4 lg:mt-0 ml-1 lg:ml-4 w-fit rounded-sm px-1"
+        className="inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-1"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}

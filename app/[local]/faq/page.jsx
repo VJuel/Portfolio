@@ -15,7 +15,17 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export default function Faq() {
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: "Metadata" })
+
+  return {
+    title: t("faq.title"),
+    description: t("faq.description"),
+  }
+}
+
+export default async function Faq({ params }) {
+  unstable_setRequestLocale(params.locale)
   const faq = useTranslations("faq")
 
   const notifications = [
