@@ -13,8 +13,8 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Portfolio({ params }) {
-  unstable_setRequestLocale(params.locale)
+export default function Portfolio({ params: { locale } }) {
+  unstable_setRequestLocale(locale)
   const portfolio = useTranslations("portfolio")
 
   return (
