@@ -14,6 +14,7 @@ import IconCard from "@/components/services/IconCard"
 import nextjs from "@/public/services/next-js.svg"
 import wordpress from "@/public/services/wordpress.svg"
 import { montserrat } from "../../../components/fonts"
+import { useTranslations } from "next-intl"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -24,9 +25,9 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default async function Services(params) {
+export default function Services(params) {
   unstable_setRequestLocale(params.local)
-  const t = await getTranslations("services")
+  const t = useTranslations("services")
 
   return (
     <div id="services" className="w-full h-auto max-w-6xl m-auto set-page">
