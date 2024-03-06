@@ -10,7 +10,7 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Blog({ params }) {
+export default function Blog() {
   return (
     <section id="blog" className="w-full h-[calc(100vh-5rem)] calc-pb-8">
       <div className="py-6 h-full">

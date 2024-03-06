@@ -15,8 +15,8 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Faq({ params }) {
-  unstable_setRequestLocale(params.local)
+export default function Faq(params) {
+  unstable_setRequestLocale(params.locale)
   const faq = useTranslations("faq")
 
   const notifications = [

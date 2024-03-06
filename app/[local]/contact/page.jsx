@@ -19,8 +19,8 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default async function ContactPage(params) {
-  unstable_setRequestLocale(params.local)
+export default function ContactPage(params) {
+  unstable_setRequestLocale(params.locale)
   const t = useTranslations("contact")
 
   return (

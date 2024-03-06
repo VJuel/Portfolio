@@ -26,7 +26,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function Services(params) {
-  unstable_setRequestLocale(params.local)
+  unstable_setRequestLocale(params.locale)
   const t = useTranslations("services")
 
   return (
