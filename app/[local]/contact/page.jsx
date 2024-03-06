@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import FormSection from "@/components/form/FormSection"
 import {
   FormField,
@@ -7,6 +7,8 @@ import {
 } from "@/components/form/FormFields"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
+import { useTransition } from "react"
+import { useTranslations } from "next-intl"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -18,7 +20,8 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function ContactPage(params) {
-  const t = await getTranslations("contact")
+  unstable_setRequestLocale(params.local)
+  const t = useTranslations("contact")
 
   return (
     <section

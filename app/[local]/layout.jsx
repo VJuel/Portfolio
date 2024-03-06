@@ -24,8 +24,8 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function RootLayout({ children, params }) {
   return (
-    <html lang={params.local} className="w-full">
-      <MyCustomNextIntlClientProvider locale={params.local}>
+    <html lang={params.locale} className="w-full">
+      <MyCustomNextIntlClientProvider locale={params.locale}>
         <body
           className={`${roboto.className} ${robotoSlab.className} ${montserrat.className} antialiased no-scroll w-full`}
         >

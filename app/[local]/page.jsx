@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Page({ params }) {
-  unstable_setRequestLocale(params.local)
+  unstable_setRequestLocale(params.locale)
 
   return (
     <>
