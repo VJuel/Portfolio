@@ -32,7 +32,8 @@
     "app/page.jsx",
     "config.js",
     "components/nav/NavLinkItem.jsx",
-    "app/layout.jsx"
+    "app/layout.jsx",
+    "src/features/providers/MyCustomNextIntlClientProvider.jsx"
   ],
   "exclude": ["node_modules"]
 }
