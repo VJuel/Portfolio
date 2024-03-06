@@ -7,7 +7,6 @@ import {
 } from "@/components/form/FormFields"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
-import { useTransition } from "react"
 import { useTranslations } from "next-intl"
 
 export async function generateMetadata({ params: { locale } }) {
