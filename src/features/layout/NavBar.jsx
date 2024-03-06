@@ -31,7 +31,7 @@ export default function NavBar({ children }) {
 
       {/*Nav*/}
       <Nav>
-        <ul className="flex flex-col lg:flex-row items-start justify-start mt-4 lg:mt-0">
+        <ul className="flex flex-col lg:flex-row items-start justify-start mt-4 lg:mt-0 grow">
           <li className="w-full px-4 md:px-2 lg:my-0">
             <NavLinkItem href="/">{navTrad("home")}</NavLinkItem>
           </li>

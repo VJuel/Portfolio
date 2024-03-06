@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 import { useTranslations } from "next-intl"
@@ -13,7 +13,9 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Portfolio(params) {
+export default function Portfolio({ params }) {
+  unstable_setRequestLocale(params.locale)
+
   const portfolio = useTranslations("portfolio")
 
   return (
