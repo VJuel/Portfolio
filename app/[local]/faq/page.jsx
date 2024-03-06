@@ -6,8 +6,8 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export async function generateMetadata({ params: { locale } }) {
-  const t = await getTranslations({ locale, namespace: "Metadata" })
+export async function generateMetadata({ params: { local } }) {
+  const t = await getTranslations({ local, namespace: "Metadata" })
 
   return {
     title: t("faq.title"),
@@ -16,7 +16,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function Faq(params) {
-  unstable_setRequestLocale(params.locale)
+  unstable_setRequestLocale(params.local)
   const faq = useTranslations("faq")
 
   const notifications = [

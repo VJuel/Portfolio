@@ -13,8 +13,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-export async function generateMetadata({ params: { locale } }) {
-  const t = await getTranslations({ locale, namespace: "Metadata" })
+export async function generateMetadata({ params: { local } }) {
+  const t = await getTranslations({ local, namespace: "Metadata" })
 
   return {
     title: t("title"),
@@ -24,13 +24,12 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function RootLayout({ children, params }) {
   return (
-    <html lang={params.locale} className="w-full">
-      <MyCustomNextIntlClientProvider locale={params.locale}>
+    <html lang={params.local} className="w-full">
+      <MyCustomNextIntlClientProvider locale={params.local}>
         <body
           className={`${roboto.className} ${robotoSlab.className} ${montserrat.className} antialiased no-scroll w-full`}
         >
           <NavBar lang={params.local} />
-
           <main className="flex flex-col justify-center items-start w-full">
             <Reseaux />
             {children}

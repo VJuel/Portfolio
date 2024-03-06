@@ -16,8 +16,8 @@ import wordpress from "@/public/services/wordpress.svg"
 import { montserrat } from "../../../components/fonts"
 import { useTranslations } from "next-intl"
 
-export async function generateMetadata({ params: { locale } }) {
-  const t = await getTranslations({ locale, namespace: "Metadata" })
+export async function generateMetadata({ params: { local } }) {
+  const t = await getTranslations({ local, namespace: "Metadata" })
 
   return {
     title: t("services.title"),
@@ -26,7 +26,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function Services(params) {
-  unstable_setRequestLocale(params.locale)
+  unstable_setRequestLocale(params.local)
   const t = useTranslations("services")
 
   return (

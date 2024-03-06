@@ -9,8 +9,8 @@ import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 import { useTranslations } from "next-intl"
 
-export async function generateMetadata({ params: { locale } }) {
-  const t = await getTranslations({ locale, namespace: "Metadata" })
+export async function generateMetadata({ params: { local } }) {
+  const t = await getTranslations({ local, namespace: "Metadata" })
 
   return {
     title: t("contact.title"),
@@ -19,7 +19,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function ContactPage(params) {
-  unstable_setRequestLocale(params.locale)
+  unstable_setRequestLocale(params.local)
   const t = useTranslations("contact")
 
   return (
