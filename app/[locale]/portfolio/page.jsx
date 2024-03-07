@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
@@ -13,8 +14,8 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Portfolio(params) {
-  unstable_setRequestLocale(params.locale)
+export default function Portfolio({ params: { locale } }) {
+  unstable_setRequestLocale(locale)
   const portfolio = useTranslations("portfolio")
 
   return (

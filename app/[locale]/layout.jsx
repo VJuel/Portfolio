@@ -22,16 +22,16 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default async function RootLayout({ children, params }) {
-  unstable_setRequestLocale(params.locale)
+export default async function RootLayout({ children, params: { locale } }) {
+  unstable_setRequestLocale(locale)
 
   return (
-    <html lang={params.locale} className="w-full">
-      <MyCustomNextIntlClientProvider locale={params.locale}>
+    <html lang={locale} className="w-full">
+      <MyCustomNextIntlClientProvider locale={locale}>
         <body
           className={`${roboto.className} ${robotoSlab.className} ${montserrat.className} antialiased no-scroll w-full`}
         >
-          <NavBar lang={params.locale} />
+          <NavBar lang={locale} />
           <main className="flex flex-col justify-center items-start w-full">
             <Reseaux />
             {children}

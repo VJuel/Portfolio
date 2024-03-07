@@ -5,8 +5,6 @@ import sendEmail from "@/lib/actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
-import { Suspense } from "react"
-import Spinner from "@/components/Spinner"
 
 const initialState = {
   message: null,
@@ -15,41 +13,11 @@ const initialState = {
 export default function FormSection({ children }) {
   const [state, formAction] = useFormState(senderEmail, initialState)
   const status = useFormStatus()
-  const errorForm = "text-red-500 text-sm"
   const router = useRouter()
   const { toast } = useToast()
   const formRef = useRef()
   const [token, setToken] = useState(null)
   const captchaRef = useRef(null)
-  const [shouldRefresh, setShouldRefresh] = useState(false)
-
-  // async function senderEmail(state, formData) {
-  //   if (!token) {
-  //     return toast({
-  //       variant: "destructive",
-  //       title: "Veuillez valider le captcha",
-  //       duration: 10000,
-  //     })
-  //   }
-
-  //   const { results, error } = await sendEmail(state, formData)
-
-  //   if (error) {
-  //     return toast({
-  //       variant: "destructive",
-  //       title: error,
-  //       duration: 10000,
-  //     })
-  //   }
-
-  //   if (results?.ok) {
-  //     toast({
-  //       title: "Message envoyé",
-  //       description: "Votre message a bien été envoyé.",
-  //     })
-  //     formRef.current.reset()
-  //   }
-  // }
 
   async function senderEmail(state, formData) {
     // Vérifie si le captcha est validé.
@@ -109,7 +77,6 @@ export default function FormSection({ children }) {
       ref={formRef}
     >
       {children}
-
       <HCaptcha
         sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
         onVerify={setToken}

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import FormSection from "@/components/form/FormSection"
 import {
@@ -18,8 +20,8 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function ContactPage(params) {
-  unstable_setRequestLocale(params.locale)
+export default function ContactPage({ params: { locale } }) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations("contact")
 
   return (

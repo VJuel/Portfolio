@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import clsx from "clsx"
 import { robotoSlab, montserrat } from "@/components/fonts"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"

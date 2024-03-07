@@ -5,8 +5,7 @@ import HomePortfolio from "@/components/home/HomePortfolio"
 import HomeServices from "@/components/home/HomeServices"
 import Freelance from "@/components/home/Freelance"
 
-export async function generateMetadata({ params }) {
-  const { locale } = params
+export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
 
   return {
@@ -15,8 +14,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function Page({ params }) {
-  unstable_setRequestLocale(params.locale)
+export default function Page({ params: { locale } }) {
+  unstable_setRequestLocale(locale)
 
   return (
     <>

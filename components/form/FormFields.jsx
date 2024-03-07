@@ -5,14 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { getTranslations } from "next-intl/server"
 
-export async function FormField({
-  label,
-  name,
-  onChange,
-  value,
-  placeholder,
-  type,
-}) {
+export async function FormField({ label }) {
   const t = await getTranslations("contact.formSection")
   return (
     <>
