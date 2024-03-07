@@ -15,7 +15,7 @@ export default function About() {
     >
       <Image
         src={ellipse}
-        width={500}
+        width={auto}
         height={500}
         alt="Ellipse background image"
         className="absolute -right-[180px] -top-[120px] -z-10 scale-0 md:scale-[250%] lg:scale-[380%]"
