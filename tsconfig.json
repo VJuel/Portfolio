@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/[local]/layout.jsx",
+    "app/[locale]/layout.jsx",
     "components/ui/use-toast.js",
     "app/page.jsx",
     "config.js",

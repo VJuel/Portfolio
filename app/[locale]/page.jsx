@@ -6,8 +6,8 @@ import HomeServices from "@/components/home/HomeServices"
 import Freelance from "@/components/home/Freelance"
 
 export async function generateMetadata({ params }) {
-  const { local } = params
-  const t = await getTranslations({ local, namespace: "Metadata" })
+  const { locale } = params
+  const t = await getTranslations({ locale, namespace: "Metadata" })
 
   return {
     title: t("title"),
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Page({ params }) {
-  unstable_setRequestLocale(params.local)
+  unstable_setRequestLocale(params.locale)
 
   return (
     <>

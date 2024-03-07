@@ -4,8 +4,8 @@ import clsx from "clsx"
 import { useTranslations } from "next-intl"
 import ProjetsCard from "@/components/portfolio/ProjetsCard"
 
-export async function generateMetadata({ params: { local } }) {
-  const t = await getTranslations({ local, namespace: "Metadata" })
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: "Metadata" })
 
   return {
     title: t("portfolio.title"),
@@ -14,7 +14,7 @@ export async function generateMetadata({ params: { local } }) {
 }
 
 export default function Portfolio(params) {
-  unstable_setRequestLocale(params.local)
+  unstable_setRequestLocale(params.locale)
   const portfolio = useTranslations("portfolio")
 
   return (
