@@ -22,7 +22,7 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function RootLayout({ children, params }) {
+export default async function RootLayout({ children, params }) {
   unstable_setRequestLocale(params.locale)
 
   return (
