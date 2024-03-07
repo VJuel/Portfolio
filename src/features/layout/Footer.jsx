@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto bg-secondary !text-gray-200 relative border-t-2 border-black">
       <div className="footer relative flex lg:flex-row md:justify-between items-start justify-start max-w-4xl m-auto px-4 py-6 flex-col w-full gap-4 bg-secondary">
-        <div className="w-[65%] md:w-[75%] [&>p]:leading-6 text-lg text-left relative border-0 lg:border-r-2 border-black flex flex-col">
+        <div className="w-[65%] md:w-[50%] [&>p]:leading-6 text-lg text-left relative border-0 lg:border-r-2 border-black flex flex-col">
           <h3
             className={clsx(
               robotoSlab.className,
@@ -45,24 +45,67 @@ export default function Footer() {
           >
             {t("coordoneesTitle")}
           </h3>
-          <ul className="footerlist flex flex-col gap-2 mt-2 items-start justify-start list-footer w-full lg:m-auto lg:pl-[3rem]">
+          <ul className="[&>li>div>svg]:pb-2 footerlist flex flex-col gap-2 mt-2 items-start justify-start list-footer w-full lg:m-auto lg:pl-[3rem]">
             <li className="list-me">
               <div className="flex gap-2 md:gap-4 justify-center items-center">
-                <FaPhone />
-                <span className="md:pt-2 hidden md:block text-md font-bold whitespace-nowrap">
+                <FaPhone className="text-md" />
+                <span className="inline-block text-md font-bold whitespace-nowrap">
                   {t("coordoneesTel")}
                 </span>
-                :
               </div>
               <span>07 85 66 40 42</span>
             </li>
             <li className="list-me">
               <div className="flex gap-2 md:gap-4 justify-center items-center">
-                <FaEnvelope />
-                <span className="md:pt-2 hidden md:block text-md font-bold whitespace-nowrap">
+                <FaMapMarkerAlt className="text-md" />
+                <span className="inline-block text-md font-bold whitespace-nowrap">
+                  {t("coordoneesAdress")}
+                </span>
+              </div>
+              <div className="block-adress flex flex-col items-start lg:items-end">
+                <span className="whitespace-wrap md:whitespace-nowrap">
+                  18 Quai Louis Durand,
+                  <br className="md:hidden" /> 17000 La Rochelle
+                </span>
+              </div>
+            </li>
+
+            <li className="reseaux list-me">
+              <div className="flex gap-2 md:gap-4 justify-center items-center">
+                <FaGithub className="text-md" />
+                <span className="inline-block text-md font-bold whitespace-nowrap">
+                  Github
+                </span>
+              </div>
+              <a
+                className="flex justify-center items-center gap-2 md:gap-4"
+                href="https://github.com/VJuel"
+              >
+                Vjuel
+                <FaExternalLinkAlt className="text-sm" />
+              </a>
+            </li>
+            <li className="reseaux list-me">
+              <div className="flex gap-2 md:gap-4 justify-center items-center">
+                <FaLinkedinIn className="text-md xs:text-md" />
+                <span className="inline-block text-md font-bold whitespace-nowrap">
+                  Linkedin
+                </span>
+              </div>
+              <a
+                className="flex justify-center items-center gap-2 md:gap-4"
+                href="https://www.linkedin.com/in/vicktor-juhel-294421231/"
+              >
+                Vicktor Juhel
+                <FaExternalLinkAlt className="text-sm" />
+              </a>
+            </li>
+            <li className="list-me adress">
+              <div className="flex gap-2 md:gap-4 justify-center items-center">
+                <FaEnvelope className="text-md" />
+                <span className="inline-block text-md font-bold whitespace-nowrap">
                   {t("coordoneesEmail")}
                 </span>
-                :
               </div>
               <a
                 className="text-right"
@@ -70,54 +113,6 @@ export default function Footer() {
               >
                 dev@vicktor-web-solution.com
               </a>
-            </li>
-
-            <li className="reseaux list-me">
-              <div className="flex gap-2 md:gap-4 justify-center items-center">
-                <FaGithub />
-                <span className="md:pt-2 hidden md:block text-md font-bold whitespace-nowrap">
-                  Github
-                </span>
-                :
-              </div>
-              <a
-                className="flex justify-center items-center gap-2 md:gap-4"
-                href="https://github.com/VJuel"
-              >
-                Github
-                <FaExternalLinkAlt className="text-xs" />
-              </a>
-            </li>
-            <li className="reseaux list-me">
-              <div className="flex gap-2 md:gap-4 justify-center items-center">
-                <FaLinkedinIn className="text-2xl xs:text-md" />
-                <span className="md:pt-2 hidden md:block text-md font-bold whitespace-nowrap">
-                  Linkedin
-                </span>
-                :
-              </div>
-              <a
-                className="flex justify-center items-center gap-2 md:gap-4"
-                href="https://www.linkedin.com/in/vicktor-juhel-294421231/"
-              >
-                Linkedin
-                <FaExternalLinkAlt className="text-xs" />
-              </a>
-            </li>
-            <li className="list-me">
-              <div className="flex gap-2 md:gap-4 justify-center items-center">
-                <FaMapMarkerAlt className="text-2xl md:text-md" />
-                <span className="md:pt-[6px] hidden md:block text-md font-bold whitespace-nowrap">
-                  {t("coordoneesAdress")}
-                </span>
-                :
-              </div>
-              <div className="block-adress flex flex-col items-end">
-                <span className="whitespace-wrap md:whitespace-nowrap">
-                  18 Quai Louis Durand,
-                  <br className="md:hidden " /> 17000 La Rochelle
-                </span>
-              </div>
             </li>
           </ul>
         </div>

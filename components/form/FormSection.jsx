@@ -48,6 +48,7 @@ export default function FormSection({ children }) {
         })
         // Réinitialise le formulaire et potentiellement le token du captcha ici.
         formRef.current.reset()
+        captchaRef.current.resetCaptcha()
         setToken(null) // Réinitialise le token du captcha si nécessaire.
       }
     } catch (error) {

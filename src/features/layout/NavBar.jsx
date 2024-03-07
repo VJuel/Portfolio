@@ -1,5 +1,5 @@
 import Image from "next/image"
-import logoSolus from "@/public/vwsolution.svg"
+import logoSolus from "@/public/vwsolution-2.png"
 import { useTranslations } from "next-intl"
 import { Header } from "@/components/nav/HeaderContainer"
 import NavLinkItem from "@/components/nav/NavLinkItem"
@@ -7,7 +7,6 @@ import LocaleSwitcher from "@/components/nav/Langswitcher"
 import Link from "next/link"
 import Burger from "@/components/nav/Burger"
 import Nav from "@/components/nav/NavContainer"
-import Overlay from "@/components/nav/Overlay"
 
 export default function NavBar({ children }) {
   const navTrad = useTranslations("nav")
@@ -20,7 +19,7 @@ export default function NavBar({ children }) {
             src={logoSolus}
             sizes="(min-width: 1024px) 50px, (max-width: 1024px) 60px, 100px"
             width={100}
-            height={75}
+            height={85}
             alt="Logo Vicktor Web Solution || Developpeur Freelance Paris"
             className="z-10"
           />

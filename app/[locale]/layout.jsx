@@ -29,7 +29,7 @@ export default async function RootLayout({ children, params: { locale } }) {
     <html lang={locale} className="w-full">
       <MyCustomNextIntlClientProvider locale={locale}>
         <body
-          className={`${roboto.className} ${robotoSlab.className} ${montserrat.className} antialiased no-scroll w-full`}
+          className={`${roboto.className} ${robotoSlab.className} ${montserrat.className} antialiased w-full`}
         >
           <NavBar lang={locale} />
           <main className="flex flex-col justify-center items-start w-full">

@@ -242,6 +242,10 @@ a {
   overflow: hidden;
 }
 
+/* #menu-toggle:not(:checked) ~ nav {
+  display: none;
+} */
+
 #menu-toggle:checked ~ nav {
   display: flex;
   transform: translateY(0);
@@ -253,11 +257,6 @@ a {
 
 #menu-toggle:checked ~ label > div:last-child {
   @apply flex justify-center items-center;
-}
-
-#menu-toggle:checked ~ .overlay {
-  display: block;
-  z-index: 5;
 }
 
 /* Footer */
@@ -286,14 +285,31 @@ footer {
 }
 
 .list-footer {
-  @apply flex items-start justify-start gap-2 lg:pl-[0px];
+  @apply flex lg:flex-wrap lg:flex-row items-start justify-start lg:justify-end gap-2 lg:pl-[0px];
 }
 
-.list-footer > li {
-  @apply flex items-center justify-between gap-4 text-lg w-full;
+.list-footer .list-me {
+  @apply flex w-full lg:w-[48%] flex-col items-start lg:items-end justify-between text-lg;
 }
 
-.list-footer > li > svg {
+@media screen and (min-width: 1024px) {
+  .list-footer li:nth-child(even) {
+    @apply w-[55%];
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list-footer li:nth-child(1),
+  .list-footer li:nth-child(3) {
+    @apply w-[40%];
+  }
+}
+
+.list-footer .list-me.adress {
+  @apply flex w-full flex-col items-start lg:items-end justify-between text-lg;
+}
+
+.list-footer .list-me > svg {
   @apply text-xl;
 }
 
@@ -301,15 +317,18 @@ footer {
   position: initial !important;
 }
 
+.list-footer > li > div > svg {
+  margin-bottom: 4px;
+}
 .coord {
   @apply lg:items-end items-start;
 }
 
 .block-adress {
-  @apply flex items-end justify-center;
+  @apply flex items-start lg:items-end justify-center;
 }
 .block-adress > span {
-  text-align: right;
+  @apply text-left lg:text-right;
 }
 
 .footer-basis {
@@ -416,6 +435,26 @@ section > div > h2 {
 @media (min-width: 1024px) {
   .animation-spin {
     animation: 1.5s spin ease-in-out forwards;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes resetPosition {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
   }
 }
 

@@ -1,7 +1,5 @@
-import Image from "next/image"
-import globe from "@/public/home/globe-freelance.png"
 import { useTranslations } from "next-intl"
-import { robotoSlab } from "../fonts"
+import { montserrat, robotoSlab } from "../fonts"
 import clsx from "clsx"
 import {
   Figma,
@@ -13,7 +11,6 @@ import {
   FastForward,
   ShieldCheck,
 } from "lucide-react"
-import seo from "@/public/services/seo.svg"
 import FreelanceListItem from "@/components/home/FreelanceListItem"
 
 export default function Freelance() {
@@ -71,7 +68,11 @@ export default function Freelance() {
             </h2>
             <h3 className="text-lg font-normal mb-2">{t("tjm")}</h3>
             <span className="text-2xl">
-              <span className="text-5xl font-bold">350</span>
+              <span
+                className={clsx(montserrat.className, "text-5xl font-bold")}
+              >
+                350
+              </span>
               <span className="font-normal">€</span>
               <span className="text-5xl text-secondary font-semibold rounded-lg px-2 -mb-2">
                 /
