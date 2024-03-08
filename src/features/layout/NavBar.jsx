@@ -1,5 +1,3 @@
-import Image from "next/image"
-import logoSolus from "@/public/vwsolution-2.png"
 import { useTranslations } from "next-intl"
 import { Header } from "@/components/nav/HeaderContainer"
 import NavLinkItem from "@/components/nav/NavLinkItem"
@@ -7,6 +5,7 @@ import LocaleSwitcher from "@/components/nav/Langswitcher"
 import Link from "next/link"
 import Burger from "@/components/nav/Burger"
 import Nav from "@/components/nav/NavContainer"
+import LogoImage from "@/components/nav/LogoImage"
 
 export default function NavBar({ children }) {
   const navTrad = useTranslations("nav")
@@ -15,14 +14,7 @@ export default function NavBar({ children }) {
     <Header>
       <div className="flex justify-center items-center md:justify-start">
         <Link href="/">
-          <Image
-            src={logoSolus}
-            sizes="(min-width: 1024px) 50px, (max-width: 1024px) 60px, 100px"
-            width={100}
-            height={85}
-            alt="Logo Vicktor Web Solution || Developpeur Freelance Paris"
-            className="z-10"
-          />
+          <LogoImage />
         </Link>
       </div>
 

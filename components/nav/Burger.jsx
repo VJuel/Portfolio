@@ -5,7 +5,6 @@ import { useLocale } from "next-intl"
 import clsx from "clsx"
 import { Menu, X } from "lucide-react"
 import useScrollPosition from "@/lib/hooks/useScrollPosition"
-import path from "path"
 
 export default function Burger() {
   const pathname = usePathname()
