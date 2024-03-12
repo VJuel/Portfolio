@@ -8,6 +8,8 @@ import MyCustomNextIntlClientProvider from "@/src/features/providers/MyCustomNex
 import { locales } from "@/config"
 import Reseaux from "@/components/Reseaux"
 import { Analytics } from "@vercel/analytics/react"
+import Cookies from "@/components/cookies/Cookies"
+import { getCookiesAnalytics } from "@/lib/actions"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -24,6 +26,11 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function RootLayout({ children, params: { locale } }) {
   unstable_setRequestLocale(locale)
+  const availableAnalytics = await getCookiesAnalytics()
+  const { name, value } =
+    availableAnalytics == undefined
+      ? { name: undefined, value: undefined }
+      : availableAnalytics
 
   return (
     <html lang={locale} className="w-full">
@@ -38,7 +45,12 @@ export default async function RootLayout({ children, params: { locale } }) {
           </main>
           <Footer />
           <Toaster />
-          <Analytics />
+          {!name && value !== "on" && (
+            <>
+              <Cookies />
+              <Analytics />
+            </>
+          )}
         </body>
       </MyCustomNextIntlClientProvider>
     </html>

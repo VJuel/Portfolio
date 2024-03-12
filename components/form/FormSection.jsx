@@ -1,7 +1,7 @@
 "use client"
 import { use, useEffect, useRef, useState } from "react"
 import { useFormStatus, useFormState } from "react-dom"
-import sendEmail from "@/lib/actions"
+import { sendEmail } from "@/lib/actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import HCaptcha from "@hcaptcha/react-hcaptcha"

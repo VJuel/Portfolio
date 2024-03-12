@@ -9,30 +9,32 @@ export default function LogoImage() {
   const pathnames = usePathname()
   const scrolled = useScrollPosition()
 
-  console.log(scrolled)
   return (
     <>
       {pathnames.includes("/contact") ? (
         scrolled ? (
           <Image
             src={logoDark}
-            width={130}
-            height={180}
+            width={116}
+            height={66}
+            className="h-full w-full"
             alt="Logo Vicktor Web Solution"
           />
         ) : (
           <Image
             src={logoWhite}
-            width={130}
-            height={180}
+            width={116}
+            height={66}
+            className="h-full w-full"
             alt="Logo Vicktor Web Solution"
           />
         )
       ) : (
         <Image
           src={logoDark}
-          width={130}
-          height={180}
+          width={116}
+          height={66}
+          className="h-full w-full"
           alt="Logo Vicktor Web Solution"
         />
       )}

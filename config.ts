@@ -24,6 +24,14 @@ export const pathnames = {
     fr: "/blog",
     en: "/blog",
   },
+  "/legales": {
+    fr: "/mentions-legales",
+    en: "/legal-notice",
+  },
+  "/politique": {
+    fr: "/politique-de-confidentialite",
+    en: "/privacy-policy",
+  },
 } satisfies Pathnames<typeof locales>
 
 // Use the default: `always`

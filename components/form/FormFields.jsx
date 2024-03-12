@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { getTranslations } from "next-intl/server"
+import { Switch } from "@/components/ui/switch"
 
 export async function FormField({ label }) {
   const t = await getTranslations("contact.formSection")
@@ -43,7 +44,6 @@ export async function FormTextAreaField({ label, value }) {
 
 export async function ButtonSumitContact() {
   const t = await getTranslations("contact.formSection")
-  // const pending = searchParams.query.pending
 
   return (
     <>
@@ -51,10 +51,7 @@ export async function ButtonSumitContact() {
         className="flex justify-center items-center w-fit text-center text-[--dark] font-semibold order-last"
         variant={"secondary"}
         type="submit"
-        // value={pending ? t("pending") : t("btn")}
-        // aria-disabled={pending}
       >
-        {/* {pending ? t("pending") : t("btn")} */}
         {t("btn")}
       </Button>
     </>

@@ -251,5 +251,101 @@
     "description2": "If you're interested, send me an e-mail and/or<br/> Please share it with your entire network!",
     "description3": "We look forward to working with you...",
     "banner": "Made with Nextjs, Tailwind 😜"
-  }
+  },
+  "cookies": {
+    "title": "Cookie Settings",
+    "1": {
+      "title": "Performance and Analytics Cookies",
+      "description": "Allow tracking visits and traffic sources."
+    },
+    "2": {
+      "title": "Strictly Necessary Cookies",
+      "descriptionLocale": "Collection and Use of Location Data",
+      "description": "These cookies are necessary for the website to function and cannot be switched off in our systems."
+    },
+    "btn": "Accept Cookies"
+  },
+  "legales": {
+    "title": "Legal Mentions",
+    "general": {
+      "title": "General Information",
+      "description": "The website [www.vicktor-web-solution.com](http://www.vicktor-web-solution.com/) is published by the company **Vicktor Web Solution**",
+      "forme": "Form: Sole Proprietorship",
+      "RCS": "RCS La Rochelle A 914 376 355",
+      "adresse": "10 Bis Rue Des Caillotieres 17630 La Flotte, France.",
+      "telephone": "Phone: 33 07 85 66 40 42",
+      "email": "dev@vicktor-web-solution.com"
+    },
+    "publication": {
+      "title": "Director of Vicktor Web Solution",
+      "description": "Vicktor Juhel",
+      "tva": "ℹ️ Individual VAT identification number: FR54881024145"
+    },
+    "hebergement": {
+      "title": "Hosting",
+      "description": "Vercel Inc.",
+      "adresse": "440 N Barranca Ave #4133",
+      "ville": "Covina, CA 91723",
+      "website": "Website: [https://vercel.com](https://vercel.com/)",
+      "email": "privacy@vercel.com"
+    }
+  },
+  "politique": {
+    "title": "Privacy Policy",
+    "date": "Last updated: 03/08/2024",
+    "description": "Welcome to Vicktor Web Solution, accessible from www.vicktor-web-solution.com. We understand the importance of our visitors' privacy and are committed to safeguarding it. This privacy policy outlines our practices regarding the collection, use, and disclosure of your personal information when you use our Service and the choices you have associated with that data.",
+    "sub-title": "Data Collection and Use",
+    "collecte": {
+      "title": "Data Collected",
+      "description": "We collect various types of data for various purposes to provide and improve our service to you.",
+      "donnees": {
+        "title": "Data Collected",
+        "description": "We collect various types of data for various purposes to provide and improve our service to you."
+      },
+      "personnelles": {
+        "title": "Personal Data",
+        "description": "While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personal data may include, but is not limited to:"
+      },
+      "localisation": {
+        "title": "Location Data",
+        "description": "We use location data to provide features of our Service, to improve and personalize our Service. You can enable or disable location services when you use our Service at any time, through your device settings.",
+        "cookies": "Cookies and Usage Data",
+        "localisation": "Location Data"
+      },
+      "cookies": {
+        "title": "Cookies and Tracking Data",
+        "description": "We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device."
+      }
+    },
+    "utilisation": {
+      "title": "Use of Data",
+      "description": "Vicktor Web Solution uses the collected data for various purposes:",
+      "fournir": "To provide and maintain our Service",
+      "informations": "To notify you about changes to our Service",
+      "participer": "To allow you to participate in interactive features of our Service when you choose to do so",
+      "support": "To provide customer care and support",
+      "recueillir": "To gather analysis or valuable information so that we can improve our Service",
+      "surveiller": "To monitor the usage of our Service",
+      "detecter": "To detect, prevent, and address technical issues",
+      "consentement": "Cookies Consent",
+      "description2": "Upon your first visit to our site, a banner informs you of the presence of cookies and asks for your consent to their use. You have the option to accept or decline cookies used for tracking, performance, and analytics."
+    },
+    "Securite": {
+      "title": "Data Security",
+      "description": "The security of your data is important to us, but please remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security."
+    },
+    "modifications": {
+      "title": "Changes to this privacy policy",
+      "description": "We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page.",
+      "conseillons": "We recommend that you check this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when posted on this page."
+    },
+    "contactez": {
+      "title": "Contact us",
+      "description": "If you have any questions about this privacy policy, please contact us :",
+      "email": "dev@vicktor-web-solution.com"
+    }
 }
+}
+
+
+

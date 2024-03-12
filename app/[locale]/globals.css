@@ -14,7 +14,7 @@
     --primary: hsl(222.2, 47.4%, 11.2%);
     --secondary: #ffde59;
     --muted: #000;
-    --accent: #06d6a0;
+    --accent: #00bf63;
     --destructive: hsl(0, 84.2%, 60.2%);
     --warning: hsl(38 92% 50%);
     --border: hsl(214.3, 31.8%, 91.4%);
@@ -139,8 +139,7 @@
 .background-hero {
   background: -webkit-linear-gradient(
     123deg,
-    #ffde59,
-    #06d6a0
+    #ffde59
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     123deg,
@@ -639,8 +638,8 @@ section > div > h2 {
 }
 
 .shadow-freelance {
-  box-shadow: 0 0 0.2rem #06d6a0, 0 0 0.8rem #06d6a0, 0 0 2rem #06d6a0,
-    0 0 0.8rem #06d6a0, 0 0 2.8rem #06d6a0, inset 0 0 1.3rem #06d6a0;
+  box-shadow: 0 0 0.2rem #00bf63, 0 0 0.8rem #00bf63, 0 0 2rem #00bf63,
+    0 0 0.8rem #00bf63, 0 0 2.8rem #00bf63, inset 0 0 1.3rem #00bf63;
 }
 
 .embla__slide {

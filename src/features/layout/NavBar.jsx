@@ -12,8 +12,8 @@ export default function NavBar({ children }) {
 
   return (
     <Header>
-      <div className="flex justify-center items-center md:justify-start">
-        <Link href="/">
+      <div className="flex justify-center items-center md:justify-start w-[116px] h-[66px]">
+        <Link href="/" className="w-full h-full">
           <LogoImage />
         </Link>
       </div>

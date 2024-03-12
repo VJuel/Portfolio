@@ -21,6 +21,14 @@
     "blog": {
       "title": "Blog's",
       "description": "Découvrez mes articles sur le développement web, les technologies, et bien plus encore !"
+    },
+    "legales": {
+      "title": "Mentions légales",
+      "description": "Vicktor Web Solution | Services Professionnels & Portfolio – Spécialiste en optimisation de site web"
+    },
+    "politique": {
+      "title": "Politique de confidentialité",
+      "description": "Nous utilisons des cookies pour améliorer votre expérience sur notre site Web. En naviguant sur ce site, vous acceptez notre utilisation des cookies."
     }
   },
   "nav": {
@@ -158,9 +166,9 @@
         "list": {
           "li1": "Gestion de Produits Intuitive",
           "li2": "Panier d'Achats et Paiements Sécurisés",
-          "li3": "Personnalisation du Parcours Client          ",
+          "li3": "Personnalisation du Parcours Client",
           "li4": "Outils de Marketing Intégrés",
-          "li5": "Analytique et Reporting          "
+          "li5": "Analytique et Reporting "
         }
       },
       "surmesure": {
@@ -250,6 +258,97 @@
     "description1": "Merci d&apos;avoir regardé mon profil en entier !",
     "description2": "S&apos;il vous intéresse, envoyer moi un e-mail et<br/> merci de le partager à tout votre réseau !",
     "description3": "Au plaisir de collaborer avec vous...",
-    "banner": "Fait avec Nextjs, Tailwind 😜"
+    "banner": "Fait avec Nextjs, Tailwind"
+  },
+  "cookies": {
+    "title": "Parametre des cookies",
+    "1": {
+      "title": "Cookies de performance et d'analyse",
+      "description": "Permettent de suivre les visites et les sources de trafic."
+    },
+    "2": {
+      "title": "Cookies strictement nécessaires",
+      "descriptionLocale": "Collecte et Utilisation des Données de Localisation",
+      "description": "Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas être désactivés dans nos systèmes."
+    },
+    "btn": "Accepter les cookies"
+  },
+  "legales": {
+    "title": "Mentions légales",
+    "general": {
+      "title": "Informations générales",
+      "description": "Le site [www.vicktor-web-solution.com](http://www.vicktor-web-solution.com/) est édité par la société **Vicktor Web Solution**",
+      "forme": "Forme : Entreprise individuelle",
+      "RCS": "RCS La Rochelle A 914 376 355",
+      "adresse": "10 Bis Rue Des Caillotieres 17630 La Flotte, France.",
+      "telephone": "Téléphone : 33 07 85 66 40 42",
+      "email": "dev@vicktor-web-solution.com"
+    },
+    "publication": {
+      "title": "Directeur de l'entreprise Vicktor Web Solution",
+      "description": "Vicktor Juhel",
+      "tva": "ℹ️ Numéro individuel d’identification d’assujetti à la TVA : FR54881024145"
+    },
+    "hebergement": {
+      "title": "Hébergement",
+      "description": "Vercel Inc.",
+      "adresse": "440 N Barranca Ave #4133",
+      "ville": "Covina, CA 91723",
+      "website": "Website : [https://vercel.com](https://vercel.com/)",
+      "email": "privacy@vercel.com"
+    }
+  },
+  "politique": {
+    "title": "Politique de confidentialité",
+    "date": "Dernière mise à jour : 8/03/2024",
+    "description": "Bienvenue sur Vicktor Web Solution, accessible depuis www.vicktor-web-solution.com. Nous comprenons l'importance de la vie privée de nos visiteurs et nous nous engageons à préserver leur sécurité. Cette politique de confidentialité décrit nos pratiques concernant la collecte, l'utilisation et la divulgation de vos informations personnelles lorsque vous utilisez notre Service et les choix que vous avez associés à ces données.",
+    "sub-title": "Collecte et utilisation des données",
+    "collecte": {
+      "donnees": {
+        "title": "Données collectées",
+        "description": "Nous collectons différents types de données à des fins variées afin de fournir et d'améliorer notre service à votre égard."
+      },
+      "personnelles": {
+        "title": "Données personnelles",
+        "description": "Pendant l'utilisation de notre Service, nous pouvons vous demander de nous fournir certaines informations personnellement identifiables qui peuvent être utilisées pour vous contacter ou vous identifier. Les données personnelles peuvent inclure, mais ne sont pas limitées à :"
+      },
+      "localisation": {
+        "title": "Données de localisation",
+        "description": "Nous utilisons des données de localisation pour fournir des fonctionnalités de notre Service, pour améliorer et personnaliser notre Service. Vous pouvez activer ou désactiver les services de localisation lorsque vous utilisez notre Service à tout moment, via les paramètres de votre appareil.",
+        "cookies": "Cookies et données d'utilisation",
+        "localisation": "Données de localisation"
+      },
+      "cookies": {
+        "title": "Données de cookies et de suivi",
+        "description": "Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur notre Service et conserver certaines informations. Les cookies sont des fichiers avec une petite quantité de données qui peuvent inclure un identifiant unique anonyme. Les cookies sont envoyés à votre navigateur depuis un site web et stockés sur votre appareil."
+      }
+    },
+    "utilisation": {
+      "title": "Utilisation des données",
+      "description": "Vicktor Web Solution utilise les données collectées pour diverses fins :",
+      "fournir": "Fournir et maintenir notre Service",
+      "informations": "Vous informer des changements apportés à notre Service",
+      "participer": "Vous permettre de participer à des fonctionnalités interactives de notre Service lorsque vous choisissez de le faire",
+      "support": "Fournir un support client",
+      "recueillir": "Recueillir des analyses ou des informations précieuses afin que nous puissions améliorer notre Service",
+      "surveiller": "Surveiller l'utilisation de notre Service",
+      "detecter": "Détecter, prévenir et traiter les problèmes techniques",
+      "consentement": "Consentement aux cookies",
+      "description2": "Lors de votre première visite sur notre site, un bandeau vous informe de la présence de cookies et vous demande de donner votre consentement à leur utilisation. Vous avez la possibilité d'accepter ou de refuser les cookies utilisés pour le suivi, la performance et l'analyse."
+    },
+    "securite": {
+      "title": "Sécurité des données",
+      "description": "La sécurité de vos données est importante pour nous, mais rappelez-vous qu'aucune méthode de transmission sur Internet ou méthode de stockage électronique n'est sécurisée à 100 %. Alors que nous nous efforçons d'utiliser des moyens commercialement acceptables pour protéger vos données personnelles, nous ne pouvons garantir leur sécurité absolue."
+    },
+    "modifications": {
+      "title": "Modifications de cette politique de confidentialité",
+      "description": "Nous pouvons mettre à jour notre politique de confidentialité de temps à autre. Nous vous notifierons de tout changement en publiant la nouvelle politique de confidentialité sur cette page.",
+      "conseillons": "Nous vous conseillons de consulter cette politique de confidentialité périodiquement pour tout changement. Les changements apportés à cette politique de confidentialité sont effectifs lorsqu'ils sont publiés sur cette page."
+    },
+    "contactez": {
+      "title": "Contactez-nous",
+      "description": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter :",
+      "email": "Par email : dev@vicktor-web-solution.com"
+    }
   }
 }
