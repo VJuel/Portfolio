@@ -11,10 +11,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
 const images = [
-  "/home/ecommerce.png",
-  "/home/netflix.png",
-  "/home/omnifood.png",
-  "/home/outdoors.png",
+  "/luz/homeLuz.png",
+  "/natours/home-natours.png",
+  "/netflix/home-netflix.png",
+  "/omnifood/home-omnifood.png",
+  "/ecommerce/home-ecommerce.png",
 ]
 
 export default function CarouselHome() {
@@ -30,7 +31,7 @@ export default function CarouselHome() {
           // }),
         ]
       }
-      className="basis-1/3 w-full max-w-md justify-center items-center h-full"
+      className="basis-1/3 w-full justify-center items-center h-full"
     >
       <CarouselContent className="h-full w-full">
         {images.map((srcImg, index) => (
@@ -39,15 +40,15 @@ export default function CarouselHome() {
             className="embla__slide basis-1 h-full w-full"
           >
             <div className="p-1 h-full">
-              <Card>
-                <CardContent className="flex items-center justify-center p-0 overflow-hidden h-full shadow-sm">
+              <Card className="h-full">
+                <CardContent className="flex items-center justify-center p-0 overflow-hidden shadow-sm h-full">
                   <Image
                     alt={"Project Image"}
                     key={index}
                     src={srcImg}
                     width={400}
                     height={400}
-                    className="w-full h-full object-cover rounded-xs"
+                    className="w-full h-full ver rounded-xs"
                   />
                 </CardContent>
               </Card>

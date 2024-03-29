@@ -18,7 +18,7 @@ import Image from "next/image"
 import clsx from "clsx"
 import { ExternalLink, ArrowLeftCircle, ArrowRightCircle } from "lucide-react"
 
-export default function ProjetsCard({ portfolio }) {
+export default function ProjetsCard() {
   const pathname = usePathname()
   const router = useRouter()
   const projetData = Object.values(projects)
@@ -29,39 +29,12 @@ export default function ProjetsCard({ portfolio }) {
   const [observer, setObserver] = useState(null)
 
   useEffect(() => {
-    const checkAndObserve = () => {
-      if (sheetRef.current) {
-        const newObserver = new MutationObserver((mutationsList) => {
-          for (let mutation of mutationsList) {
-            if (
-              mutation.type === "attributes" &&
-              mutation.attributeName === "data-state"
-            ) {
-              if (sheetRef.current.getAttribute("data-state") === "closed") {
-                router.replace(pathname)
-              }
-            }
-          }
-        })
-
-        newObserver.observe(sheetRef.current, { attributes: true })
-        setObserver(newObserver)
-      } else {
-        // Si l'élément n'est pas encore monté, on vérifie à nouveau après un délai
-        setTimeout(checkAndObserve, 100)
+    if (sheetRef.current) {
+      if (sheetRef.current.getAttribute("data-state") === "closed") {
+        router.replace(pathname)
       }
     }
-
-    if (typeof window !== "undefined") {
-      checkAndObserve()
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect()
-      }
-    }
-  }, [observer, pathname, router])
+  }, [pathname, router])
 
   const handleNext = () => {
     if (currentIndex < projetData.length - 1) {
@@ -172,26 +145,31 @@ export default function ProjetsCard({ portfolio }) {
                       />
                     ))}
 
-                    <p>
-                      Lisez le
-                      <Link
-                        href={project.github}
-                        className="border-none !text-blue-700 text-center before:content-none"
-                      >
-                        READ.ME Github
-                      </Link>
-                    </p>
-                    <div className="w-full flex justify-center items-center pt-6">
-                      <Button className="text-center m-auto">
+                    {project?.github !== "" && (
+                      <p>
+                        Lisez le
                         <Link
-                          className="flex justify-center items-center gap-2"
-                          href={project.link}
-                          target="_blank"
+                          href={project.github}
+                          className="pl-1 border-none !text-blue-700 text-center before:content-none"
                         >
-                          Accédez au site <ExternalLink />
+                          READ.ME Github
                         </Link>
-                      </Button>
-                    </div>
+                      </p>
+                    )}
+
+                    {project?.link !== "" && (
+                      <div className="w-full flex justify-center items-center pt-6">
+                        <Button className="text-center m-auto">
+                          <Link
+                            className="flex justify-center items-center gap-2 text-white"
+                            href={project?.link ? project.link : ""}
+                            target="_blank"
+                          >
+                            Accédez au site <ExternalLink />
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
                   </Fragment>
                 ))}
             </SheetHeader>

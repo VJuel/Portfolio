@@ -30,7 +30,7 @@ export default function ImageHero() {
         setCircleAttributes({
           cx: e.clientX - rect.left,
           cy: e.clientY - rect.top,
-          r: isMediaQuery.matches ? 60 : 110,
+          r: isMediaQuery.matches ? 60 : 130,
         })
       }
 
@@ -55,9 +55,9 @@ export default function ImageHero() {
   return (
     <div
       ref={containerRef}
-      className="imgcontainer lg:block relative md:w-[70%] lg:w-[40%] h-auto max-w-2xl flex justify-center z-1"
+      className="border-2 border-black rounded-sm bg-stone-100 imgcontainer lg:block relative md:w-[70%] lg:w-[40%] h-auto max-w-2xl flex justify-center z-1"
     >
-      <ImageBlur
+      <Image
         src={me}
         width={500}
         height={500}
@@ -96,8 +96,6 @@ export default function ImageHero() {
           />
         </>
       ) : null}
-
-      <div className="animate-fade-img min-w-[300px] w-[80%] z-10 absolute border-2 border-black rounded-sm lg:w-full h-full top-0 left-1/2 -translate-x-1/2 m-auto" />
     </div>
   )
 }

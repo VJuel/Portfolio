@@ -25,7 +25,7 @@ export default function CookiesModal({ children }) {
     <>
       {isClient && (
         <Dialog defaultOpen={true}>
-          <DialogContent>
+          <DialogContent className="gap-2 p-8">
             <DialogHeader>
               <DialogTitle className={clsx(montserrat.className)}>
                 Paramètres des cookies

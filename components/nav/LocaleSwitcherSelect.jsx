@@ -2,8 +2,9 @@
 
 import clsx from "clsx"
 import { useParams } from "next/navigation"
-import { ChangeEvent, ReactNode, useTransition } from "react"
+import { useTransition } from "react"
 import { useRouter, usePathname } from "../../navigation"
+import { montserrat } from "../fonts"
 
 export default function LocaleSwitcherSelect({
   children,
@@ -37,7 +38,10 @@ export default function LocaleSwitcherSelect({
     >
       <p className="sr-only">{label}</p>
       <select
-        className="inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-1"
+        className={clsx(
+          montserrat.className,
+          "inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-1"
+        )}
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}

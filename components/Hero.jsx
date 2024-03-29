@@ -11,7 +11,7 @@ export default function Hero({ lang }) {
   return (
     <section
       id="home"
-      className={`lg:h-[calc(100vh_-_25px)] background-hero transition-all duration-_ 1s_ flex justify-center items-center w-full py-10 lg:py-0`}
+      className={`lg:h-[calc(100vh_-_25px)] background-hero transition-all duration-_ 0.7s_ flex justify-center items-center w-full py-10 lg:py-0`}
     >
       <div className="max-w-6xl w-full flex flex-col lg:flex-row p-4 lg:p-10 gap-12 lg:gap-0 justify-center items-center mt-20">
         <div className="w-full lg:w-1/2 pr-0 lg:pr-10 text-center lg:text-left">
