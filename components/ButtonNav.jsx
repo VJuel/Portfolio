@@ -12,7 +12,7 @@ export function ButtonNav({ children, href, t, variant }) {
         "flex justify-center items-center mt-4 animate-fade-in animation-delay-800 w-fit gap-2"
       )}
     >
-      <Link href={href} className="font-semibold">
+      <Link href={href} className="font-semibold order-2">
         {t}
       </Link>
       {children}

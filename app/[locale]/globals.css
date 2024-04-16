@@ -14,7 +14,7 @@
     --primary: hsl(222.2, 47.4%, 11.2%);
     --secondary: #ffde59;
     --muted: #000;
-    --accent: #00bf63;
+    --accent: #00c767;
     --destructive: hsl(0, 84.2%, 60.2%);
     --warning: hsl(38 92% 50%);
     --border: hsl(214.3, 31.8%, 91.4%);
@@ -25,7 +25,7 @@
 
     --font-roboto: "Roboto", sans-serif;
     --font-monterrat: "Montserrat", sans-serif;
-
+    /* #00C767 */
     --radius: 0.5rem;
   }
 }
@@ -144,7 +144,7 @@
   background: linear-gradient(
     123deg,
     #ffde59,
-    #00bf63
+    #00c767
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -632,8 +632,8 @@ section > div > h2 {
 }
 
 .shadow-freelance {
-  box-shadow: 0 0 0.2rem #00bf63, 0 0 0.8rem #00bf63, 0 0 2rem #00bf63,
-    0 0 0.8rem #00bf63, 0 0 2.8rem #00bf63, inset 0 0 1.3rem #00bf63;
+  box-shadow: 0 0 0.2rem #00c767, 0 0 0.8rem #00c767, 0 0 2rem #00c767,
+    0 0 0.8rem #00c767, 0 0 2.8rem #00c767, inset 0 0 1.3rem #00c767;
 }
 
 .embla__slide {
