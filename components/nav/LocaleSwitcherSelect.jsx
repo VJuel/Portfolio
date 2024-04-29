@@ -32,7 +32,7 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        "relative text-dark ml-2 md:ml-0",
+        "relative text-dark -ml-2 md:ml-0",
         isPending && "transition-opacity [&:disabled]:opacity-30 w-full"
       )}
     >
@@ -40,7 +40,7 @@ export default function LocaleSwitcherSelect({
       <select
         className={clsx(
           montserrat.className,
-          "inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-1"
+          "inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground md:p-[6px] py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-6"
         )}
         defaultValue={defaultValue}
         disabled={isPending}

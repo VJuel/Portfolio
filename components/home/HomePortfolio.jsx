@@ -27,7 +27,7 @@ export default function HomePortfolio() {
             <Palette className="text-[--text]" />
           </ButtonNav>
         </div>
-        <div className="flex flex-col justify-center items-center md:items-start mt-8 md:mt-0 h-[200px] md:h-[250px] lg:h-[270px] w-full md:w-[54%]">
+        <div className="flex flex-col justify-center items-center md:items-start mt-8 md:mt-0 h-[190px] md:h-[250px] lg:h-[270px] w-full md:w-[54%]">
           <CarouselHome />
         </div>
       </div>

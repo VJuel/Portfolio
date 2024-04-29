@@ -5,13 +5,21 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { getTranslations } from "next-intl/server"
 import { Switch } from "@/components/ui/switch"
+import { montserrat } from "@/components/fonts"
+import clsx from "clsx"
 
 export async function FormField({ label }) {
   const t = await getTranslations("contact.formSection")
   return (
     <>
       <div className="flex-col w-1/2">
-        <Label htmlFor={label} className="text-[--text] lg:text-inherit">
+        <Label
+          htmlFor={label}
+          className={clsx(
+            montserrat.classname,
+            "text-[--text] lg:text-inherit"
+          )}
+        >
           {t(label + ".name")}
         </Label>
         <Input
@@ -30,7 +38,10 @@ export async function FormTextAreaField({ label, value }) {
 
   return (
     <>
-      <Label htmlFor={label} className="text-[--text] lg:text-inherit">
+      <Label
+        htmlFor={label}
+        className={clsx(montserrat.classname, "text-[--text] lg:text-inherit")}
+      >
         Message
       </Label>
       <Textarea

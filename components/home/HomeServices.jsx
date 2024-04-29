@@ -14,6 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Newspaper, Handshake } from "lucide-react"
+
 export default function HomeServices() {
   const t = useTranslations("home.HomeServices")
 
@@ -26,7 +27,7 @@ export default function HomeServices() {
 
         <article className="w-full md:w-[80%] lg:w-full h-auto lg:h-[570px] mt-10 flex flex-col lg:flex-row justify-center items-center gap-14 m-auto">
           {/* Card Nextjs */}
-          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-lg justify-between items-center">
+          <Card className="w-[350px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0lg:shadow-lg justify-between items-center border-none shadow-none">
             <Image
               src="/nextjs-logo.jpg"
               width={400}
@@ -49,7 +50,7 @@ export default function HomeServices() {
           </Card>
 
           {/* Card Wordpress */}
-          <Card className="w-[360px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:border-l lg:shadow-lg justify-between items-center">
+          <Card className="w-[350px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:shadow-lg justify-between items-center border-none shadow-none">
             <Image
               src="/WordPress-Logo.png"
               width={400}

@@ -30,7 +30,7 @@ export default function ContactPage({ params: { locale } }) {
       className="w-full lg:h-screen h-auto m-auto set-page lg:py-0 bg-gray-900 lg:bg-background"
     >
       <div className="w-full flex m-auto flex-col lg:flex-row justify-center items-center h-full">
-        <div className="flex justify-center items-center flex-col bg-gray-900 w-full md:w-[55%] h-full">
+        <div className="flex justify-center items-center flex-col bg-gray-900 w-full md:w-[55%] h-full   px-[20px]">
           <h1
             className={clsx(
               robotoSlab.className,

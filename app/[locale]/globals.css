@@ -25,7 +25,6 @@
 
     --font-roboto: "Roboto", sans-serif;
     --font-monterrat: "Montserrat", sans-serif;
-    /* #00C767 */
     --radius: 0.5rem;
   }
 }
@@ -277,7 +276,7 @@ footer {
 }
 
 .footer div > p {
-  @apply text-lg font-medium;
+  @apply md:text-lg text-[18px] font-medium;
 }
 
 .list-footer {
@@ -285,7 +284,7 @@ footer {
 }
 
 .list-footer .list-me {
-  @apply flex w-full lg:w-[48%] flex-col items-start lg:items-end justify-between text-lg;
+  @apply flex w-full lg:w-[48%] flex-col items-start lg:items-end justify-between  md:text-lg text-[18px];
 }
 
 @media screen and (min-width: 1024px) {

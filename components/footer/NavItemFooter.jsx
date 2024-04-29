@@ -3,6 +3,7 @@
 import clsx from "clsx"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { Link } from "../../navigation"
+import { montserrat } from "../fonts"
 
 export default function NavLinkFooter({ href, children }) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
@@ -13,7 +14,8 @@ export default function NavLinkFooter({ href, children }) {
     <Link
       aria-current={isActive ? "page" : undefined}
       className={clsx(
-        "inline-block transition-colors text-xs [&>*]:text-xs text-[--dark] font-medium",
+        montserrat.className,
+        "inline-block transition-colors text-xs [&>*]:text-xs text-[--dark] md:font-medium font-bold text-black",
         isActive ? "text-slate-600" : "text-dark hover:text-slate-600"
       )}
       href={href}

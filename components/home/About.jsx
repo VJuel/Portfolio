@@ -22,7 +22,7 @@ export default function About() {
       />
       <div className="py-6">
         <h2 className={clsx(robotoSlab.className, "text-3xl")}>{t("title")}</h2>
-        <div className="max-w-3xl gap-4 md:gap-8 w-full flex justify-center items-center p-4 flex-col mt-8 lg:flex-row bg-accent md:rounded-sm overflow-hidden md:border-2 md:border-black ">
+        <div className="max-w-3xl gap-4 md:gap-8 w-full flex justify-center items-center p-4 flex-col mt-8 lg:flex-row xs:bg-accent md:rounded-sm overflow-hidden md:border-2 md:border-black ">
           <div className="w-full lg:w-[75%] lg:p-7 text-black text-lg text-left">
             <div className="div gap">
               <h3

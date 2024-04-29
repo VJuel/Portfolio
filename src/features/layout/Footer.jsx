@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto bg-secondary !text-gray-200 relative border-t-2 border-black">
       <div className="footer relative flex lg:flex-row md:justify-between items-start justify-start max-w-4xl m-auto px-4 py-6 flex-col w-full gap-4 bg-secondary">
-        <div className="w-[65%] md:w-[50%] [&>p]:leading-6 text-lg text-left relative border-0 lg:border-r-2 border-black flex flex-col">
+        <div className="w-[65%] md:w-[50%] [&>p]:leading-6text-left relative border-0 lg:border-r-2 border-black flex flex-col">
           <h3
             className={clsx(
               robotoSlab.className,

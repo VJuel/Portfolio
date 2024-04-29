@@ -19,7 +19,7 @@ export default function Portfolio({ params: { locale } }) {
   const portfolio = useTranslations("portfolio")
 
   return (
-    <section id="portfolio" className="w-full h-auto set-page">
+    <section id="portfolio" className="w-full h-auto set-page px-[20px]">
       <div className="flex flex-col justify-center items-center">
         <div className="w-full max-w-6xl flex m-auto flex-col justify-center items-center">
           <h1
