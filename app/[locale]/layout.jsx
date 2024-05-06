@@ -10,6 +10,7 @@ import Reseaux from "@/components/Reseaux"
 import { Analytics } from "@vercel/analytics/react"
 import Cookies from "@/components/cookies/Cookies"
 import { getCookiesAnalytics } from "@/lib/actions"
+import Favicon from "/public/favicon.ico"
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -21,6 +22,7 @@ export async function generateMetadata({ params: { locale } }) {
   return {
     title: t("title"),
     description: t("description"),
+    icons: [{ rel: "icon", url: Favicon.src }],
   }
 }
 

@@ -14,7 +14,7 @@
     --primary: hsl(222.2, 47.4%, 11.2%);
     --secondary: #ffde59;
     --muted: #000;
-    --accent: #00c767;
+    --accent: #00e777;
     --destructive: hsl(0, 84.2%, 60.2%);
     --warning: hsl(38 92% 50%);
     --border: hsl(214.3, 31.8%, 91.4%);
@@ -143,7 +143,7 @@
   background: linear-gradient(
     123deg,
     #ffde59,
-    #00c767
+    #00e777
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { robotoSlab } from "../fonts"
+import { montserrat, robotoSlab } from "../fonts"
 import clsx from "clsx"
 import { ButtonNav } from "../ButtonNav"
 import { useTranslations } from "next-intl"
@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Newspaper, Handshake } from "lucide-react"
+import { Newspaper, UserRoundCog } from "lucide-react"
 
 export default function HomeServices() {
   const t = useTranslations("home.HomeServices")
@@ -27,7 +27,7 @@ export default function HomeServices() {
 
         <article className="w-full md:w-[80%] lg:w-full h-auto lg:h-[570px] mt-10 flex flex-col lg:flex-row justify-center items-center gap-14 m-auto">
           {/* Card Nextjs */}
-          <Card className="w-[350px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0lg:shadow-lg justify-between items-center border-none shadow-none">
+          <Card className="w-[350px] md:w-full lg:w-[360px] h-full flex flex-col md:border-0 md:shadow-none lg:shadow-lg justify-between items-center border-none shadow-none">
             <Image
               src="/nextjs-logo.jpg"
               width={400}
@@ -36,13 +36,17 @@ export default function HomeServices() {
               alt="logo nextjs"
             />
             <CardHeader>
-              <CardTitle>{t("nextjs.title")}</CardTitle>
+              <CardTitle className={clsx(montserrat.className)}>
+                {t("nextjs.title")}
+              </CardTitle>
             </CardHeader>
-            <CardContent className="text-justify">
+            <CardContent className={clsx(montserrat.className, "text-justify")}>
               <strong>{t("nextjs.strong")}</strong> {t("nextjs.description")}
             </CardContent>
             <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1 gap-4">
-              <ButtonNav href="/services" t={t("btn1")} />
+              <ButtonNav href="/services" t="Mes services">
+                <UserRoundCog className="stroke-white" />
+              </ButtonNav>
               <ButtonNav variant="secondary" href="/blog" t="Articles">
                 <Newspaper className="text-black" />
               </ButtonNav>
@@ -68,7 +72,9 @@ export default function HomeServices() {
               <br className="hidden md:block" />
             </CardContent>
             <CardFooter className="flex justify-between w-full md:w-[50%] lg:w-full flex-grow-1 gap-4">
-              <ButtonNav href="/services" t="Voir les offres" />
+              <ButtonNav href="/services" t="Mes services">
+                <UserRoundCog className="stroke-white" />
+              </ButtonNav>
               <ButtonNav variant="secondary" href="/blog" t="Articles">
                 <Newspaper className="text-black" />
               </ButtonNav>
