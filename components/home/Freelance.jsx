@@ -71,7 +71,7 @@ export default function Freelance() {
               <span
                 className={clsx(montserrat.className, "text-5xl font-bold")}
               >
-                350
+                400
               </span>
               <span className="font-normal">€</span>
               <span className="text-5xl text-secondary font-semibold rounded-lg px-2 -mb-2">
