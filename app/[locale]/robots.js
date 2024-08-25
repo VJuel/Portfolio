@@ -3,6 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/private/",
     },
     sitemap: "https://vicktor-juhel.fr/sitemap.xml",
   }

@@ -18,7 +18,7 @@ import Image from "next/image"
 import clsx from "clsx"
 import { ExternalLink, ArrowLeftCircle, ArrowRightCircle } from "lucide-react"
 
-export default function ProjetsCard() {
+export default function ProjetsCard({ lang }) {
   const pathname = usePathname()
   const router = useRouter()
   const projetData = Object.values(projects)
@@ -131,7 +131,7 @@ export default function ProjetsCard() {
                       {project.title}
                     </SheetTitle>
                     <SheetDescription>
-                      {/* {project.description[lang]} */}
+                      {project.description[lang]}
                     </SheetDescription>
 
                     {project.images.map((image, index) => (

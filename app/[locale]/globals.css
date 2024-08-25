@@ -24,7 +24,7 @@
     --footer-text: #e5e7eb;
 
     --font-roboto: "Roboto", sans-serif;
-    --font-monterrat: "Montserrat", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
     --radius: 0.5rem;
   }
 }
@@ -78,8 +78,8 @@
     font-family: var(--font-roboto);
   }
 
-  .monterrat {
-    font-family: var(--font-monterrat);
+  .montserrat {
+    font-family: var(--font-montserrat);
   }
 
   h1,
@@ -639,4 +639,11 @@ section > div > h2 {
   flex: 0 0 600px; /* Slide covers 200px of the viewport */
   min-width: 0;
   flex-basis: 92%;
+}
+
+select {
+  @apply bg-inherit;
+}
+option {
+  @apply montserrat;
 }
