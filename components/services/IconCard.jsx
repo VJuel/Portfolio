@@ -15,11 +15,11 @@ export default function IconCard({ icon, title, description, background }) {
     <Card
       className={clsx(
         background,
-        "flex flex-col justify-center items-center w-full md:w-[75%] lg:w-2/4 h-full"
+        "flex flex-col justify-center items-center w-full md:w-[75%] lg:w-2/4 h-full montserrat"
       )}
     >
       <CardHeader>
-        <CardTitle className="text-center mb-4">{title}</CardTitle>
+        <CardTitle className="text-center mb-4 montserrat">{title}</CardTitle>
         <Image
           src={icon}
           width={120}
@@ -27,7 +27,9 @@ export default function IconCard({ icon, title, description, background }) {
           alt="Icon Freelance Skills"
         />
       </CardHeader>
-      <CardContent className="text-center">{description}</CardContent>
+      <CardContent className="text-center montserrat">
+        {description}
+      </CardContent>
     </Card>
   )
 }

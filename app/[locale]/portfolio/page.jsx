@@ -28,7 +28,7 @@ export default function Portfolio({ params: { locale } }) {
             {portfolio("title")}
           </h1>
           <div className="w-full max-w-6xl flex m-auto justify-center items-center ">
-            <ProjetsCard portfolio={portfolio("title")} />
+            <ProjetsCard lang={locale} portfolio={portfolio("title")} />
           </div>
         </div>
       </div>

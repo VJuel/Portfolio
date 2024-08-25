@@ -14,7 +14,11 @@ export default function LocaleSwitcher() {
         <option
           key={cur}
           value={cur}
-          className={clsx(montserrat.className, "w-full cursor-pointer")}
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className={clsx(
+            montserrat.className,
+            "w-full cursor-pointer montserrat"
+          )}
         >
           {t("locale", { locale: cur })}
         </option>

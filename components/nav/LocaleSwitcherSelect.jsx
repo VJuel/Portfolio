@@ -40,7 +40,7 @@ export default function LocaleSwitcherSelect({
       <select
         className={clsx(
           montserrat.className,
-          "inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground md:p-[6px] py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-6"
+          "inline-flex border border-input bg-transparent shadow-sm hover:bg-inherit hover:text-accent-foreground md:p-[6px] py-2 mt-4 lg:mt-0 ml-4 lg:ml-3 w-fit rounded-sm px-6 montserrat focus:bg-background"
         )}
         defaultValue={defaultValue}
         disabled={isPending}
