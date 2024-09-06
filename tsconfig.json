@@ -33,7 +33,10 @@
     "config.js",
     "components/nav/NavLinkItem.jsx",
     "app/layout.jsx",
-    "src/features/providers/MyCustomNextIntlClientProvider.jsx"
+    "src/features/providers/MyCustomNextIntlClientProvider.jsx",
+    "components/form/DatePicker.jsx",
+    "components/form/DatePicker.jsx",
+    "components/form/DateTimePicker.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
 import NavLinkFooter from "@/components/footer/NavItemFooter"
 import { useTranslations } from "next-intl"
-import { montserrat } from "./fonts"
+import { montserrat } from "../fonts"
 import clsx from "clsx"
 
 export function Banner({ text }) {

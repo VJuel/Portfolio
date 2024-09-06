@@ -1,5 +1,5 @@
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
-import Hero from "@/components/Hero"
+import Hero from "@/components/home/Hero"
 import About from "@/components/home/About"
 import HomePortfolio from "@/components/home/HomePortfolio"
 import HomeServices from "@/components/home/HomeServices"

@@ -7,9 +7,12 @@ import {
   FormTextAreaField,
   ButtonSumitContact,
 } from "@/components/form/FormFields"
+// import DatetimePicker from "@/components/form/DatetimePicker"
 import { robotoSlab } from "@/components/fonts"
 import clsx from "clsx"
 import { useTranslations } from "next-intl"
+import { Label } from "@/components/ui/label"
+import { DatePicker } from "@/components/form/DateTimePicker"
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: "Metadata" })
@@ -34,7 +37,7 @@ export default function ContactPage({ params: { locale } }) {
           <h1
             className={clsx(
               robotoSlab.className,
-              "text-5xl font-bold text-secondary mb-6"
+              "text-5xl font-bold text-secondary mb-6 text-center"
             )}
           >
             {t("title")}
@@ -53,6 +56,17 @@ export default function ContactPage({ params: { locale } }) {
               <FormField label={"tel"} />
             </div>
             <FormTextAreaField label={"message"} />
+            <div className="flex flex-col">
+              <Label
+                htmlFor="date"
+                className={clsx(
+                  "montserrat text-[--text] lg:text-inherit pb-1"
+                )}
+              >
+                Choisir date et heure pour un rendez-vous
+              </Label>
+              <DatePicker />
+            </div>
             <ButtonSumitContact />
           </FormSection>
         </div>

@@ -1,6 +1,6 @@
 import { robotoSlab } from "../fonts"
 import clsx from "clsx"
-import { ButtonNav } from "../ButtonNav"
+import { ButtonNav } from "../nav/ButtonNav"
 import { useTranslations } from "next-intl"
 import { Palette } from "lucide-react"
 import CarouselHome from "@/components/home/CarouselHome"

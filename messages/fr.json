@@ -210,7 +210,7 @@
         "placeholder": "Votre numéro de téléphone"
       },
       "message": "J'aimerais rentrer en contact avec vous pour...",
-      "btn": "Envoyer moi un e-mail !",
+      "btn": "Envoyez moi un e-mail !",
       "pending": "Envoi en cours..."
     }
   },
@@ -255,8 +255,8 @@
     "coordoneesEmail": "E-mail",
     "coordoneesAdress": "Adresse",
 
-    "description1": "Merci d&apos;avoir regardé mon profil en entier !",
-    "description2": "S&apos;il vous intéresse, envoyer moi un e-mail et<br/> merci de le partager à tout votre réseau !",
+    "description1": "Merci d'avoir consulté mon profil jusqu'au bout !",
+    "description2": "Si mon profil vous intéresse, n'hésitez pas à m'envoyer un e-mail <br/>et à le partager avec votre réseau !",
     "description3": "Au plaisir de collaborer avec vous...",
     "banner": "Fait avec Nextjs, Tailwind"
   },

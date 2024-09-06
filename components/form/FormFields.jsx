@@ -1,10 +1,8 @@
-import { useTranslations } from "next-intl"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { getTranslations } from "next-intl/server"
-import { Switch } from "@/components/ui/switch"
 import { montserrat } from "@/components/fonts"
 import clsx from "clsx"
 
@@ -37,7 +35,7 @@ export async function FormTextAreaField({ label, value }) {
   const t = await getTranslations("contact.formSection")
 
   return (
-    <>
+    <div className="flex-col">
       <Label
         htmlFor={label}
         className={clsx(montserrat.classname, "text-[--text] lg:text-inherit")}
@@ -49,7 +47,7 @@ export async function FormTextAreaField({ label, value }) {
         name={label}
         placeholder={t(label)}
       />
-    </>
+    </div>
   )
 }
 

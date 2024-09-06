@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import clsx from "clsx"
-import ImageHero from "@/components/ImageHero"
+import ImageHero from "@/components/home/ImageHero"
 import { useTranslations } from "next-intl"
-import { ButtonNav } from "@/components/ButtonNav"
+import { ButtonNav } from "@/components/nav/ButtonNav"
 
 export default function Hero({ lang }) {
   const t = useTranslations("home.hero")

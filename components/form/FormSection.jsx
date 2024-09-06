@@ -1,10 +1,12 @@
 "use client"
 import { use, useEffect, useRef, useState } from "react"
 import { useFormStatus, useFormState } from "react-dom"
-import { sendEmail } from "@/lib/actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
+import { validateCaptcha } from "@/lib/utils/hcaptcha"
+import { checkRateLimiter } from "@/lib/utils/rateLimiter"
+import { handleSubmit } from "@/lib/utils/formHandler"
 
 const initialState = {
   message: null,
@@ -20,7 +22,6 @@ export default function FormSection({ children }) {
   const captchaRef = useRef(null)
 
   async function senderEmail(state, formData) {
-    // Vérifie si le captcha est validé.
     if (!token) {
       toast({
         variant: "destructive",
@@ -30,36 +31,14 @@ export default function FormSection({ children }) {
       return
     }
 
-    try {
-      // Envoie les données du formulaire au serveur.
-      const { results, error } = await sendEmail(state, formData)
+    const canProceed = await checkRateLimiter(toast)
+    if (!canProceed) return
 
-      // Gère la réponse du serveur.
-      if (error) {
-        toast({
-          variant: "destructive",
-          title: error,
-          duration: 10000,
-        })
-      } else if (results?.ok) {
-        toast({
-          title: "Message envoyé",
-          description: "Votre message a bien été envoyé.",
-        })
-        // Réinitialise le formulaire et potentiellement le token du captcha ici.
-        formRef.current.reset()
-        captchaRef.current.resetCaptcha()
-        setToken(null) // Réinitialise le token du captcha si nécessaire.
-      }
-    } catch (error) {
-      // Gère les erreurs de l'appel réseau.
-      console.error("Erreur lors de l'envoi du formulaire : ", error)
-      toast({
-        variant: "destructive",
-        title: "Une erreur est survenue lors de l'envoi du message.",
-        duration: 10000,
-      })
-    }
+    const isCaptchaValid = await validateCaptcha(token, toast)
+    if (!isCaptchaValid) return
+
+    formData.append("h-captcha-response", token)
+    await handleSubmit(formData, state, toast, formRef, captchaRef, setToken)
   }
 
   useEffect(() => {
