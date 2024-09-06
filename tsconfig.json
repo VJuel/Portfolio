@@ -36,7 +36,9 @@
     "src/features/providers/MyCustomNextIntlClientProvider.jsx",
     "components/form/DatePicker.jsx",
     "components/form/DatePicker.jsx",
-    "components/form/DateTimePicker.jsx"
+    "components/form/DateTimePicker.jsx",
+    "components/form/TimePicker.jsx",
+    "components/form/TimePickerInput.jsx"
   ],
   "exclude": ["node_modules"]
 }

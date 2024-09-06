@@ -1,28 +1,13 @@
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
-import React from "react"
+import React, { useState, useEffect, useMemo, forwardRef } from "react"
 import {
-  Period,
-  TimePickerType,
   getArrowByType,
   getDateByType,
   setDateByType,
 } from "@/components/ui/TimePickerUtils"
 
-export interface TimePickerInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  picker: TimePickerType
-  date: Date | undefined
-  setDate: (date: Date | undefined) => void
-  period?: Period
-  onRightFocus?: () => void
-  onLeftFocus?: () => void
-}
-
-const TimePickerInput = React.forwardRef<
-  HTMLInputElement,
-  TimePickerInputProps
->(
+const TimePickerInput = forwardRef(
   (
     {
       className,
@@ -42,10 +27,10 @@ const TimePickerInput = React.forwardRef<
     },
     ref
   ) => {
-    const [flag, setFlag] = React.useState<boolean>(false)
-    const [prevIntKey, setPrevIntKey] = React.useState<string>("0")
+    const [flag, setFlag] = useState(false)
+    const [prevIntKey, setPrevIntKey] = useState("0")
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (flag) {
         const timer = setTimeout(() => {
           setFlag(false)
@@ -54,11 +39,11 @@ const TimePickerInput = React.forwardRef<
       }
     }, [flag])
 
-    const calculatedValue = React.useMemo(() => {
+    const calculatedValue = useMemo(() => {
       return getDateByType(date || new Date(), picker) // Assurez-vous que `date` est toujours défini
     }, [date, picker])
 
-    const calculateNewValue = (key: string) => {
+    const calculateNewValue = (key) => {
       if (picker === "12hours") {
         if (flag && calculatedValue.slice(1, 2) === "1" && prevIntKey === "0")
           return "0" + key
@@ -66,7 +51,7 @@ const TimePickerInput = React.forwardRef<
       return !flag ? "0" + key : calculatedValue.slice(1, 2) + key
     }
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (e) => {
       if (e.key === "Tab") return
       e.preventDefault()
       if (e.key === "ArrowRight") onRightFocus?.()
