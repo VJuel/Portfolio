@@ -51,7 +51,7 @@ export function DatePicker() {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[50%] p-0">
+        <PopoverContent className="w-[60%] md:w-[80%] lg:w-auto p-0">
           <Calendar
             mode="single"
             selected={selectedDate ? new Date(selectedDate) : null}
