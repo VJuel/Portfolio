@@ -1,7 +1,6 @@
 import * as React from "react"
 
-// export const EmailTemplate = (name, firstName, email, tel, date, message) => (
-export const EmailTemplate = (name) => (
+export const EmailTemplate = (name, firstName, email, tel, date, message) => (
   <div
     style={{
       fontFamily: "Arial, sans-serif",
@@ -17,13 +16,19 @@ export const EmailTemplate = (name) => (
     </p>
     <ul>
       <li>
-        {/* <strong>Nom :</strong> {firstName} {name} */}
+        <strong>Prénom :</strong> {firstName}
         <strong>Nom :</strong>
         {name}
       </li>
-      <li>{/* <strong>Email :</strong> {email} */}</li>
-      <li>{/* <strong>Téléphone :</strong> {tel} */}</li>
-      <li>{/* <strong>Rendez-vous :</strong> {date} */}</li>
+      <li>
+        <strong>Email :</strong> {email}
+      </li>
+      <li>
+        <strong>Téléphone :</strong> {tel}
+      </li>
+      <li>
+        <strong>Rendez-vous :</strong> {date}
+      </li>
     </ul>
     <p style={{ marginTop: "20px" }}>
       <strong>Message :</strong>
@@ -35,7 +40,7 @@ export const EmailTemplate = (name) => (
         margin: "10px 0",
       }}
     >
-      {/* {message} */}
+      {message}
     </blockquote>
     <p>
       Pour répondre à cette demande, vous pouvez contacter le client directement
